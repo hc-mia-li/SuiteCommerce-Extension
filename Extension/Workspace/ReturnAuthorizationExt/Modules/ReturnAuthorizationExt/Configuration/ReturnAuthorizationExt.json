@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "ReturnAuthorizationExt.config": {
+            "group": "extensions",
+            "subtab": "ReturnAuthorizationExt_subtab",
+            "type": "string",
+            "title": "ReturnAuthorizationExt_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

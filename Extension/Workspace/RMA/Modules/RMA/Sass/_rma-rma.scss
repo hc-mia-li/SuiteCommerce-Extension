@@ -1,0 +1,189 @@
+/*
+	Sass Application Entry Point
+	Link all your sass dependencies in the right order
+
+	Example:
+	@import "other-sass-file.scss";
+	@import "../../<other module>/Sass/other-sass-file.scss";
+*/
+input, select {
+        width: 100%;
+}
+#reasonreturn{
+	background-image: none;
+}
+.rma-container {
+	@extend .container;
+}
+.rma-form {
+	padding-left: 10vh;
+        padding-right: 10vh;
+}
+.rma-p {
+	width: 78%;
+}
+.rma-title {
+	text-align: center;
+	text-transform: capitalize;
+	font-style: unset;
+}
+.rma-basic-info-section {
+	margin-top: $sc-margin-lv2;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.basic-info-row {
+	display: flex;
+    flex-wrap: wrap;
+}
+
+.basic-info-title {
+	padding-left: $sc-padding-lv3;
+	padding-bottom: $sc-padding-lv3;
+	width: 100%;
+}
+
+.rma-retrun-instrunctions {
+	p {
+		color: red;
+		padding-left: $sc-padding-lv3;
+	}
+	.p-text {
+		padding-left: $sc-padding-lv3;
+		padding-top: $sc-padding-lv2;
+	}
+}
+.rma-return-instr-ol li {
+	padding-left: $sc-padding-lv1 * 8;
+}
+h4.rma-return-instr-title {
+	padding-left: 15px;
+	color: red;
+}
+
+.rma-return-prod {
+	padding-left: $sc-padding-lv3;
+	padding-top: $sc-padding-lv2;
+}
+.rma-flex {
+	display: flex;
+	flex-wrap: wrap;
+       margin-left: -15px;
+}
+
+// add rma prod
+.add-rma-products {
+	float: left;
+	display: flex;
+	border-top: none !important;
+	padding-left: $sc-padding-lv3;
+}
+.rma-add-retrun-sec {
+	display: flex;
+	align-items: baseline;
+	padding-left: $sc-padding-lv3;
+}
+.rma-new-plus-icon {
+	@extend .icon-plus;
+	font-size: 11px;
+	color: #fff;
+	padding: 6px;
+	border-radius: 50%;
+	background-color: #a5acb9;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.rma-new-remove-icon {
+	@extend .icon-trash;
+	font-size: 11px;
+	color: #fff;
+	padding: 6px;
+	border-radius: 50%;
+	background-color: #a5acb9;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+// Attach picture
+.attach-pictures {
+	margin-top: 10px;
+}
+.rma-upload-td {
+	position: relative;
+}
+
+.rma-file-upload-icon {
+	position: absolute;
+	right: 15px;
+	bottom: 10px;
+	@extend .icon-upload;
+	font-size: 1.5rem;
+}
+.rma-files-format {
+	color: red;
+	margin-top: 17px;
+}
+.attach-pic-sect {
+	padding-left: $sc-padding-lv3;
+}
+
+// ship info
+
+.rma-ship-from-information {
+	padding-left: $sc-padding-lv3;
+	margin-top: 5px;
+}
+.rma-form-actions {
+	padding-left: $sc-padding-lv3;
+	margin-top: 5px;
+}
+.rma-submit-btn {
+	@extend .button-secondary ;
+	@extend .button-large;
+}
+
+.rma-info-card-content {
+	@extend .info-card-content;
+	color: $sc-color-secondary;
+	font-weight: bold;
+}
+#validationMessage{
+	color: red;
+}
+#submit-msg{
+	margin-top: 15px;
+	margin-left: 15px;
+	text-align: center;
+}
+@media (max-width: $screen-sm) {
+	.rma-flex-wrap {
+		flex: auto;
+	}
+	.rma-reson-return-select
+	{
+		width: 100%;
+	}
+	.rma-type-list{
+		width:100% ;
+	}
+	.rma-flex-wrap-2 {
+		width: 100%;
+	}
+}
+@media (min-width: $screen-sm-min) {
+
+	.rma-resons-wrap{
+		width: 50%;
+	}
+	.rma-reson-return-select
+	{
+		width: 100%;
+	}
+	.rma-type-list{
+		width:100% ;
+	}
+}
+
+// .rma-retrun-instrunctions h3.rma-return-info {
+// 	margin-left: 15px;
+// }

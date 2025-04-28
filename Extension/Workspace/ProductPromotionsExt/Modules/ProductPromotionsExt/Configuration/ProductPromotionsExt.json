@@ -1,0 +1,94 @@
+{
+    "type": "object",
+    "subtab": {
+        "id": "ProductPromotions",
+        "title": "Product Promotions",
+        "group": "extensions"
+    },
+    "properties": {
+        "ProductPromotions.PLPSeries": {
+            "group": "extensions",
+            "subtab": "ProductPromotions",
+            "type": "array",
+            "title": "Product Series",
+            "description": "Select the product series to participate in the promotion",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "series": {
+                        "title": "Product Series",
+                        "mandatory": true,
+                        "type": "string",
+                        "enum": [
+                            "OpenFit",
+                            "OpenFit Air",
+                            "OpenRun",
+                            "OpenRun Pro",
+                            "OpenRun Pro 2",
+                            "OpenMove",
+                            "OpenSwim",
+                            "OpenSwim Pro",
+                            "OpenComm2"
+                        ]
+                    },
+                    "size": {
+                        "title": "Product Size",
+                        "mandatory": false,
+                        "type": "string",
+                        "default": "",
+                        "enum": [
+                            "",
+                            "Mini",
+                            "Standard"
+                        ]
+                    },
+                    "text": {
+                        "title": "Promotion Text",
+                        "mandatory": true,
+                        "type": "string",
+                        "default": "SALE"
+                    },
+                    "extratext": {
+                        "title": "Extra Promotion Text",
+                        "mandatory": false,
+                        "type": "string",
+                        "default": "OFFLINE ONLY"
+                    },
+                    "excludeKeywords": {
+                        "title": "Exclude item keywords",
+                        "mandatory": false,
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            }
+        },
+        "ProductPromotions.startDate": {
+            "group": "extensions",
+            "subtab": "ProductPromotions",
+            "type": "string",
+            "mandatory": true,
+            "title": "Promotion Start Date(PST)",
+            "description": "Configure promotion start time(PST),format:YYYY/MM/DD hh:mm:ss am(pm)",
+            "default": "2024/04/01 12:00:00 am"
+        },
+        "ProductPromotions.endDate": {
+            "group": "extensions",
+            "subtab": "ProductPromotions",
+            "type": "string",
+            "mandatory": true,
+            "title": "Promotion End Date(PST)",
+            "description": "Configure promotion end time(PST),format:YYYY/MM/DD hh:mm:ss am(pm)",
+            "default": "2024/05/01 12:00:00 am"
+        },
+        "ProductPromotions.bannerTitle": {
+            "group": "extensions",
+            "subtab": "ProductPromotions",
+            "type": "string",
+            "mandatory": true,
+            "title": "Banner Title",
+            "description": "Configure banner title",
+            "default": "Get up"
+        }
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "name": "RMA",
+    "fantasyName": "RMA",
+    "vendor": "HitPoint",
+    "version": "1.0.12",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "23.1.4",
+        "SCS": "23.1.4"
+    },
+    "description": "RMA",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/RMA.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/RMA/Configuration/RMA.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/RMA/Sass/_rma-rma.scss"
+        },
+        "files": [
+            "Modules/RMA/Sass/_rma-rma.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/RMA/Templates/hp_rma_rma.tpl",
+                    "Modules/RMA/Templates/hp_rma_rma_saleorder_item.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/RMA/JavaScript/HitPoint.RMA.RMA.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/RMA/JavaScript/HitPoint.RMA.RMA.js",
+                    "Modules/RMA/JavaScript/RMA.View.js",
+                    "Modules/RMA/JavaScript/HitPoint.RMA.RMA.Model.js",
+                    "Modules/RMA/JavaScript/RMA.SaleOrderItem.View.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/RMA/SuiteScript/HitPoint.RMA.RMA.js",
+        "files": [
+            "Modules/RMA/SuiteScript/HitPoint.RMA.RMA.js",
+            "Modules/RMA/SuiteScript/RMA.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\RMA",
+    "suitescript2": {
+        "files": []
+    }
+}

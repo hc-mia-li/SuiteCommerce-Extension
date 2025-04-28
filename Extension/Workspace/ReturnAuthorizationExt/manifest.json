@@ -1,0 +1,77 @@
+{
+    "name": "ReturnAuthorizationExt",
+    "fantasyName": "ReturnAuthorizationExt",
+    "vendor": "HitPoint",
+    "version": "1.0.2",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": "23.1.4"
+    },
+    "description": "Return Authorization Customization",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/ReturnAuthorizationExt.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/ReturnAuthorizationExt/Configuration/ReturnAuthorizationExt.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/ReturnAuthorizationExt/Sass/_returnauthorizationext-returnauthorizationext.scss"
+        },
+        "files": [
+            "Modules/ReturnAuthorizationExt/Sass/_returnauthorizationext-returnauthorizationext.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/ReturnAuthorizationExt/Templates/hp_returnauthorizationext_returnauthorizationext.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/ReturnAuthorizationExt/JavaScript/HitPoint.ReturnAuthorizationExt.ReturnAuthorizationExt.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/ReturnAuthorizationExt/JavaScript/HitPoint.ReturnAuthorizationExt.ReturnAuthorizationExt.js",
+                    "Modules/ReturnAuthorizationExt/JavaScript/ReturnAuthorizationExt.View.js",
+                    "Modules/ReturnAuthorizationExt/JavaScript/HitPoint.ReturnAuthorizationExt.ReturnAuthorizationExt.Model.js",
+                    "Modules/ReturnAuthorizationExt/JavaScript/HitPoint.ReturnAuthorizationExt.ReturnAuthorizationExt.SS2Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/ReturnAuthorizationExt/SuiteScript/HitPoint.ReturnAuthorizationExt.ReturnAuthorizationExt.js",
+        "files": [
+            "Modules/ReturnAuthorizationExt/SuiteScript/HitPoint.ReturnAuthorizationExt.ReturnAuthorizationExt.js",
+            "Modules/ReturnAuthorizationExt/SuiteScript/ReturnAuthorizationExt.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\ReturnAuthorizationExt",
+    "suitescript2": {
+        "files": [
+            "Modules/ReturnAuthorizationExt/SuiteScript2/ReturnAuthorizationExt.Service.ss"
+        ]
+    }
+}

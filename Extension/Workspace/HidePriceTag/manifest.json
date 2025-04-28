@@ -1,0 +1,102 @@
+{
+    "name": "HidePriceTag",
+    "fantasyName": "HidePriceTag",
+    "vendor": "HitPoint",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "",
+        "SCS": ""
+    },
+    "description": "Hide the price tag to the unlogged in users",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/HidePriceTag.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/HidePriceTag/Configuration/HidePriceTag.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/HidePriceTag/Sass/_hidepricetag-hidepricetag.scss",
+            "myaccount": "Modules/HidePriceTag/Sass/_hidepricetag-hidepricetag.scss",
+            "checkout": "Modules/HidePriceTag/Sass/_hidepricetag-hidepricetag.scss"
+        },
+        "files": [
+            "Modules/HidePriceTag/Sass/_hidepricetag-hidepricetag.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/HidePriceTag/Templates/hp_hidepricetag_hidepricetag.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/HidePriceTag/Templates/hp_hidepricetag_hidepricetag.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/HidePriceTag/Templates/hp_hidepricetag_hidepricetag.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/HidePriceTag/JavaScript/HitPoint.HidePriceTag.HidePriceTag.js",
+            "myaccount": "Modules/HidePriceTag/JavaScript/HitPoint.HidePriceTag.HidePriceTag.js",
+            "checkout": "Modules/HidePriceTag/JavaScript/HitPoint.HidePriceTag.HidePriceTag.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/HidePriceTag/JavaScript/HitPoint.HidePriceTag.HidePriceTag.js",
+                    "Modules/HidePriceTag/JavaScript/HidePriceTag.View.js",
+                    "Modules/HidePriceTag/JavaScript/HitPoint.HidePriceTag.HidePriceTag.Model.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/HidePriceTag/JavaScript/HitPoint.HidePriceTag.HidePriceTag.js",
+                    "Modules/HidePriceTag/JavaScript/HidePriceTag.View.js",
+                    "Modules/HidePriceTag/JavaScript/HitPoint.HidePriceTag.HidePriceTag.Model.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/HidePriceTag/JavaScript/HitPoint.HidePriceTag.HidePriceTag.js",
+                    "Modules/HidePriceTag/JavaScript/HidePriceTag.View.js",
+                    "Modules/HidePriceTag/JavaScript/HitPoint.HidePriceTag.HidePriceTag.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/HidePriceTag/SuiteScript/HitPoint.HidePriceTag.HidePriceTag.js",
+        "files": [
+            "Modules/HidePriceTag/SuiteScript/HitPoint.HidePriceTag.HidePriceTag.js",
+            "Modules/HidePriceTag/SuiteScript/HidePriceTag.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\HidePriceTag",
+    "suitescript2": {
+        "files": []
+    }
+}

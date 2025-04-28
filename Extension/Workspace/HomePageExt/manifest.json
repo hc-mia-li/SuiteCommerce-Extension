@@ -1,77 +1,78 @@
 {
-    "name": "HomePageExt",
-    "fantasyName": "HomePageExt",
-    "vendor": "HitPoint",
-    "version": "1.0.4",
-    "type": "extension",
-    "target": "SCA,SCS",
-    "target_version": {
-        "SCA": "",
-        "SCS": ""
-    },
-    "description": "homepageext",
-    "skins": [],
-    "assets": {
-        "img": {
-            "files": []
-        },
-        "fonts": {
-            "files": []
-        },
-        "services": {
-            "files": [
-                "services/HomePageExt.Service.ss"
-            ]
-        }
-    },
-    "configuration": {
-        "files": [
-            "Modules/HomePageExt/Configuration/HomePageExt.json"
-        ]
-    },
-    "sass": {
-        "entry_points": {
-            "shopping": "Modules/HomePageExt/Sass/_homepageext-homepageext.scss"
-        },
-        "files": [
-            "Modules/HomePageExt/Sass/_homepageext-homepageext.scss"
-        ]
-    },
-    "templates": {
-        "application": {
-            "shopping": {
-                "files": [
-                    "Modules/HomePageExt/Templates/hp_homepageext_homepageext.tpl"
-                ]
-            }
-        }
-    },
-    "javascript": {
-        "entry_points": {
-            "shopping": "Modules/HomePageExt/JavaScript/HitPoint.HomePageExt.HomePageExt.js"
-        },
-        "application": {
-            "shopping": {
-                "files": [
-                    "Modules/HomePageExt/JavaScript/HitPoint.HomePageExt.HomePageExt.js",
-                    "Modules/HomePageExt/JavaScript/HomePageExt.View.js",
-                    "Modules/HomePageExt/JavaScript/HitPoint.HomePageExt.HomePageExt.Model.js",
-                    "Modules/HomePageExt/JavaScript/HitPoint.HomePageExt.HomePageExt.SS2Model.js"
-                ]
-            }
-        }
-    },
-    "ssp-libraries": {
-        "entry_point": "Modules/HomePageExt/SuiteScript/HitPoint.HomePageExt.HomePageExt.js",
-        "files": [
-            "Modules/HomePageExt/SuiteScript/HitPoint.HomePageExt.HomePageExt.js",
-            "Modules/HomePageExt/SuiteScript/HomePageExt.ServiceController.js"
-        ]
-    },
-    "local_folder": "Workspace\\HomePageExt",
-    "suitescript2": {
-        "files": [
-            "Modules/HomePageExt/SuiteScript2/HomePageExt.Service.ss"
-        ]
-    }
+	"name": "HomePageExt",
+	"fantasyName": "HomePageExt",
+	"vendor": "HitPoint",
+	"type": "extension",
+	"target": "SCA,SCS",
+	"target_version": {
+		"SCA": "",
+		"SCS": ""
+	},
+	"version": "1.0.4",
+	"description": "homepageext",
+	"assets": {
+		"img": {
+			"files": []
+		},
+		"fonts": {
+			"files": []
+		},
+		"services": {
+			"files": [
+				"services/HomePageExt.Service.ss"
+			]
+		}
+	},
+	"configuration": {
+		"files": [
+			"Modules/HomePageExt/Configuration/HomePageExt.json"
+		]
+	},
+	"templates": {
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/HomePageExt/Templates/hp_homepageext_homepageext.tpl"
+				]
+			}
+		}
+	},
+	"sass": {
+		"entry_points": {
+			"shopping": "Modules/HomePageExt/Sass/_homepageext-homepageext.scss"
+		},
+		"files": [
+			"Modules/HomePageExt/Sass/_homepageext-homepageext.scss"
+		]
+	},
+	"javascript": {
+		"entry_points": {
+			"shopping": "Modules/HomePageExt/JavaScript/HitPoint.HomePageExt.HomePageExt.js"
+		},
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/HomePageExt/JavaScript/HitPoint.HomePageExt.HomePageExt.js",
+					"Modules/HomePageExt/JavaScript/HomePageExt.View.js",
+					"Modules/HomePageExt/JavaScript/HitPoint.HomePageExt.HomePageExt.Model.js",
+					"Modules/HomePageExt/JavaScript/HitPoint.HomePageExt.HomePageExt.SS2Model.js"
+				]
+			}
+		}
+	},
+	"ssp-libraries": {
+		"entry_point": "Modules/HomePageExt/SuiteScript/HitPoint.HomePageExt.HomePageExt.js",
+		"files": [
+			"Modules/HomePageExt/SuiteScript/HitPoint.HomePageExt.HomePageExt.js",
+			"Modules/HomePageExt/SuiteScript/HomePageExt.ServiceController.js"
+		]
+	},
+	"suitescript2": {
+		"files": [
+			"Modules/HomePageExt/SuiteScript2/HomePageExt.Service.ss"
+		]
+	},
+	"path": "SuiteScripts/Deploy_Extensions/HitPoint/HomePageExt@1.0.4",
+	"activation_id": "1",
+	"extension_id": "1401"
 }

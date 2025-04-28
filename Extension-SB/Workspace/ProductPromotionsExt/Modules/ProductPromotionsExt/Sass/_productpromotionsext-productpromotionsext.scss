@@ -1,0 +1,110 @@
+/*
+	Sass Application Entry Point
+	Link all your sass dependencies in the right order
+
+	Example:
+	@import "other-sass-file.scss";
+	@import "../../<other module>/Sass/other-sass-file.scss";
+*/
+
+.facets-item-cell-grid-image-wrapper{
+    position:relative;
+    overflow:hidden;
+    .badge-box{
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 100%;
+        min-width: 130px;
+        transform: rotate(-45deg);
+        transform-origin: center top;
+        padding-top: 25px;
+    }
+    .badge{
+        text-align: center;
+        background-color: #ff7a3d;
+        width: 100%;
+        padding: 5px;
+    }
+    .badge-text{
+        color: white;
+        font-size: 1rem;
+        line-height: 1.1;
+        font-weight: 700;
+    }
+    .badge-tag{
+        color: white;
+        font-size: 0.8rem;
+        line-height: 1;
+        font-weight: 500;
+    }
+}
+
+.collection,.product-details-quickview-img{
+    overflow:hidden;
+    .badge-box{
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 100%;
+        min-width: 130px;
+        transform: rotate(-45deg);
+        transform-origin: center top;
+        padding-top: 35px;
+    }
+    .badge{
+        text-align: center;
+        background-color: #ff7a3d;
+        width: 100%;
+        padding: 10px;
+    }
+    .badge-text{
+        color: white;
+        font-size: 16px;
+        line-height: 1.1;
+        font-weight:700;
+    }
+    .badge-tag{
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1;
+    }
+}
+//.collection-tag:nth-of-type(1){
+//    display:none;
+//}
+
+.product-details-full-image-gallery-container{
+    overflow: hidden;
+    .badge-box{
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 100%;
+        min-width: 130px;
+        transform: rotate(-45deg);
+        transform-origin: center top;
+        padding-top: 50px;
+    }
+    .badge{
+        text-align: center;
+        background-color: #ff7a3d;
+        width: 100%;
+        padding: 15px;
+    }
+    .badge-text{
+        color: white;
+        font-size: 1.2rem;
+        line-height: 1.1;
+        font-weight: 700;
+    }
+    .badge-tag{
+        color: white;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1;
+    }
+}
+
+

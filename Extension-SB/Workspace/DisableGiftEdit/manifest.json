@@ -1,0 +1,80 @@
+{
+	"name": "DisableGiftEdit",
+	"fantasyName": "DisableGiftEdit",
+	"vendor": "HP",
+	"type": "extension",
+	"target": "SCA,SCS",
+	"target_version": {
+		"SCA": ">=23.1.0",
+		"SCS": ">=23.1.0"
+	},
+	"version": "1.0.0",
+	"description": "Restrict gift items from being edited or sold separately.",
+	"assets": {
+		"img": {
+			"files": []
+		},
+		"fonts": {
+			"files": []
+		},
+		"services": {
+			"files": [
+				"services/DisableGiftEdit.Service.ss"
+			]
+		}
+	},
+	"configuration": {
+		"files": [
+			"Modules/DisableGiftEdit/Configuration/DisableGiftEdit.json"
+		]
+	},
+	"templates": {
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/DisableGiftEdit/Templates/hp_disablegiftedit_disablegiftedit.tpl"
+				]
+			},
+			"checkout": {
+				"files": [
+					"Modules/DisableGiftEdit/Templates/hp_disablegiftedit_disablegiftedit.tpl"
+				]
+			}
+		}
+	},
+	"javascript": {
+		"entry_points": {
+			"shopping": "Modules/DisableGiftEdit/JavaScript/HP.DisableGiftEdit.DisableGiftEdit.js",
+			"checkout": "Modules/DisableGiftEdit/JavaScript/HP.DisableGiftEdit.DisableGiftEdit.js"
+		},
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/DisableGiftEdit/JavaScript/HP.DisableGiftEdit.DisableGiftEdit.js",
+					"Modules/DisableGiftEdit/JavaScript/DisableGiftEdit.View.js",
+					"Modules/DisableGiftEdit/JavaScript/HP.DisableGiftEdit.DisableGiftEdit.Model.js"
+				]
+			},
+			"checkout": {
+				"files": [
+					"Modules/DisableGiftEdit/JavaScript/HP.DisableGiftEdit.DisableGiftEdit.js",
+					"Modules/DisableGiftEdit/JavaScript/DisableGiftEdit.View.js",
+					"Modules/DisableGiftEdit/JavaScript/HP.DisableGiftEdit.DisableGiftEdit.Model.js"
+				]
+			}
+		}
+	},
+	"ssp-libraries": {
+		"entry_point": "Modules/DisableGiftEdit/SuiteScript/HP.DisableGiftEdit.DisableGiftEdit.js",
+		"files": [
+			"Modules/DisableGiftEdit/SuiteScript/HP.DisableGiftEdit.DisableGiftEdit.js",
+			"Modules/DisableGiftEdit/SuiteScript/DisableGiftEdit.ServiceController.js"
+		]
+	},
+	"suitescript2": {
+		"files": []
+	},
+	"path": "SuiteScripts/Deploy_Extensions/HP/DisableGiftEdit@1.0.0",
+	"activation_id": "2",
+	"extension_id": "4101"
+}

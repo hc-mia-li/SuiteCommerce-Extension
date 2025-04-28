@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "subtab": {
+        "id": "PromotionalGift",
+        "title": "Promotional Gift",
+        "group": "extensions"
+    },
+    "properties": {
+        "PromotionalGift.startDate": {
+            "group": "extensions",
+            "subtab": "PromotionalGift",
+            "type": "string",
+            "mandatory": true,
+            "title": "Promotional Gift Start Date(PST)",
+            "description": "Configure promotional gift start time(PST),format:YYYY/MM/DD hh:mm:ss am(pm)",
+            "default": "2025/02/01 12:00:00 am"
+        },
+        "PromotionalGift.endDate": {
+            "group": "extensions",
+            "subtab": "PromotionalGift",
+            "type": "string",
+            "mandatory": true,
+            "title": "Promotional Gift End Date(PST)",
+            "description": "Configure promotional gift end time(PST),format:YYYY/MM/DD hh:mm:ss am(pm)",
+            "default": "2025/03/01 12:00:00 am"
+        },
+        "PromotionalGift.PromotionItem": {
+            "group": "extensions",
+            "subtab": "PromotionalGift",
+            "type": "array",
+            "title": "Promotional Item",
+            "description": "Select the product series to participate in the promotion",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "itemId": {
+                        "title": "Promotional Item Id",
+                        "mandatory": true,
+                        "type": "string",
+                        "description": "Please enter the internal ID of the item"
+                    },
+                    "item": {
+                        "title": "Promotional Item",
+                        "mandatory": false,
+                        "type": "string",
+                        "description": "Please enter the sku of the item"
+                    },
+                    "giftId": {
+                        "title": "Promotional Gift Item Id",
+                        "mandatory": true,
+                        "type": "string",
+                        "description": "Please enter the internal ID of the gift item"
+                    },
+                    "gift": {
+                        "title": "Promotional Gift",
+                        "mandatory": false,
+                        "type": "string",
+                        "description": "Please enter the sku of the gift item"
+                    },
+                    "quantity": {
+                        "title": "Number of gifts",
+                        "mandatory": true,
+                        "type": "integer",
+                        "description": "Please enter the quantity of the gift item"
+                    }
+                }
+            }
+        }
+    }
+}

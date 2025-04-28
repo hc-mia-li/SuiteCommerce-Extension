@@ -1,0 +1,70 @@
+{
+	"name": "ItemSpecExt",
+	"fantasyName": "ItemSpecExt",
+	"vendor": "HP",
+	"type": "extension",
+	"target": "SCA,SCS",
+	"target_version": {
+		"SCA": "",
+		"SCS": ""
+	},
+	"version": "1.0.0",
+	"description": "Display the specification link on each item&#39;s page, click to open a PDF file",
+	"assets": {
+		"img": {
+			"files": []
+		},
+		"fonts": {
+			"files": []
+		},
+		"services": {
+			"files": [
+				"services/ItemSpecExt.Service.ss"
+			]
+		}
+	},
+	"templates": {
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/ItemSpecExt/Templates/hp_itemspecext_itemspecext.tpl"
+				]
+			}
+		}
+	},
+	"sass": {
+		"entry_points": {
+			"shopping": "Modules/ItemSpecExt/Sass/_itemspecext-itemspecext.scss"
+		},
+		"files": [
+			"Modules/ItemSpecExt/Sass/_itemspecext-itemspecext.scss"
+		]
+	},
+	"javascript": {
+		"entry_points": {
+			"shopping": "Modules/ItemSpecExt/JavaScript/HP.ItemSpecExt.ItemSpecExt.js"
+		},
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/ItemSpecExt/JavaScript/HP.ItemSpecExt.ItemSpecExt.js",
+					"Modules/ItemSpecExt/JavaScript/ItemSpecExt.View.js",
+					"Modules/ItemSpecExt/JavaScript/HP.ItemSpecExt.ItemSpecExt.Model.js"
+				]
+			}
+		}
+	},
+	"ssp-libraries": {
+		"entry_point": "Modules/ItemSpecExt/SuiteScript/HP.ItemSpecExt.ItemSpecExt.js",
+		"files": [
+			"Modules/ItemSpecExt/SuiteScript/HP.ItemSpecExt.ItemSpecExt.js",
+			"Modules/ItemSpecExt/SuiteScript/ItemSpecExt.ServiceController.js"
+		]
+	},
+	"suitescript2": {
+		"files": []
+	},
+	"path": "SuiteScripts/Deploy_Extensions/HP/ItemSpecExt@1.0.0",
+	"activation_id": "2",
+	"extension_id": "104"
+}

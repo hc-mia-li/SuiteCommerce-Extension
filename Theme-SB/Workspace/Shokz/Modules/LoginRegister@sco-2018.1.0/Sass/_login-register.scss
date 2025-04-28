@@ -1,0 +1,113 @@
+/* Edited for Posh Theme */
+
+.login-register {
+	@media (min-width: 767px) {
+		padding-bottom: 80px;
+		padding-top: 80px;
+	}
+}
+.login-register-header{
+	@extend .row;
+	margin-bottom: $sc-margin-lv4;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.login-register-title{
+	@extend .col-xs-12;
+}
+
+.login-register-title-noregister{
+	text-align: center;
+}
+
+.login-register-body{
+	@extend .row;
+	margin-left: 0;
+	margin-right: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.login-register-body-colored{
+	@extend .login-register-body;
+
+	& .login-register-wrapper-column-login {
+		@extend .col-sm-push-3;
+	}
+}
+
+.login-register-wrapper-column-login,
+.login-register-wrapper-column-register{
+	@extend .col-xs-12;
+	@extend .col-sm-6;
+	@media (min-width: 1199px) {
+		padding: 0;
+	}
+	@media (min-width: 767px) {
+		width: calc((6 / 12) * 100% - 10px);
+	}
+}
+
+.login-register-wrapper-column-register {
+	@media (min-width: 767px) {
+		display: flex;
+		justify-content: end;
+	}
+}
+
+.login-register-separator {
+	width: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.login-register-separator-content {
+		font-size: 14px;
+		color: #BABABA;
+		position: relative;
+
+		&::before {
+			position: absolute;
+			content: "";
+			border-left: 1px solid #BABABA;
+			height: 108px;
+			left: 50%;
+			top: -124px;
+		}
+
+		&::after {
+			position: absolute;
+			content: "";
+			border-left: 1px solid #BABABA;
+			height: 108px;
+			left: 50%;
+			bottom: -124px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		display: none;
+	}
+}
+
+.login-register-wrapper-login,
+.login-register-wrapper-register{
+	@extend .box-column;
+	background-color: white!important;
+	padding: 0!important;
+	@media (min-width: 767px) {
+		max-width: 486px;
+	}
+}
+
+.login-register-wrapper-guest{}
+.login-register-title-register{
+	font-weight: 500;
+	font-size: 28px;
+}
+.login-register-desc-register{
+	font-size: 14px;
+	margin-top: 64px;
+}
+

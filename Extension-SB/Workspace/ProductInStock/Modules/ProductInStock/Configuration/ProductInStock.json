@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": { 
+        "ProductInStock.config": {
+            "group": "extensions",
+            "subtab": "ProductInStock_subtab",
+            "type": "string",
+            "title": "ProductInStock_Title",
+            "description": "Config description example",
+            "default": "Default config example"
+        }
+    }
+}

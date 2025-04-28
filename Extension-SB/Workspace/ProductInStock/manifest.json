@@ -1,0 +1,108 @@
+{
+	"name": "ProductInStock",
+	"fantasyName": "ProductInStock",
+	"vendor": "HitPoint",
+	"type": "extension",
+	"target": "SCA,SCS",
+	"target_version": {
+		"SCA": "",
+		"SCS": ""
+	},
+	"version": "1.0.2",
+	"description": "Show Product Stock Number",
+	"assets": {
+		"img": {
+			"files": []
+		},
+		"fonts": {
+			"files": []
+		},
+		"services": {
+			"files": [
+				"services/ProductInStock.Service.ss"
+			]
+		}
+	},
+	"configuration": {
+		"files": [
+			"Modules/ProductInStock/Configuration/ProductInStock.json"
+		]
+	},
+	"templates": {
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/ProductInStock/Templates/hp_productinstock_productinstock.tpl"
+				]
+			},
+			"myaccount": {
+				"files": [
+					"Modules/ProductInStock/Templates/hp_productinstock_productinstock.tpl"
+				]
+			},
+			"checkout": {
+				"files": [
+					"Modules/ProductInStock/Templates/hp_productinstock_productinstock.tpl"
+				]
+			}
+		}
+	},
+	"sass": {
+		"entry_points": {
+			"shopping": "Modules/ProductInStock/Sass/_productinstock-productinstock.scss",
+			"myaccount": "Modules/ProductInStock/Sass/_productinstock-productinstock.scss",
+			"checkout": "Modules/ProductInStock/Sass/_productinstock-productinstock.scss"
+		},
+		"files": [
+			"Modules/ProductInStock/Sass/_productinstock-productinstock.scss"
+		]
+	},
+	"javascript": {
+		"entry_points": {
+			"shopping": "Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.js",
+			"myaccount": "Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.js",
+			"checkout": "Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.js"
+		},
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.js",
+					"Modules/ProductInStock/JavaScript/ProductInStock.View.js",
+					"Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.Model.js",
+					"Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.SS2Model.js"
+				]
+			},
+			"myaccount": {
+				"files": [
+					"Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.js",
+					"Modules/ProductInStock/JavaScript/ProductInStock.View.js",
+					"Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.Model.js",
+					"Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.SS2Model.js"
+				]
+			},
+			"checkout": {
+				"files": [
+					"Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.js",
+					"Modules/ProductInStock/JavaScript/ProductInStock.View.js",
+					"Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.Model.js",
+					"Modules/ProductInStock/JavaScript/HitPoint.ProductInStock.ProductInStock.SS2Model.js"
+				]
+			}
+		}
+	},
+	"ssp-libraries": {
+		"entry_point": "Modules/ProductInStock/SuiteScript/HitPoint.ProductInStock.ProductInStock.js",
+		"files": [
+			"Modules/ProductInStock/SuiteScript/HitPoint.ProductInStock.ProductInStock.js",
+			"Modules/ProductInStock/SuiteScript/ProductInStock.ServiceController.js"
+		]
+	},
+	"suitescript2": {
+		"files": [
+			"Modules/ProductInStock/SuiteScript2/ProductInStock.Service.ss"
+		]
+	},
+	"path": "SuiteScripts/Deploy_Extensions/HitPoint/ProductInStock@1.0.2",
+	"activation_id": "2",
+	"extension_id": "105"
+}

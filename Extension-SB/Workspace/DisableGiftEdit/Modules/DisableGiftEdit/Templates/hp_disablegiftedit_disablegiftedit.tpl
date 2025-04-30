@@ -1,7 +1,11 @@
+{{#unless showBtn}}
 <script>
-    $('.cart-detailed-item-free [data-item-id="879185"] .cart-lines-free-item-summary-quantity-value').attr('disabled', 'disabled');
-    $('.cart-detailed-item-free [data-item-id="879185"] .cart-lines-free-item-actions').remove()
+    $('.cart-add-to-cart-button-button').remove();
+    $('.cart-detailed-item-free .cart-lines-free-item-summary-quantity-value').attr('disabled', 'disabled');
+    $('.cart-detailed-item-free .cart-lines-free-item-summary-quantity-value').css({border:'none',padding:0,'text-align':'left'});
+    $('.cart-detailed-item-free .cart-lines-free-item-actions').remove();
 </script>
+{{/unless}}
 <!--
   Available helpers:
   {{ getExtensionAssetsPath "img/image.jpg"}} - reference assets in your extension

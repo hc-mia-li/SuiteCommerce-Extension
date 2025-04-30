@@ -19,16 +19,42 @@ define('HP.DisableGiftEdit.DisableGiftEdit.View'
 
 	,	initialize: function (options) {
 
-			/*  Uncomment to test backend communication with an example service
-				(you'll need to deploy and activate the extension first)
-			*/
-
-			// this.model = new DisableGiftEditModel();
-			// var self = this;
-         	// this.model.fetch().done(function(result) {
-			// 	self.message = result.message;
-			// 	self.render();
-      		// });
+			var pdp = options.pdp;
+			var environment = options.environment;
+			var cart = options.cart;
+			var giftConfig = environment.getConfig('DisableGiftEdit');
+			var enabled = giftConfig.enabled;
+			var gifts = giftConfig.promotions;
+			this.showBtn = true;
+			var _this = this;
+			console.log('pdp',pdp)
+			if(pdp){
+				var info = pdp.getItemInfo();
+				if(enabled){
+					var find = gifts.find(obj=>obj.gift==info.item.internalid);
+					if(find){
+						_this.showBtn = false;
+					}
+				}
+			}
+			if(cart && enabled){
+				cart.on('beforeAddLine',function(line){
+					console.log(line)
+					var find = gifts.find(obj=>obj.gift==line.line.item.internalid);
+					if(find){
+						let msgElement = document.querySelector('.global-views-message-error');
+						if (!msgElement) {
+							cart.showMessage({
+								message: 'The current item is not allowed to be sold separately',
+								type: 'error',
+								selector: 'Notifications'
+							});
+						}
+						return jQuery.Deferred().reject();
+					}
+				})
+				this.showBtn = false;
+			}
 		}
 
 	,	events: {
@@ -44,10 +70,8 @@ define('HP.DisableGiftEdit.DisableGiftEdit.View'
 		//@method getContext @return HP.DisableGiftEdit.DisableGiftEdit.View.Context
 	,	getContext: function getContext()
 		{
-			//@class HP.DisableGiftEdit.DisableGiftEdit.View.Context
-			this.message = this.message || 'Hello World!!'
 			return {
-				message: this.message
+				showBtn: this.showBtn
 			};
 		}
 	});

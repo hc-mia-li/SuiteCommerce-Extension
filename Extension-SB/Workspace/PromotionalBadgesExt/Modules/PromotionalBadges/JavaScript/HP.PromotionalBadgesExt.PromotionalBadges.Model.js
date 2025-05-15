@@ -1,7 +1,7 @@
 // Model.js
 // -----------------------
 // @module Case
-define("HP.ProductPromotionsExt.ProductPromotionsExt.Model", ["Backbone", "Utils"], function(
+define("HP.PromotionalBadgesExt.PromotionalBadges.Model", ["Backbone", "Utils"], function(
     Backbone,
     Utils
 ) {
@@ -14,7 +14,7 @@ define("HP.ProductPromotionsExt.ProductPromotionsExt.Model", ["Backbone", "Utils
         //@property {String} urlRoot
         urlRoot: Utils.getAbsoluteUrl(
             getExtensionAssetsPath(
-                "services/ProductPromotionsExt.Service.ss"
+                "services/PromotionalBadges.Service.ss"
             )
         )
         

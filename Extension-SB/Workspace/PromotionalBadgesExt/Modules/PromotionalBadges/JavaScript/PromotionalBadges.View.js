@@ -1,34 +1,37 @@
-// @module HP.ProductPromotionsExt.ProductPromotionsExt
-define('HP.ProductPromotionsExt.ProductPromotionsExt.View'
+// @module HP.PromotionalBadgesExt.PromotionalBadges
+define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 ,	[
-	'hp_productpromotionsext_productpromotionsext.tpl'
-		,'HP.ProductPromotionsExt.ProductPromotionsExt.Model'
+	'hp_promotionalbadgesext_promotionalbadges.tpl'
+
+		,'HP.PromotionalBadgesExt.PromotionalBadges.Model'
 
 	,	'Backbone'
     ]
 , function (
-	hp_productpromotionsext_productpromotionsext_tpl
-	,ProductPromotionsExtModel
+	hp_promotionalbadgesext_promotionalbadges_tpl
+
+	,PromotionalBadgesModel
 
 	,	Backbone
 )
 {
     'use strict';
 
-	// @class HP.ProductPromotionsExt.ProductPromotionsExt.View @extends Backbone.View
+	// @class HP.PromotionalBadgesExt.PromotionalBadges.View @extends Backbone.View
 	return Backbone.View.extend({
 
-		template: hp_productpromotionsext_productpromotionsext_tpl
+		template: hp_promotionalbadgesext_promotionalbadges_tpl
 
 	,	initialize: function (options) {
 
 			/*  Uncomment to test backend communication with an example service
 				(you'll need to deploy and activate the extension first)
 			*/
+
 			let environment = options.environment;
 			let items = options.plp?.getItemsInfo();
 			let itemInfo = options.pdp?.getItemInfo();
-			let PLPSeries = environment.getConfig("ProductPromotions.PLPSeries");
+			let PLPSeries = environment.getConfig("PromotionalBadges.PLPSeries");
 			let homeProduct = [
 				{"series":"OpenFit Air"},
 				{"series":"OpenFit",exclude:'Air'},//由于判断时根据字符串匹配，OpenFit和OpenFit Air容易同事匹配上，需要排除
@@ -42,7 +45,7 @@ define('HP.ProductPromotionsExt.ProductPromotionsExt.View'
 			]
 			// To add elements to the page, need to wait for DOM rendering to complete.
 			// When the request is done, DOM has been rendered.
-			this.model = new ProductPromotionsExtModel();
+			this.model = new PromotionalBadgesModel();
 			this.model.fetch().done(function(result) {
 				if(items){
 					//PLP
@@ -148,14 +151,13 @@ define('HP.ProductPromotionsExt.ProductPromotionsExt.View'
 
 		}
 
-		//@method getContext @return HP.ProductPromotionsExt.ProductPromotionsExt.View.Context
+		//@method getContext @return HP.PromotionalBadgesExt.PromotionalBadges.View.Context
 	,	getContext: function getContext()
 		{
-			//@class HP.ProductPromotionsExt.ProductPromotionsExt.View.Context
+			//@class HP.PromotionalBadgesExt.PromotionalBadges.View.Context
+			this.message = this.message || 'Hello World!!'
 			return {
-				startDate:this.startDate,
-				endDate:this.endDate,
-				PLPSeries:this.PLPSeries
+				message: this.message
 			};
 		}
 	});

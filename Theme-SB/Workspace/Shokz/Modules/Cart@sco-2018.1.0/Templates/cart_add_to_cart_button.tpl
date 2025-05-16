@@ -6,7 +6,7 @@
 			<button type="submit" data-type="add-to-cart" data-action="sticky" class="cart-add-to-cart-button-button">
 				<!--{{#if isUpdate}}{{translate 'Update'}}{{else}}{{translate 'Add to Cart >'}}{{/if}}-->
 				<span class="cart-add-to-cart-button-text">{{#if isUpdate}}{{translate 'Update'}}{{else}}{{translate 'Add to Cart >'}}{{/if}}</span>
-			</button/>
+			</button>
 			<script>
 				$('.cart-add-to-cart-button-button').on('mouseup', (e) => {
 					// SC Standard Native listens for both mouseup and click events triggering duplicate adding.
@@ -23,8 +23,8 @@
 
 
 {{!----
-Use the following context variables when customizing this template: 
-	
+Use the following context variables when customizing this template:
+
 	isCurrentItemPurchasable (Boolean)
 	isUpdate (Boolean)
 

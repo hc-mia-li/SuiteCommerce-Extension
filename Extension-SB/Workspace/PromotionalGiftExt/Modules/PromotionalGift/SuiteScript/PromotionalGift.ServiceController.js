@@ -10,7 +10,10 @@ define("HP.PromotionalGiftExt.PromotionalGift.ServiceController", ["ServiceContr
     // The values in this object are the validation needed for the current service.
     options: {
       common: {
-      },
+        requirePermissions: {
+          list: ['lists.listCustJob.1']
+        }
+      }
     },
 
     get: function get() {

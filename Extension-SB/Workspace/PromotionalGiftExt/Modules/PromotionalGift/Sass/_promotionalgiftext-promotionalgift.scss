@@ -5,14 +5,5 @@
 	Example:
 	@import "other-sass-file.scss";
 	@import "../../<other module>/Sass/other-sass-file.scss";
-*/ 
+*/
 
-.promotionalgift-info-card {
-    @extend .info-card;
-}
-
-.promotionalgift-info-card-content {
-    @extend .info-card-content;
-    color: $sc-color-secondary;
-    font-weight: bold;
-}

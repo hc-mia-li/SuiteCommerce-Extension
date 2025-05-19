@@ -48,6 +48,7 @@
                         "type": "string",
                         "enum": [
                             "OpenFit",
+                            "OpenFit 2",
                             "OpenFit Air",
                             "OpenRun",
                             "OpenRun Pro",

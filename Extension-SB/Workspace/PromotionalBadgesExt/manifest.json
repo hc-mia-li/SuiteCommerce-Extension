@@ -2,15 +2,14 @@
     "name": "PromotionalBadgesExt",
     "fantasyName": "PromotionalBadgesExt",
     "vendor": "HP",
-    "version": "1.0.0",
     "type": "extension",
-    "target": "SCS,SCA",
+    "target": "SCA,SCS",
     "target_version": {
-        "SCS": ">=23.1.0",
-        "SCA": ">=23.1.0"
+        "SCA": ">=23.1.0",
+        "SCS": ">=23.1.0"
     },
+    "version": "1.0.1",
     "description": "Configuration of promotional badge display settings",
-    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -29,14 +28,6 @@
             "Modules/PromotionalBadges/Configuration/PromotionalBadges.json"
         ]
     },
-    "sass": {
-        "entry_points": {
-            "shopping": "Modules/PromotionalBadges/Sass/_promotionalbadgesext-promotionalbadges.scss"
-        },
-        "files": [
-            "Modules/PromotionalBadges/Sass/_promotionalbadgesext-promotionalbadges.scss"
-        ]
-    },
     "templates": {
         "application": {
             "shopping": {
@@ -45,6 +36,14 @@
                 ]
             }
         }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/PromotionalBadges/Sass/_promotionalbadgesext-promotionalbadges.scss"
+        },
+        "files": [
+            "Modules/PromotionalBadges/Sass/_promotionalbadgesext-promotionalbadges.scss"
+        ]
     },
     "javascript": {
         "entry_points": {
@@ -67,7 +66,6 @@
             "Modules/PromotionalBadges/SuiteScript/PromotionalBadges.ServiceController.js"
         ]
     },
-    "local_folder": "Workspace\\PromotionalBadgesExt",
     "suitescript2": {
         "files": []
     }

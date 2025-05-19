@@ -33,15 +33,16 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 			let itemInfo = options.pdp?.getItemInfo();
 			let PLPSeries = environment.getConfig("PromotionalBadges.PLPSeries");
 			let homeProduct = [
-				{"series":"OpenFit Air"},
-				{"series":"OpenFit",exclude:'Air'},//由于判断时根据字符串匹配，OpenFit和OpenFit Air容易同事匹配上，需要排除
-				{"series":"OpenRun Pro",exclude:'2'},
-				{"series":"OpenRun Pro 2"},
-				{"series":"OpenRun",exclude:'Pro'},
-				{"series":"OpenMove"},
-				{"series":"OpenSwim Pro"},
-				{"series":"OpenSwim",exclude:'Pro'},
-				{"series":"OpenComm2"}
+				"OpenFit",
+				"OpenFit 2",
+				"OpenFit Air",
+				"OpenRun",
+				"OpenRun Pro",
+				"OpenRun Pro 2",
+				"OpenMove",
+				"OpenSwim",
+				"OpenSwim Pro",
+				"OpenComm2"
 			]
 			// To add elements to the page, need to wait for DOM rendering to complete.
 			// When the request is done, DOM has been rendered.
@@ -52,16 +53,7 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 					items.forEach(itm=>{
 						let categories = itm.commercecategory.categories;
 						let displayname = itm.storedisplayname2.toLowerCase();
-						let item = PLPSeries.find(objA =>
-							categories.some(objB =>
-								objA.series === objB.name &&
-								(!objA.size || displayname.toLowerCase().includes(objA.size.toLowerCase())) &&
-								(
-									!objA.excludeKeywords || // 如果没有排除关键词就通过
-									!displayname.toLowerCase().includes(objA.excludeKeywords.toLowerCase()) // displayname 中不能包含这个关键词
-								)
-							)
-						);
+						let item = findSeries(categories,displayname);
 						if(item){
 							let dom = $('[data-sku="'+itm.itemid+'"]').find('.facets-item-cell-grid-image-wrapper');
 							appendContent(dom,item);
@@ -71,43 +63,34 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 					//PDP
 					let categories = itemInfo.item.commercecategory.categories;
 					let displayname = itemInfo.item.storedisplayname2.toLowerCase();
-					let item = PLPSeries.find(objA =>
-						categories.some(objB =>
-							objA.series === objB.name &&
-							(!objA.size || displayname.toLowerCase().indexOf(objA.size.toLowerCase()) > -1) &&
-							(!objA.excludeKeywords || displayname.toLowerCase().indexOf(objA.excludeKeywords.toLowerCase()) === -1)
-						)
-					);
+					let item = findSeries(categories,displayname);
 					if(item){
 						let dom = $('.product-details-image-gallery');
 						appendContent(dom, item);
 					}
 				}else{
 					PLPSeries.forEach(obj => {
-						let item = homeProduct.find(el => el.series === obj.series);
-						if (item) {
-							// Home
-							$('.primary-text').filter(function(){
-								let text = $(this).text();
-								let series = item.series.toUpperCase();
-								let size = $(this).parent().parent().find('.item.active').text();
-								if(text===series&&(!obj.size||obj.size===size)){
-									let dom = $(this).parent().parent();
-									appendContent(dom,obj);
-								}
-							})
-
-							// quick view
-							let quick = $('.product-details-quickview-item-name').text();
-							if (
-								quick.includes(obj.series) &&
-								(!item.exclude || quick.indexOf(item.exclude) < 0) &&
-								(!obj.size || quick.toLowerCase().indexOf(obj.size.toLowerCase()) > -1) &&
-								quick.indexOf('(') < 0 &&
-								(!obj.excludeKeywords || quick.toLowerCase().indexOf(obj.excludeKeywords.toLowerCase()) < 0)
-							){	let dom = $('.product-details-quickview-img')
+						// Home
+						$('.primary-text').filter(function(){
+							let text = $(this).text();
+							let series = matchSeries(text);
+							let size = $(this).parent().parent().find('.item.active').text();
+							if(obj.series===series&&(!obj.size||obj.size===size)){
+								let dom = $(this).parent().parent();
 								appendContent(dom,obj);
 							}
+						})
+
+						// quick view
+						let quick = $('.product-details-quickview-item-name').text();
+						let series = matchSeries(quick);
+						if (series==obj.series && (!obj.size || quick.toLowerCase().includes(obj.size.toLowerCase())) &&
+							(
+								!obj.excludeKeywords || // 如果没有排除关键词就通过
+								!quick.toLowerCase().includes(obj.excludeKeywords.toLowerCase()) // displayname 中不能包含这个关键词
+							)){
+							let dom = $('.product-details-quickview-img');
+							appendContent(dom,obj);
 						}
 					});
 					// 首页size切换
@@ -138,6 +121,34 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 				if(!dom.find('.badge-box').length){
 					dom.append(badgeContent);
 				}
+			}
+
+			function findSeries(categories,itemName){
+				return PLPSeries.find(objA =>
+					categories.some(objB =>
+						objA.series === objB.name &&
+						(!objA.size || itemName.toLowerCase().includes(objA.size.toLowerCase())) &&
+						(
+							!objA.excludeKeywords || // 如果没有排除关键词就通过
+							!itemName.toLowerCase().includes(objA.excludeKeywords.toLowerCase()) // displayname 中不能包含这个关键词
+						)
+					)
+				);
+			}
+
+			function matchSeries(name) {
+				let lowerInput = name.toLowerCase();
+
+				let sortedTypes = homeProduct.sort((a, b) => b.length - a.length);
+
+				for (let type of sortedTypes) {
+					let regex = new RegExp(`^${type.toLowerCase()}(\\s|$)`);
+					if (regex.test(lowerInput)) {
+						return type;
+					}
+				}
+
+				return null; // 如果没有匹配，返回null
 			}
 		}
 

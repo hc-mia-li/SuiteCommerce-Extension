@@ -35,14 +35,16 @@
 		{{#if showHighlightedMessage}}
 			<div class="product-views-price-login-to-see-prices-highlighted">
 				<p class="product-views-price-message">
-					{{translate 'Please <a href="$(0)" data-navigation="ignore-click">log in</a> to see price or purchase this item' urlLogin}}
-				</p>
+<!--					{{!translate 'Please <a href="$(0)" data-navigation="ignore-click">log in</a> to see price or purchase this item' urlLogin}}-->
+                    {{priceFormatted}} {{frequency}}
+                </p>
 			</div>
 		{{else}}
 			<div class="product-views-price-login-to-see-prices">
 				<p class="product-views-price-message">
-					{{translate '<a href="$(0)" data-navigation="ignore-click">Log in</a> to see price' urlLogin}}
-				</p>
+<!--					{{!translate '<a href="$(0)" data-navigation="ignore-click">Log in</a> to see price' urlLogin}}-->
+                    Quick View for MSRP
+                </p>
 			</div>
 		{{/if}}
 	{{/if}}

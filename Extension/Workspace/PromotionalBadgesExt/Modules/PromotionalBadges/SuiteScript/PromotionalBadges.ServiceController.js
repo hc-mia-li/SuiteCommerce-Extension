@@ -1,10 +1,10 @@
-define("HP.ProductPromotionsExt.ProductPromotionsExt.ServiceController", ["ServiceController","Configuration"], function(
-  ServiceController,Configuration
+define("HP.PromotionalBadgesExt.PromotionalBadges.ServiceController", ["ServiceController"], function(
+  ServiceController
 ) {
   "use strict";
 
   return ServiceController.extend({
-    name: "HP.ProductPromotionsExt.ProductPromotionsExt.ServiceController",
+    name: "HP.PromotionalBadgesExt.PromotionalBadges.ServiceController",
 
     // The values in this object are the validation needed for the current service.
     options: {

@@ -1,11 +1,11 @@
 
 define(
-	'HP.ProductPromotionsExt.ProductPromotionsExt'
+	'HP.PromotionalBadgesExt.PromotionalBadges'
 ,   [
-		'HP.ProductPromotionsExt.ProductPromotionsExt.View'
+		'HP.PromotionalBadgesExt.PromotionalBadges.View'
 	]
 ,   function (
-		ProductPromotionsExtView
+		PromotionalBadgesView
 	)
 {
 	'use strict';
@@ -18,46 +18,45 @@ define(
 			// more documentation of the Extensibility API in
 			// https://system.netsuite.com/help/helpcenter/en_US/APIs/SuiteCommerce/Extensibility/Frontend/index.html
 
-			/** @type {LayoutComponent} */
 			var layout = container.getComponent('Layout');
 			var plp = container.getComponent('PLP');
 			var pdp = container.getComponent('PDP');
 			var environment = container.getComponent('Environment');
 
-			if(layout)
-			{
-				if(!isInPromotion()){
+			if(layout) {
+				if (!isInPromotion()) {
 					layout.addToViewContextDefinition('Home.View', 'bannerTitle', 'string', function (context) {
-						return environment.getConfig("ProductPromotions.bannerTitle");
+						return environment.getConfig("PromotionalBadges.bannerTitle");
 					});
 				}
+
 				// home
-				layout.addChildView('home', function() {
-					if(isInPromotion()){
-						return new ProductPromotionsExtView({ environment: environment});
+				layout.addChildView('home', function () {
+					if (isInPromotion()) {
+						return new PromotionalBadgesView({environment: environment});
 					}
 				});
 				// PLP
-				layout.addChildView('cms:facets_facet_browse_cms_area_1', function() {
-					if(isInPromotion()){
-						return new ProductPromotionsExtView({ environment: environment,plp:plp });
+				layout.addChildView('cms:facets_facet_browse_cms_area_1', function () {
+					if (isInPromotion()) {
+						return new PromotionalBadgesView({environment: environment, plp: plp});
 					}
 				});
 				//PDP
-				layout.addChildView('cms:item_details_banner', function() {
-					if(isInPromotion()) {
-						return new ProductPromotionsExtView({environment: environment, pdp: pdp});
+				layout.addChildView('cms:item_details_banner', function () {
+					if (isInPromotion()) {
+						return new PromotionalBadgesView({environment: environment, pdp: pdp});
 					}
 				});
 				//quick view
 				layout.addChildView('Child.View', function() {
 					if(isInPromotion()) {
-						return new ProductPromotionsExtView({environment: environment});
+						return new PromotionalBadgesView({environment: environment});
 					}
 				});
 
 				// 判断当前时间是否处于促销期间
-				function isInPromotion(){
+				function isInPromotion() {
 					// Convert timestamp to PST date
 					// 创建一个 Date 对象
 					var date = new Date(SC.date);
@@ -82,13 +81,13 @@ define(
 					var [second, period] = secondPart.split(' ');
 					// 拼接为所需格式
 					var currentStr = `${year}/${month}/${day} ${hour}:${minute}:${second} ${period}`;
-					var startStr = environment.getConfig("ProductPromotions.startDate");
-					var endStr = environment.getConfig("ProductPromotions.endDate");
+					var startStr = environment.getConfig("PromotionalBadges.startDate");
+					var endStr = environment.getConfig("PromotionalBadges.endDate");
 					var currentDate = new Date(currentStr);
 					var startDate = new Date(startStr);
 					var endDate = new Date(endStr);
-					console.log('result',startDate <= currentDate && currentDate<endDate)
-					return startDate <= currentDate && currentDate<endDate;
+					console.log('badge result', startDate <= currentDate && currentDate < endDate)
+					return startDate <= currentDate && currentDate < endDate;
 				}
 			}
 		}

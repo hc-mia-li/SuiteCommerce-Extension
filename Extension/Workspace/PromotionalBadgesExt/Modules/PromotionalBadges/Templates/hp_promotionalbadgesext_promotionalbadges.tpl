@@ -1,5 +1,6 @@
 
 
+
 <!--
   Available helpers:
   {{ getExtensionAssetsPath "img/image.jpg"}} - reference assets in your extension

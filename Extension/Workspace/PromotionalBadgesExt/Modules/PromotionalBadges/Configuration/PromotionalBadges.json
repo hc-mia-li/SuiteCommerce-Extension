@@ -1,14 +1,41 @@
 {
     "type": "object",
     "subtab": {
-        "id": "ProductPromotions",
-        "title": "Product Promotions",
+        "id": "PromotionalBadges",
+        "title": "Promotional Badges",
         "group": "extensions"
     },
     "properties": {
-        "ProductPromotions.PLPSeries": {
+        "PromotionalBadges.startDate": {
             "group": "extensions",
-            "subtab": "ProductPromotions",
+            "subtab": "PromotionalBadges",
+            "type": "string",
+            "mandatory": true,
+            "title": "Promotion Start Date(PST)",
+            "description": "Configure promotion start time(PST),format:YYYY/MM/DD hh:mm:ss am(pm)",
+            "default": "2024/04/01 12:00:00 am"
+        },
+        "PromotionalBadges.endDate": {
+            "group": "extensions",
+            "subtab": "PromotionalBadges",
+            "type": "string",
+            "mandatory": true,
+            "title": "Promotion End Date(PST)",
+            "description": "Configure promotion end time(PST),format:YYYY/MM/DD hh:mm:ss am(pm)",
+            "default": "2024/05/01 12:00:00 am"
+        },
+        "PromotionalBadges.bannerTitle": {
+            "group": "extensions",
+            "subtab": "PromotionalBadges",
+            "type": "string",
+            "mandatory": true,
+            "title": "Banner Title",
+            "description": "Configure banner title",
+            "default": "Get up"
+        },
+        "PromotionalBadges.PLPSeries": {
+            "group": "extensions",
+            "subtab": "PromotionalBadges",
             "type": "array",
             "title": "Product Series",
             "description": "Select the product series to participate in the promotion",
@@ -21,6 +48,7 @@
                         "type": "string",
                         "enum": [
                             "OpenFit",
+                            "OpenFit 2",
                             "OpenFit Air",
                             "OpenRun",
                             "OpenRun Pro",
@@ -62,33 +90,6 @@
                     }
                 }
             }
-        },
-        "ProductPromotions.startDate": {
-            "group": "extensions",
-            "subtab": "ProductPromotions",
-            "type": "string",
-            "mandatory": true,
-            "title": "Promotion Start Date(PST)",
-            "description": "Configure promotion start time(PST),format:YYYY/MM/DD hh:mm:ss am(pm)",
-            "default": "2024/04/01 12:00:00 am"
-        },
-        "ProductPromotions.endDate": {
-            "group": "extensions",
-            "subtab": "ProductPromotions",
-            "type": "string",
-            "mandatory": true,
-            "title": "Promotion End Date(PST)",
-            "description": "Configure promotion end time(PST),format:YYYY/MM/DD hh:mm:ss am(pm)",
-            "default": "2024/05/01 12:00:00 am"
-        },
-        "ProductPromotions.bannerTitle": {
-            "group": "extensions",
-            "subtab": "ProductPromotions",
-            "type": "string",
-            "mandatory": true,
-            "title": "Banner Title",
-            "description": "Configure banner title",
-            "default": "Get up"
         }
     }
 }

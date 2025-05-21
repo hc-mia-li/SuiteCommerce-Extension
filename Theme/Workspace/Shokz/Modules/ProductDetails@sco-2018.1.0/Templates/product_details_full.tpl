@@ -100,6 +100,14 @@
                                     </div>
 
                                 </section>
+                            {{else}}
+                                <!--Display MSRP price when not logged in-->
+                                <p style="font-size:14px;color:#050505;">Item Price</p>
+                                <div class="product-views-price">
+                                <span class="product-views-price-lead" itemprop="price" data-rate="{{model.item.onlinecustomerprice_detail.onlinecustomerprice}}" data-role="price-lead-formatted">
+                                    {{model.item.onlinecustomerprice_detail.onlinecustomerprice_formatted}}
+                                </span>
+                                </div>
                             {{/if}}
                             <script>
                                 if(!$('.stock-info').data('stock-status')) {

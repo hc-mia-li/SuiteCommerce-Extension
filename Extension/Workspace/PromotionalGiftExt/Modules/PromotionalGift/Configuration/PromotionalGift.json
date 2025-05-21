@@ -2,7 +2,7 @@
     "type": "object",
     "subtab": {
         "id": "PromotionalGift",
-        "title": "Promotional Gift",
+        "title": "Promotional Gifts",
         "group": "extensions"
     },
     "properties": {
@@ -62,6 +62,11 @@
                         "mandatory": true,
                         "type": "integer",
                         "description": "Please enter the quantity of the gift item"
+                    },
+                    "uneditable": {
+                        "title": "non-editable",
+                        "type": "boolean",
+                        "description": "check this box will make the free gift non-editable and not available for separate sale."
                     }
                 }
             }

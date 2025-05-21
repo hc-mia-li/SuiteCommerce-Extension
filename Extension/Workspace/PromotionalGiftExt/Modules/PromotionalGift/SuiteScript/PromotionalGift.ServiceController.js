@@ -10,18 +10,23 @@ define("HP.PromotionalGiftExt.PromotionalGift.ServiceController", ["ServiceContr
     // The values in this object are the validation needed for the current service.
     options: {
       common: {
-      },
+        requirePermissions: {
+          list: ['lists.listCustJob.1']
+        }
+      }
     },
 
     get: function get() {
       var nlapiCustomer = nlapiGetWebContainer().getShoppingSession().getCustomer();
       var customer = nlapiCustomer.getFieldValues();
       var internalid = customer.internalid;
-      var result = nlapiLoadRecord('customer', internalid, null);
-      var flag = result.getFieldValue('custentity_promo_blacklist');
-      return JSON.stringify({
-        flag: flag
-      });
+      if (internalid) {
+        var result = nlapiLoadRecord('customer', internalid);
+        var flag = result.getFieldValue('custentity_promo_blacklist');
+        return JSON.stringify({ flag: flag });
+      } else {
+        return JSON.stringify({ flag: null, error: 'User is not logged in' });
+      }
     },
 
     post: function post() {

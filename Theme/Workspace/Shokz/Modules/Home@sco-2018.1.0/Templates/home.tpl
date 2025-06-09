@@ -49,19 +49,11 @@
 
                                         <div class="home-slide-caption-container {{#if isAbsoluteUrl}}carousel-center-box{{/if}} {{#if class}}{{class}}{{else}}carousel-center{{/if}} {{#if text}}caption-display{{/if}} {{#if title}}caption-display{{/if}} {{#if linktext}}caption-display{{/if}}">
                                             <div class="home-slide-caption {{captionTextAlign}}">
-                                                <div class="home-slide-caption-body">
+                                                <div class="home-slide-caption-body" {{#ifEquals title 'OPENDOTS ONE'}} style="margin-top: calc(190 / 1700 * 100vw);margin-left: calc(35 / 1700 * 100vw);text-align: center;display: inline-block;width: auto !important;"{{/ifEquals}}>
                                                     <div class="custom-menu-color" style="color:{{captionColor}};display: none;">{{title}}</div>
                                                         <!--                                                {{#if title}}<h1 class="home-info-title"-->
                                                         <!--                                                                 style="color:{{captionColor}}">{{title}}</h1>{{/if}}-->
                                                     <!--<h2 class="home-info-title">OPEN<span style="font-weight:500">FIT</span></h2>-->
-                                                    {{#ifEquals title 'OPENFIT'}}
-                                                        <h2 class="home-info-title" style="color:{{captionColor}}">OPEN<span style="font-weight:700">FIT</span></h2>
-                                                        {{#if text}}<h2 class="home-info-text"
-                                                                        style="color:{{captionColor}}">{{text}}</h2>{{/if}}
-                                                        <h3 class="home-info-subtext"
-                                                            style="color:#F1F1F1;font-size:20px;line-height:30px;margin:0 0 48px 0">
-                                                            Open-Ear True Wireless Earbuds</h3>
-                                                    {{/ifEquals}}
 
                                                     {{#ifEquals title 'OPENFIT 2'}}
                                                         <h2 class="home-info-title" style="color:{{captionColor}};font-weight: 500">
@@ -72,15 +64,6 @@
                                                             style="color:#E7E7E7;font-size:20px;line-height:30px;margin:0 0 48px 0">
                                                             OPEN<span style="font-weight:700">FIT</span> 2 |
                                                             {{text}}</h3>
-                                                    {{/ifEquals}}
-
-                                                    {{#ifEquals title 'OPENFIT AIR'}}
-                                                        <h2 class="home-info-title" style="color:{{captionColor}}">OPEN<span style="font-weight:700">FIT</span> AIR</h2>
-                                                        {{#if text}}<h2 class="home-info-text"
-                                                                        style="color:{{captionColor}}">{{text}}</h2>{{/if}}
-                                                        <h3 class="home-info-subtext"
-                                                            style="color:#666666;font-size:20px;line-height:30px;margin:0 0 48px 0">
-                                                            Secure Fit. Effortless Comfort.</h3>
                                                     {{/ifEquals}}
 
                                                     {{#ifEquals title 'OPENSWIM PRO'}}
@@ -129,8 +112,13 @@
                                                         </div>
                                                     {{/ifEquals}}
 
+                                                    {{#ifEquals title 'OPENDOTS ONE'}}
+                                                        <h2 class="home-info-text" style="color:{{captionColor}};font-size: calc(22 / 1700 * 100vw) !important;font-weight: 500">OPEN<span style="font-weight:700">DOTS </span>ONE</h2>
+                                                        {{#if text}}<h2 class="home-info-title" style="margin-bottom: 3px;background: linear-gradient(90deg, #000000 0%, #D1C2C3 100%);-webkit-background-clip: text; -webkit-text-fill-color: transparent;display: inline-block;margin-bottom: 3.5vw;font-size: calc(40 / 1700 * 100vw) !important;font-weight: 500;">{{text}}</h2>{{/if}}
+                                                    {{/ifEquals}}
+
                                                     {{#if linktext}}
-                                                        <div class="home-slide-caption-button-container">
+                                                        <div class="home-slide-caption-button-container" {{#ifEquals title 'OPENDOTS ONE'}} style="margin:0 auto;"{{/ifEquals}}>
                                                             <a{{objectToAtrributes item}} class="home-slide-caption-button">{{#if text}}{{linktext}}{{else}}{{translate 'Shop now'}}{{/if}}</a>
                                                         </div>
                                                     {{/if}}
@@ -198,9 +186,60 @@
     <div class="home-product-container">
         <div class="home-product-body">
             <div class="home-product-category true-wireless">
-                <h3 class="home-product-category-title">True Wireless</h3>
-                <p class="home-product-category-description">Open-Ear Headphones</p>
+                <div class="home-product-sports">
+                    <div>
+                        <h3 class="home-product-category-title">Open Earbuds</h3>
+                        <p class="home-product-category-description">Open-Ear Headphones</p>
+                    </div>
+                    <div class="sport-left">
+                        <div class="arrow-circle prev disabled" title="prev">
+                            <img src="/scs/img/arrow-left.png">
+                        </div>
+                        <div class="arrow-circle next" style="margin-left: 10px;" title="next">
+                            <img src="/scs/img/arrow-right.png">
+                        </div>
+                    </div>
+                </div>
                 <div class="collections-container">
+                    <!-- OpenDots-->
+                    <div class="collection">
+                        <div class="collection-detail">
+                            <div class="collection-detail-image">
+                                <img class="collection-image black"
+                                     src="/site/image/E310-ST-BK-US_01.png"/>
+                                <img class="collection-image beige" style="display: none;"
+                                     src="/site/image/E310-ST-GY-US_01.png"/>
+                            </div>
+                            <div class="collection-detail-info">
+                                <div class="collection-detail-info-title">
+                                    <p class="collection-detail-title">Color：</p>
+                                    <div class="color-option-container">
+                                        <div class="color-option black" style="background-color: black;"
+                                             data-value="E310-ST-BK-US">
+                                            <img class="checkmark active"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option beige" style="background-color: #F0ECE1;"
+                                             data-value="E310-ST-GY-US">
+                                            <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collection-detail-info-title collection-product">
+                                    <p class="collection-detail-title collection-price-title">Price：</p>
+                                    <div class="collection-price" data-view="open-dots-one-price"></div>
+                                    <input class="black" type="hidden" value="product/956627"/>
+                                    <input class="beige" type="hidden" value="product/956428"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-info">
+                            <p class="primary-text">OPEN<span style="font-weight: 700">DOTS</span> ONE</p>
+                            <div class="collection-link-btn">SHOP NOW ></div>
+                        </div>
+                        <p class="collection-tag">New</p>
+                    </div>
                     <!-- OpenFit 2-->
                     <div class="collection">
                         <div class="collection-detail">
@@ -284,171 +323,6 @@
                             <p class="primary-text">OPEN<span style="font-weight: 700">FIT</span> AIR</p>
                             <div class="collection-link-btn">SHOP NOW ></div>
                         </div>
-                        <script>
-                            $('.color-option').click(function () {
-                                var color = this.className.split(" ")[1];
-                                var sku = $(this).attr('data-value');
-                                var size = $(this).parent().parent().parent().find('.item.active').attr('data-value');
-                                if (size !== undefined) {
-                                    size = '.' + size;
-                                } else {
-                                    size = "";
-                                }
-                                $(this).parent().find('.color-option' + size).find('.checkmark').removeClass('active');
-                                $(this).find('.checkmark').addClass('active');
-
-                                $(this).parents('.collection-detail').find('.collection-detail-image').find('.collection-image').hide()
-                                $(this).parents('.collection-detail').find('.collection-detail-image').find('.collection-image.' + color + size).show();
-
-                                if (SC_HOME_PRICE && sku) {
-                                    var itemRec = SC_HOME_PRICE.filter(function (item) {
-                                        // return item.itemname.split(" ")[0].includes("Open")
-                                        return item.itemtype==='Headphone'
-                                    }).find(function (item) {
-                                        return item.itemid === sku;
-                                    });
-                                    if (itemRec.price) {
-                                        var itemType = "";
-                                        if (itemRec.itemname.includes("OpenFit")) {
-                                            // OpenFit Air
-                                            if (itemRec.itemname.includes("Air")) {
-                                                itemType = "open-fit-air-price";
-                                            } else if (itemRec.itemname.includes("2")) {
-                                                // OpenFit 2
-                                                itemType = "open-fit-2-price";
-                                            } else {
-                                                // OpenFit
-                                                itemType = "open-fit-price";
-                                            }
-                                        } else if (itemRec.itemname.includes("OpenRun Pro")) {
-                                            // OpenRun Pro 2-EK
-                                            if (itemRec.itemname.includes("2-EK")) {
-                                                itemType = "open-run-pro2-ek-price";
-                                            } else if (itemRec.itemname.includes("Boston Marathon")) {
-                                                // OpenRun Pro 2 Boston Marathon
-                                                itemType = "open-run-pro2-bm-price";
-                                            } else if (itemRec.itemname.includes("2")) {
-                                                // OpenRun Pro 2
-                                                itemType = "open-run-pro2-price";
-                                            } else {
-                                                // OpenRun Pro
-                                                itemType = "open-run-pro-price";
-                                            }
-                                        } else if (itemRec.itemname.includes("OpenRun") && !itemRec.itemname.includes("Pro")) {
-                                            // OpenRun
-                                            itemType = "open-run-price";
-                                        } else if (itemRec.itemname.includes("OpenMove")) {
-                                            // OpenMove
-                                            itemType = "open-move-price";
-                                        } else if (itemRec.itemname.includes("OpenSwim")) {
-                                            // OpenSwim Pro
-                                            if (itemRec.itemname.includes("Pro")) {
-                                                itemType = "open-swim-pro-price";
-                                            } else {
-                                                // OpenSwim
-                                                itemType = "open-swim-price";
-                                            }
-                                        } else if (itemRec.itemname.includes("OpenComm")) {
-                                            // OpenComm 2
-                                            itemType = "open-comm-2-price";
-                                        }
-
-                                        $('[data-view=' + itemType + ']').text(itemRec.price)
-                                    }
-                                }
-                            })
-                            $('.item').click(function () {
-                                $(this).parent().find('.item').removeClass('active');
-                                $(this).addClass('active');
-                                var size = $(this).attr('data-value');
-                                $(this).parent().parent().parent().find('.color-option').hide();
-                                $(this).parent().parent().parent().find('.color-option.' + size).show();
-
-                                var obj = $(this).parent().parent().parent().find('.color-option.' + size);
-                                var sku = "";
-                                var color = "";
-                                for (let i = 0; i < obj.length; i++) {
-                                    if (obj.eq(i).find('.checkmark').hasClass('active')) {
-                                        sku = obj.eq(i).attr('data-value');
-                                        color = obj.eq(i).attr('class').split(' ')[1];
-                                        break;
-                                    }
-                                }
-                                $(this).parents('.collection-detail').find('.collection-detail-image').find('.collection-image').hide()
-
-                                if (SC_HOME_PRICE && sku) {
-                                    var itemRec = SC_HOME_PRICE.filter(function (item) {
-                                        // return item.itemname.split(" ")[0].includes("Open")
-                                        return item.itemtype==='Headphone'
-                                    }).find(function (item) {
-                                        return item.itemid === sku;
-                                    });
-                                    if (itemRec.price) {
-                                        var itemType = "";
-                                        if (itemRec.itemname.includes("OpenFit")) {
-                                            // OpenFit Air
-                                            if (itemRec.itemname.includes("Air")) {
-                                                itemType = "open-fit-air-price";
-                                            } else if (itemRec.itemname.includes("2")) {
-                                                // OpenFit 2
-                                                itemType = "open-fit-2-price";
-                                            } else {
-                                                // OpenFit
-                                                itemType = "open-fit-price";
-                                            }
-                                        } else if (itemRec.itemname.includes("OpenRun Pro")) {
-                                            // OpenRun Pro 2-EK
-                                            if (itemRec.itemname.includes("2-EK")) {
-                                                itemType = "open-run-pro2-ek-price";
-                                            } else if (itemRec.itemname.includes("Boston Marathon")) {
-                                                // OpenRun Pro 2 Boston Marathon
-                                                itemType = "open-run-pro2-bm-price";
-                                            } else if (itemRec.itemname.includes("2")) {
-                                                // OpenRun Pro 2
-                                                itemType = "open-run-pro2-price";
-                                            } else {
-                                                // OpenRun Pro
-                                                itemType = "open-run-pro-price";
-                                            }
-                                        } else if (itemRec.itemname.includes("OpenRun") && !itemRec.itemname.includes("Pro")) {
-                                            // OpenRun
-                                            itemType = "open-run-price";
-                                        } else if (itemRec.itemname.includes("OpenMove")) {
-                                            // OpenMove
-                                            itemType = "open-move-price";
-                                        } else if (itemRec.itemname.includes("OpenSwim")) {
-                                            // OpenSwim Pro
-                                            if (itemRec.itemname.includes("Pro")) {
-                                                itemType = "open-swim-pro-price";
-                                            } else {
-                                                // OpenSwim
-                                                itemType = "open-swim-price";
-                                            }
-                                        } else if (itemRec.itemname.includes("OpenComm")) {
-                                            // OpenComm 2
-                                            itemType = "open-comm-2-price";
-                                        }
-
-                                        $('[data-view=' + itemType + ']').text(itemRec.price)
-                                    }
-                                }
-                                $(this).parents('.collection-detail').find('.collection-detail-image').find('.collection-image.' + color + '.' + size).show();
-
-                            })
-                            $('.collection-link-btn').click(function () {
-                                var size = $(this).parent().parent().find('.item.active').attr('data-value');
-
-                                if (size !== undefined) {
-                                    size = '.' + size;
-                                } else {
-                                    size = "";
-                                }
-                                var color = '.' + $(this).parent().parent().find('.color-option' + size).find('.active').parent().attr('class').split(' ')[1];
-
-                                var link = $(this).parent().parent().find('.collection-product').find(color + size).val();
-                                location.href += link;
-                            })
-                        </script>
                     </div>
                     <!-- OpenFit-->
                     <div class="collection">
@@ -549,7 +423,6 @@
                             <p class="primary-text">OPEN<span style="font-weight: 700">RUN PRO&nbsp;</span>2</p>
                             <div class="collection-link-btn">SHOP NOW ></div>
                         </div>
-                        <p class="collection-tag">New</p>
                     </div>
                     <!-- OpenRun Pro 2-EK-->
                     <div class="collection">
@@ -883,46 +756,6 @@
                         </div>
                     </div>
                 </div>
-                <script>
-                    var currentIndex = 0;
-                    var length = $('.sports').find('.collection').length;
-                    var pageSize = Math.min(Math.max(Math.floor(window.innerWidth / 330), 1), 3);
-                    var indexs = Math.ceil(length/pageSize);
-                    $('.arrow-circle').click(function(){
-                        var type = this.className.split(" ")[1];
-                        var isDisabled = this.className.split(" ")[2];
-                        if(!isDisabled){
-                            if(type=='prev'){
-                                currentIndex--;
-                                if(pageSize<3){
-                                    var offset = -currentIndex * 345 *pageSize;
-                                    $(this).parent().parent().next().css('transform',`translateX(${offset}px)`);
-                                }else{
-                                    var offset = -currentIndex * 100;
-                                    $(this).parent().parent().next().css('transform',`translateX(${offset}%)`);
-                                }
-                                if(currentIndex===0){
-                                    $(this).addClass('disabled');
-                                }
-                                $(this).next().removeClass('disabled');
-                            }
-                            if(type=='next'){
-                                currentIndex++;
-                                if(pageSize<3){
-                                    var offset = -currentIndex * 345*pageSize;
-                                    $(this).parent().parent().next().css('transform',`translateX(${offset}px)`);
-                                }else{
-                                    var offset = -currentIndex * 100;
-                                    $(this).parent().parent().next().css('transform',`translateX(${offset}%)`);
-                                }
-                                if(currentIndex+1===indexs){
-                                    $(this).addClass('disabled');
-                                }
-                                $(this).prev().removeClass('disabled');
-                            }
-                        }
-                    })
-                </script>
             </div>
             <div class="home-product-category communication">
                 <h3 class="home-product-category-title">Communication</h3>
@@ -957,6 +790,216 @@
                     </div>
                 </div>
             </div>
+            <script>
+                $('.color-option').click(function () {
+                    var color = this.className.split(" ")[1];
+                    var sku = $(this).attr('data-value');
+                    var size = $(this).parent().parent().parent().find('.item.active').attr('data-value');
+                    if (size !== undefined) {
+                        size = '.' + size;
+                    } else {
+                        size = "";
+                    }
+                    $(this).parent().find('.color-option' + size).find('.checkmark').removeClass('active');
+                    $(this).find('.checkmark').addClass('active');
+
+                    $(this).parents('.collection-detail').find('.collection-detail-image').find('.collection-image').hide()
+                    $(this).parents('.collection-detail').find('.collection-detail-image').find('.collection-image.' + color + size).show();
+
+                    if (SC_HOME_PRICE && sku) {
+                        var itemRec = SC_HOME_PRICE.filter(function (item) {
+                            // return item.itemname.split(" ")[0].includes("Open")
+                            return item.itemtype==='Headphone'
+                        }).find(function (item) {
+                            return item.itemid === sku;
+                        });
+                        if (itemRec.price) {
+                            var itemType = "";
+                            if (itemRec.itemname.includes("OpenFit")) {
+                                // OpenFit Air
+                                if (itemRec.itemname.includes("Air")) {
+                                    itemType = "open-fit-air-price";
+                                } else if (itemRec.itemname.includes("2")) {
+                                    // OpenFit 2
+                                    itemType = "open-fit-2-price";
+                                } else {
+                                    // OpenFit
+                                    itemType = "open-fit-price";
+                                }
+                            } else if (itemRec.itemname.includes("OpenRun Pro")) {
+                                // OpenRun Pro 2-EK
+                                if (itemRec.itemname.includes("2-EK")) {
+                                    itemType = "open-run-pro2-ek-price";
+                                } else if (itemRec.itemname.includes("Boston Marathon")) {
+                                    // OpenRun Pro 2 Boston Marathon
+                                    itemType = "open-run-pro2-bm-price";
+                                } else if (itemRec.itemname.includes("2")) {
+                                    // OpenRun Pro 2
+                                    itemType = "open-run-pro2-price";
+                                } else {
+                                    // OpenRun Pro
+                                    itemType = "open-run-pro-price";
+                                }
+                            } else if (itemRec.itemname.includes("OpenRun") && !itemRec.itemname.includes("Pro")) {
+                                // OpenRun
+                                itemType = "open-run-price";
+                            } else if (itemRec.itemname.includes("OpenMove")) {
+                                // OpenMove
+                                itemType = "open-move-price";
+                            } else if (itemRec.itemname.includes("OpenSwim")) {
+                                // OpenSwim Pro
+                                if (itemRec.itemname.includes("Pro")) {
+                                    itemType = "open-swim-pro-price";
+                                } else {
+                                    // OpenSwim
+                                    itemType = "open-swim-price";
+                                }
+                            } else if (itemRec.itemname.includes("OpenComm")) {
+                                // OpenComm 2
+                                itemType = "open-comm-2-price";
+                            } else if(itemRec.itemname.includes("OpenDots")){
+                                //    OpenDots
+                                itemType = "open-dots-one-price";
+                            }
+
+                            $('[data-view=' + itemType + ']').text(itemRec.price)
+                        }
+                    }
+                })
+                $('.item').click(function () {
+                    $(this).parent().find('.item').removeClass('active');
+                    $(this).addClass('active');
+                    var size = $(this).attr('data-value');
+                    $(this).parent().parent().parent().find('.color-option').hide();
+                    $(this).parent().parent().parent().find('.color-option.' + size).show();
+
+                    var obj = $(this).parent().parent().parent().find('.color-option.' + size);
+                    var sku = "";
+                    var color = "";
+                    for (let i = 0; i < obj.length; i++) {
+                        if (obj.eq(i).find('.checkmark').hasClass('active')) {
+                            sku = obj.eq(i).attr('data-value');
+                            color = obj.eq(i).attr('class').split(' ')[1];
+                            break;
+                        }
+                    }
+                    $(this).parents('.collection-detail').find('.collection-detail-image').find('.collection-image').hide()
+
+                    if (SC_HOME_PRICE && sku) {
+                        var itemRec = SC_HOME_PRICE.filter(function (item) {
+                            // return item.itemname.split(" ")[0].includes("Open")
+                            return item.itemtype==='Headphone'
+                        }).find(function (item) {
+                            return item.itemid === sku;
+                        });
+                        if (itemRec.price) {
+                            var itemType = "";
+                            if (itemRec.itemname.includes("OpenFit")) {
+                                // OpenFit Air
+                                if (itemRec.itemname.includes("Air")) {
+                                    itemType = "open-fit-air-price";
+                                } else if (itemRec.itemname.includes("2")) {
+                                    // OpenFit 2
+                                    itemType = "open-fit-2-price";
+                                } else {
+                                    // OpenFit
+                                    itemType = "open-fit-price";
+                                }
+                            } else if (itemRec.itemname.includes("OpenRun Pro")) {
+                                // OpenRun Pro 2-EK
+                                if (itemRec.itemname.includes("2-EK")) {
+                                    itemType = "open-run-pro2-ek-price";
+                                } else if (itemRec.itemname.includes("Boston Marathon")) {
+                                    // OpenRun Pro 2 Boston Marathon
+                                    itemType = "open-run-pro2-bm-price";
+                                } else if (itemRec.itemname.includes("2")) {
+                                    // OpenRun Pro 2
+                                    itemType = "open-run-pro2-price";
+                                } else {
+                                    // OpenRun Pro
+                                    itemType = "open-run-pro-price";
+                                }
+                            } else if (itemRec.itemname.includes("OpenRun") && !itemRec.itemname.includes("Pro")) {
+                                // OpenRun
+                                itemType = "open-run-price";
+                            } else if (itemRec.itemname.includes("OpenMove")) {
+                                // OpenMove
+                                itemType = "open-move-price";
+                            } else if (itemRec.itemname.includes("OpenSwim")) {
+                                // OpenSwim Pro
+                                if (itemRec.itemname.includes("Pro")) {
+                                    itemType = "open-swim-pro-price";
+                                } else {
+                                    // OpenSwim
+                                    itemType = "open-swim-price";
+                                }
+                            } else if (itemRec.itemname.includes("OpenComm")) {
+                                // OpenComm 2
+                                itemType = "open-comm-2-price";
+                            }else if(itemRec.itemname.includes("OpenDots")){
+                                //    OpenDots
+                                itemType = "open-dots-one-price";
+                            }
+
+                            $('[data-view=' + itemType + ']').text(itemRec.price)
+                        }
+                    }
+                    $(this).parents('.collection-detail').find('.collection-detail-image').find('.collection-image.' + color + '.' + size).show();
+
+                })
+                $('.collection-link-btn').click(function () {
+                    var size = $(this).parent().parent().find('.item.active').attr('data-value');
+
+                    if (size !== undefined) {
+                        size = '.' + size;
+                    } else {
+                        size = "";
+                    }
+                    var color = '.' + $(this).parent().parent().find('.color-option' + size).find('.active').parent().attr('class').split(' ')[1];
+
+                    var link = $(this).parent().parent().find('.collection-product').find(color + size).val();
+                    location.href += link;
+                })
+                // 翻页切换
+                $('.home-product-category').each(function () {
+                    var $category = $(this);
+                    var currentIndex = 0;
+                    var $collections = $category.find('.collections-container .collection');
+                    var length = $collections.length;
+                    var pageSize = Math.min(Math.max(Math.floor(window.innerWidth / 330), 1), 3);
+                    var totalPages = Math.ceil(length / pageSize);
+                    var $arrowPrev = $category.find('.arrow-circle.prev');
+                    var $arrowNext = $category.find('.arrow-circle.next');
+
+                    function updateButtons() {
+                        $arrowPrev.toggleClass('disabled', currentIndex === 0);
+                        $arrowNext.toggleClass('disabled', currentIndex >= totalPages - 1);
+                    }
+
+                    function updateOffset() {
+                        var offsetPercent = -currentIndex * 100;
+                        $category.find('.collections-container').css({
+                            'transform': `translateX(${offsetPercent}%)`,
+                            'transition': 'transform 0.5s ease'
+                        });
+                    }
+
+                    updateButtons();
+
+                    $arrowPrev.add($arrowNext).click(function () {
+                        console.log('click')
+                        if ($(this).hasClass('disabled')) return;
+
+                        if ($(this).hasClass('prev')) {
+                            currentIndex = Math.max(0, currentIndex - 1);
+                        } else {
+                            currentIndex = Math.min(totalPages - 1, currentIndex + 1);
+                        }
+                        updateOffset();
+                        updateButtons();
+                    });
+                });
+            </script>
         </div>
     </div>
     <!-- <div class="separator-line"><div class="separator-box"></div></div> -->

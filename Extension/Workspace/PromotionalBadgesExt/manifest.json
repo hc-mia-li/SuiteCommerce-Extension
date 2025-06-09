@@ -1,75 +1,72 @@
 {
-	"name": "PromotionalBadgesExt",
-	"fantasyName": "PromotionalBadgesExt",
-	"vendor": "HP",
-	"type": "extension",
-	"target": "SCA,SCS",
-	"target_version": {
-		"SCA": ">=23.1.0",
-		"SCS": ">=23.1.0"
-	},
-	"version": "1.0.0",
-	"description": "Configuration of promotional badge display settings",
-	"assets": {
-		"img": {
-			"files": []
-		},
-		"fonts": {
-			"files": []
-		},
-		"services": {
-			"files": [
-				"services/PromotionalBadges.Service.ss"
-			]
-		}
-	},
-	"configuration": {
-		"files": [
-			"Modules/PromotionalBadges/Configuration/PromotionalBadges.json"
-		]
-	},
-	"templates": {
-		"application": {
-			"shopping": {
-				"files": [
-					"Modules/PromotionalBadges/Templates/hp_promotionalbadgesext_promotionalbadges.tpl"
-				]
-			}
-		}
-	},
-	"sass": {
-		"entry_points": {
-			"shopping": "Modules/PromotionalBadges/Sass/_promotionalbadgesext-promotionalbadges.scss"
-		},
-		"files": [
-			"Modules/PromotionalBadges/Sass/_promotionalbadgesext-promotionalbadges.scss"
-		]
-	},
-	"javascript": {
-		"entry_points": {
-			"shopping": "Modules/PromotionalBadges/JavaScript/HP.PromotionalBadgesExt.PromotionalBadges.js"
-		},
-		"application": {
-			"shopping": {
-				"files": [
-					"Modules/PromotionalBadges/JavaScript/HP.PromotionalBadgesExt.PromotionalBadges.js",
-					"Modules/PromotionalBadges/JavaScript/PromotionalBadges.View.js",
-					"Modules/PromotionalBadges/JavaScript/HP.PromotionalBadgesExt.PromotionalBadges.Model.js"
-				]
-			}
-		}
-	},
-	"ssp-libraries": {
-		"entry_point": "Modules/PromotionalBadges/SuiteScript/HP.PromotionalBadgesExt.PromotionalBadges.js",
-		"files": [
-			"Modules/PromotionalBadges/SuiteScript/HP.PromotionalBadgesExt.PromotionalBadges.js",
-			"Modules/PromotionalBadges/SuiteScript/PromotionalBadges.ServiceController.js"
-		]
-	},
-	"suitescript2": {
-		"files": []
-	},
-	"path": "SuiteScripts/Deploy_Extensions/HP/PromotionalBadgesExt@1.0.0",
-	"activation_id": "1",
-	"extension_id": "4801"
+    "name": "PromotionalBadgesExt",
+    "fantasyName": "PromotionalBadgesExt",
+    "vendor": "HP",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=23.1.0",
+        "SCS": ">=23.1.0"
+    },
+    "version": "1.0.0",
+    "description": "Configuration of promotional badge display settings",
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PromotionalBadges.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/PromotionalBadges/Configuration/PromotionalBadges.json"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/PromotionalBadges/Templates/hp_promotionalbadgesext_promotionalbadges.tpl"
+                ]
+            }
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/PromotionalBadges/Sass/_promotionalbadgesext-promotionalbadges.scss"
+        },
+        "files": [
+            "Modules/PromotionalBadges/Sass/_promotionalbadgesext-promotionalbadges.scss"
+        ]
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/PromotionalBadges/JavaScript/HP.PromotionalBadgesExt.PromotionalBadges.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/PromotionalBadges/JavaScript/HP.PromotionalBadgesExt.PromotionalBadges.js",
+                    "Modules/PromotionalBadges/JavaScript/PromotionalBadges.View.js",
+                    "Modules/PromotionalBadges/JavaScript/HP.PromotionalBadgesExt.PromotionalBadges.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/PromotionalBadges/SuiteScript/HP.PromotionalBadgesExt.PromotionalBadges.js",
+        "files": [
+            "Modules/PromotionalBadges/SuiteScript/HP.PromotionalBadgesExt.PromotionalBadges.js",
+            "Modules/PromotionalBadges/SuiteScript/PromotionalBadges.ServiceController.js"
+        ]
+    },
+    "suitescript2": {
+        "files": []
+    }
 }

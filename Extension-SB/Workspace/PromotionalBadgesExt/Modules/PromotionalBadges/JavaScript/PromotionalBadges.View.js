@@ -36,6 +36,7 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 				"OpenFit",
 				"OpenFit 2",
 				"OpenFit Air",
+				"OpenDots One",
 				"OpenRun",
 				"OpenRun Pro",
 				"OpenRun Pro 2",

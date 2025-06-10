@@ -31,7 +31,7 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 			let environment = options.environment;
 			let items = options.plp?.getItemsInfo();
 			let itemInfo = options.pdp?.getItemInfo();
-			let PLPSeries = environment.getConfig("PromotionalBadges.PLPSeries");
+			let Series = environment.getConfig("PromotionalBadges.PLPSeries");
 			let homeProduct = [
 				"OpenFit",
 				"OpenFit 2",
@@ -70,39 +70,51 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 						appendContent(dom, item);
 					}
 				}else{
-					PLPSeries.forEach(obj => {
-						// Home
-						$('.primary-text').filter(function(){
-							let text = $(this).text();
+					// quick view
+					let quick = $('.product-details-quickview-item-name').text().toLowerCase();
+					let series = matchSeries(quick);
+					let matched = Series.filter(obj=>series==obj.series && (!obj.size || quick.includes(obj.size.toLowerCase())));
+					if(matched.length > 0){
+						var hasExcluded = matched.some(obj => {
+							return obj.excludeKeywords && quick.includes(obj.excludeKeywords.toLowerCase());
+						});
+						if(!hasExcluded){
+							let dom = $('.product-details-quickview-img');
+							appendContent(dom,matched[0]);
+						}
+					}
+
+					//Home
+					Series.forEach(obj => {
+						let matched = $('.primary-text').filter(function () {
+							let text = $(this).text().toLowerCase();
 							let series = matchSeries(text);
-							let size = $(this).parent().parent().find('.item.active').text();
-							if(obj.series===series&&(!obj.size||obj.size===size)){
-								let dom = $(this).parent().parent();
+							return obj.series===series;
+						})
+						if(matched.length>1){
+							let index = obj.cardIndex;
+							let size = $(matched.get(index)).parent().parent().find('.item.active').text();
+							if(!obj.size||obj.size===size){
+								let dom = $(matched.get(index)).parent().parent();
 								appendContent(dom,obj);
 							}
-						})
-
-						// quick view
-						let quick = $('.product-details-quickview-item-name').text();
-						let series = matchSeries(quick);
-						if (series==obj.series && (!obj.size || quick.toLowerCase().includes(obj.size.toLowerCase())) &&
-							(
-								!obj.excludeKeywords || // 如果没有排除关键词就通过
-								!quick.toLowerCase().includes(obj.excludeKeywords.toLowerCase()) // displayname 中不能包含这个关键词
-							)){
-							let dom = $('.product-details-quickview-img');
-							appendContent(dom,obj);
+						}else{
+							let size = $(matched.get(0)).parent().parent().find('.item.active').text();
+							if(!obj.size||obj.size===size){
+								let dom = $(matched.get(0)).parent().parent();
+								appendContent(dom,obj);
+							}
 						}
-					});
+					})
 					// 首页size切换
 					$('.item').click(function () {
 						let size = $(this).text();
 						let name = $(this).parents('.collection').find('.primary-text').text();
-						let item = PLPSeries.find(obj =>
-							obj.series.toUpperCase() === name.toUpperCase() &&
+						let item = Series.find(obj =>
+							obj.series.toLowerCase() === name.toLowerCase() &&
 							(!obj.size || obj.size === size));
 						if(item){
-							let dom =$(this).parents('.collection');
+							let dom = $(this).parents('.collection');
 							appendContent(dom,item);
 						}else{
 							$(this).parents('.collection').find('.badge-box').remove();
@@ -124,27 +136,44 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 				}
 			}
 
+			// 找到匹配的配置记录
 			function findSeries(categories,itemName){
-				return PLPSeries.find(objA =>
-					categories.some(objB =>
-						objA.series === objB.name &&
-						(!objA.size || itemName.toLowerCase().includes(objA.size.toLowerCase())) &&
-						(
-							!objA.excludeKeywords || // 如果没有排除关键词就通过
-							!itemName.toLowerCase().includes(objA.excludeKeywords.toLowerCase()) // displayname 中不能包含这个关键词
-						)
-					)
-				);
+
+				// 找到所有和 item 相关的配置：series + size 都匹配（size 可选）
+				var relatedSeries = Series.filter(config => {
+					var hasSeries = categories.some(cat => cat.name.toLowerCase() === config.series.toLowerCase());
+					if (!hasSeries) return false;
+
+					// size 存在时，itemName 必须包含 size
+					if (config.size && !itemName.includes(config.size.toLowerCase())) return false;
+
+					return true;
+				});
+
+				if (relatedSeries.length === 0) {
+					return null;
+				}
+
+				// 判断是否存在 excludeKeywords 出现在 itemName 中的配置
+				var hasExcluded = relatedSeries.some(obj => {
+					return obj.excludeKeywords && itemName.includes(obj.excludeKeywords.toLowerCase());
+				});
+
+				if (hasExcluded) {
+					// 如果任意一条 excludeKeywords 匹配了，则整体不符合
+					return null;
+				}
+				return relatedSeries[0];
 			}
 
+			//根据name字符串匹配series
 			function matchSeries(name) {
-				let lowerInput = name.toLowerCase();
 
 				let sortedTypes = homeProduct.sort((a, b) => b.length - a.length);
 
 				for (let type of sortedTypes) {
 					let regex = new RegExp(`^${type.toLowerCase()}(\\s|$)`);
-					if (regex.test(lowerInput)) {
+					if (regex.test(name)) {
 						return type;
 					}
 				}

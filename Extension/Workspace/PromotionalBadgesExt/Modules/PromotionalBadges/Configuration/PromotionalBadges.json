@@ -88,6 +88,13 @@
                         "mandatory": false,
                         "type": "string",
                         "default": ""
+                    },
+                    "cardIndex": {
+                        "title": "cardIndex",
+                        "description": "Configure the product card index that displays the badge,Each category is counted separately, starting from 0",
+                        "mandatory": false,
+                        "type": "string",
+                        "default": ""
                     }
                 }
             }

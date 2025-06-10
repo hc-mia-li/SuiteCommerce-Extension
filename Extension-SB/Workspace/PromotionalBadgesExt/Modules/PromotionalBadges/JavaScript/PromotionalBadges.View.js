@@ -93,11 +93,8 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 						})
 						if(matched.length>1){
 							let index = obj.cardIndex;
-							let size = $(matched.get(index)).parent().parent().find('.item.active').text();
-							if(!obj.size||obj.size===size){
-								let dom = $(matched.get(index)).parent().parent();
-								appendContent(dom,obj);
-							}
+							let dom = $(matched.get(index)).parent().parent();
+							appendContent(dom,obj);
 						}else{
 							let size = $(matched.get(0)).parent().parent().find('.item.active').text();
 							if(!obj.size||obj.size===size){

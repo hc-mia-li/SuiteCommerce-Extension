@@ -420,7 +420,7 @@
                             </div>
                         </div>
                         <div class="collection-info">
-                            <p class="primary-text">OPEN<span style="font-weight: 700">RUN PRO&nbsp;</span>2</p>
+                            <p class="primary-text">OPEN<span style="font-weight: 700">RUN PRO </span>2</p>
                             <div class="collection-link-btn">SHOP NOW ></div>
                         </div>
                     </div>

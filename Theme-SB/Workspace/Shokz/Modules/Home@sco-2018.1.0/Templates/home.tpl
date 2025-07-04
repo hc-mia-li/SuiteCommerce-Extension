@@ -97,30 +97,17 @@
                                                         <h2 class="home-info-title" style="color:{{captionColor}};margin-bottom: 2.604vw;">OPEN<span style="font-weight:700">RUN PRO </span>2 <div style="text-transform: uppercase;display: inline-block;font-size: 16px;padding: 3px 11px;border-radius: 34px;vertical-align: middle;margin-left: -5px;background-color: rgba(10, 11, 16);opacity: 0.6">Silver</div></h2>
                                                     {{/ifEquals}}
 
-                                                    {{#ifEquals title 'Get Up to $40 off'}}
-                                                        <p style="background: linear-gradient(to right, #D99B82, #BE8068,#9E6049);-webkit-background-clip: text;-webkit-text-fill-color: transparent;font-size: 1.02vw;line-height: 1vw;margin-bottom:0.7vw">{{text}}</p>
-                                                        <h2 class="home-info-title" style="display: inline-block;border-bottom: 2px solid #D8BEAA;padding-bottom: calc(20px + 0.5vw);line-height: 2.5vw;">
-                                                            <span style="color:#4A1500;font-weight: 400;font-size: 2.5vw !important;letter-spacing: -0.02em;">
-                                                                Get Up to <span style="color:#CB500C">$40 off</span>
-                                                                <br/>savings with Shokz
-                                                            </span>
-                                                        </h2>
-
-                                                        <div style="margin-top: 2vw;margin-bottom: 3.65vw;">
-                                                            <p style="color: rgba(85, 24, 0, 0.8);font-size: 0.83vw;"><span style="font-weight: 600">Discounts for you: </span>April 16-30</p>
-                                                            <p style="color: rgba(85, 24, 0, 0.8);font-size: 0.83vw;"><span style="font-weight: 600">Discounts for your customer: </span>May 5–11 & May 19–26</p>
-                                                        </div>
-                                                    {{/ifEquals}}
-
                                                     {{#ifEquals title 'OPENDOTS ONE'}}
                                                         <h2 class="home-info-text" style="color:{{captionColor}};font-size: calc(22 / 1700 * 100vw) !important;font-weight: 500">OPEN<span style="font-weight:700">DOTS </span>ONE</h2>
                                                         {{#if text}}<h2 class="home-info-title" style="margin-bottom: 3px;background: linear-gradient(90deg, #000000 0%, #D1C2C3 100%);-webkit-background-clip: text; -webkit-text-fill-color: transparent;display: inline-block;margin-bottom: 3.5vw;font-size: calc(40 / 1700 * 100vw) !important;font-weight: 500;">{{text}}</h2>{{/if}}
                                                     {{/ifEquals}}
 
                                                     {{#if linktext}}
-                                                        <div class="home-slide-caption-button-container" {{#ifEquals title 'OPENDOTS ONE'}} style="margin:0 auto;"{{/ifEquals}}>
+                                                        {{#unlessEquals title 'Get Up to 30% off'}}
+                                                                <div class="home-slide-caption-button-container" {{#ifEquals title 'OPENDOTS ONE'}} style="margin:0 auto;"{{/ifEquals}}>
                                                             <a{{objectToAtrributes item}} class="home-slide-caption-button">{{#if text}}{{linktext}}{{else}}{{translate 'Shop now'}}{{/if}}</a>
                                                         </div>
+                                                        {{/unlessEquals}}
                                                     {{/if}}
                                                 </div>
                                             </div>

@@ -99,7 +99,7 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 								indexes.forEach(function(index) {
 									let size = $(matched.get(index)).parent().parent().find('.item.active').text();
 									if(!obj.size||obj.size===size){
-										let dom = $(matched.get(0)).parent().parent();
+										let dom = $(matched.get(index)).parent().parent();
 										appendContent(dom,obj);
 									}
 								});

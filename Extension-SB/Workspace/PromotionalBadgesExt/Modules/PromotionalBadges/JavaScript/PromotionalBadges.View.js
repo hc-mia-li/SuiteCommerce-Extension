@@ -92,15 +92,26 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 							return obj.series===series;
 						})
 						if(matched.length>1){
-                            let indexes = obj.cardIndex.split(',').map(s => parseInt(s.trim(), 10));
+							//如果没有指定cardIndex，则全都显示
+							if(obj.cardIndex){
+								let indexes = obj.cardIndex.split(',').map(s => parseInt(s.trim(), 10));
 
-                            indexes.forEach(function(index) {
-								let size = $(matched.get(index)).parent().parent().find('.item.active').text();
-								if(!obj.size||obj.size===size){
-									let dom = $(matched.get(0)).parent().parent();
-									appendContent(dom,obj);
-								}
-                            });
+								indexes.forEach(function(index) {
+									let size = $(matched.get(index)).parent().parent().find('.item.active').text();
+									if(!obj.size||obj.size===size){
+										let dom = $(matched.get(0)).parent().parent();
+										appendContent(dom,obj);
+									}
+								});
+							}else{
+								matched.each(function(i, el) {
+									let size = $(el).parent().parent().find('.item.active').text();
+									if (!obj.size || obj.size === size) {
+										let dom = $(el).parent().parent();
+										appendContent(dom, obj);
+									}
+								});
+							}
 						}else{
 							let size = $(matched.get(0)).parent().parent().find('.item.active').text();
 							if(!obj.size||obj.size===size){

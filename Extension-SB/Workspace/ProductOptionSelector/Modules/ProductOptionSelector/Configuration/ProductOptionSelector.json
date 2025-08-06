@@ -22,8 +22,12 @@
                     "label": {
                         "type": "string",
                         "title": "Label",
-                        "description": "The label that the option will be shown ",
+                        "description": "The label that the option will be shown",
                         "translate": true
+                    },
+                    "isColor": {
+                        "type": "boolean",
+                        "title": "Is Color Option"
                     }
                 }
             }

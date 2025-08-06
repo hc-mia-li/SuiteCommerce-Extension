@@ -23,30 +23,30 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 		template: hp_productoptionselector_productoptionselector_tpl
 
 	,	initialize: function (options) {
-
-			/*  Uncomment to test backend communication with an example service
-				(you'll need to deploy and activate the extension first)
-			*/
 			this.items = []; // 所有同类商品
-			this.color = this.model.get('item').get('custitem12');
-			this.size = this.model.get('item').get('custitem11');
 			this.model = options.model;
 			this.application = options.application;
-
+			this.itemOptions = this.application.getConfig('optionSelector.itemOptions');
+			var self = this;
+			_.each(this.itemOptions, function (opt) {
+				opt.selectOption = self.model.get('item').get(opt.fieldId);
+			})
 			this.getAllItems();
 		}
-
 	,	events: {
-			'click .product-views-option-color-picker-box': 'changeColor',
-			'click .product-views-option-tile-picker': 'changeSize'
+			'click .product-views-option-picker': 'changeOption'
 		},
-		getAllItems: function () {
-			var search = this.application.getComponent('Search');
+		getItemCategory:function(){
 			var categories = this.model.get('item').get('commercecategory').categories;
+			//获取最后一层类别
 			var maxCategory = _.max(categories, function(item) {
 				return item.id;
 			});
-			var category = maxCategory ? maxCategory.name : null;
+			return maxCategory ? maxCategory.name : null;
+		},
+		getAllItems: function () {
+			var search = this.application.getComponent('Search');
+			var category = this.getItemCategory();
 			var searchParams = {
 				commercecategoryname: category,
 				fieldset: "details"
@@ -55,30 +55,34 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 			// var url = SC.ENVIRONMENT.siteSettings.touchpoints.home;
 			var self = this;
 			this.colorMap = this.getColorPalette();
+			//获取该类别下的所有货品
 			jQuery.ajax(searchUrl).then(function (data) {
 				self.items = data.items;
-				self.colorOptions = _.chain(self.items).pluck('custitem12').uniq().compact().map(function (value) {
-					return {
-						label: value,
-						value: self.colorMap[value]
-					};
-				}).value();
-				self.sizeOptions = _.uniq(_.map(self.items, 'custitem11'));
-				self.optionMap = self.setOptionMap(self.items);
+				self.optionsMap = {};
+				_.each(self.itemOptions, function (opt) {
+					var uniqueValues = _.chain(self.items).pluck(opt.fieldId).uniq().compact().value();
+					if (opt.isColor) {
+						opt.options = _.map(uniqueValues, function (value) {
+							return { label: value, value: self.colorMap[value] || value };
+						});
+					} else {
+						opt.options = uniqueValues;
+					}
+				});
+				//整理Item数据，方便后续切换选项时读取
+				self.setOptionMap(self.items);
 				self.render();
 			})
 		},
-		setOptionMap:function(options){
-			var map = {};
-			options.forEach(function(item) {
-				var size = item.custitem11 || "size";  // 尺寸可能为空
-				var color = item.custitem12 || "color"; // 颜色可能为空
-				if (!map[color]) {
-					map[color] = {};
-				}
-				map[color][size] = item;
+		setOptionMap:function(items){
+			this.optionMap = {};
+			var self = this;
+			items.forEach(function (item) {
+				var key = _.map(self.itemOptions, function (opt) {
+					return item[opt.fieldId] || opt.label;
+				}).join('|');
+				self.optionMap[key] = item;
 			});
-			return map;
 		}
 		,getColorPalette:function(){
 			var configuration = this.application.getConfig();
@@ -88,24 +92,26 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 				colorMap[color.colorName] = color.colorValue;
 			})
 			return colorMap;
-		}
-		,changeColor:function(e){
+		},
+		changeOption: function (e) {
 			e.preventDefault();
-			this.color = $(e.currentTarget).data('value');
+			var value = $(e.currentTarget).data('value');
+			var fieldId = $(e.currentTarget).data('field');
+
+			var currentOption = _.find(this.itemOptions, { fieldId: fieldId });
+			currentOption.selectOption = value;
+
+			var key = _.map(this.itemOptions, function (opt) {
+				return opt.selectOption || opt.label;
+			}, this).join('|');
+
+			var currentItem = this.optionMap[key];
+
+			if (currentItem) {
+				this.model.set('item', currentItem);
+				this.changeItemInfo();
+			}
 			this.render();
-			var size = this.size?this.size:'size';
-			var currentItem = this.optionMap[this.color][size];
-			this.model.set('item',currentItem);
-			this.changeItemInfo();
-		}
-		,changeSize:function(e){
-			e.preventDefault();
-			this.size = $(e.currentTarget).val();
-			this.render();
-			var color = this.color?this.color:'color';
-			var currentItem = this.optionMap[color][this.size];
-			this.model.set('item',currentItem);
-			this.changeItemInfo();
 		}
 		,changeItemInfo:function(){
 			var item = this.model.get('item');
@@ -126,10 +132,7 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 		{
 			//@class HP.ProductOptionSelector.ProductOptionSelector.View.Context
 			return {
-				size:this.size,
-				color:this.color,
-				sizeOptions:this.sizeOptions,
-				colorOptions:this.colorOptions
+				itemOptions: this.itemOptions
 			};
 		}
 	});

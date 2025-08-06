@@ -5,14 +5,8 @@
 	Example:
 	@import "other-sass-file.scss";
 	@import "../../<other module>/Sass/other-sass-file.scss";
-*/ 
+*/
 
-.productoptionselector-info-card {
-    @extend .info-card;
-}
-
-.productoptionselector-info-card-content {
-    @extend .info-card-content;
-    color: $sc-color-secondary;
-    font-weight: bold;
+.product-views-option-tile-picker{
+    cursor: pointer;
 }

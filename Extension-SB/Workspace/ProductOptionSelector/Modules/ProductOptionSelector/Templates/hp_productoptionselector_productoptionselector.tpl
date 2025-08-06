@@ -1,24 +1,33 @@
-<div class="product-views-option-color-label-header">
-    <span class="product-views-option-color-label">Product Color: </span>
-    <span class="product-views-option-color-value">{{color}}</span>
-</div>
-<div class="product-views-option-color-container ">
-    {{#each colorOptions}}
-        <div class="product-views-option-color-picker">
-            <span data-value="{{label}}" class="product-views-option-color-picker-box  {{#ifEquals ../color label}} active {{/ifEquals}}" style="background: {{value}}"></span>
+{{#each itemOptions}}
+    {{#if isColor}}
+        <div class="product-views-option-color-label-header">
+            <span class="product-views-option-color-label">{{label}}: </span>
+            <span class="product-views-option-color-value">{{selectOption}}</span>
         </div>
-    {{/each}}
-</div>
-<!--<div class="custcol_size-controls-group">-->
-<!--    <span class="product-views-option-tile-label">Product Size : </span>-->
-<!--    <span data-value="custcol_size"></span>-->
-<!--    <div class="product-views-option-tile-container">-->
-<!--        {{#each sizeOptions}}-->
-<!--            <input class="product-views-option-tile-input-picker" type="radio" name="custcol_size" value="{{this}}" data-active="false">-->
-<!--            {{this}}-->
-<!--        {{/each}}-->
-<!--    </div>-->
-<!--</div>-->
+        <div class="product-views-option-color-container ">
+            {{#each options}}
+                <div class="product-views-option-color-picker">
+                    <span data-value="{{label}}" data-field="{{../fieldId}}" class="product-views-option-color-picker-box product-views-option-picker {{#ifEquals ../selectOption label}} active {{/ifEquals}}" style="background: {{value}}"></span>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="custcol_size-controls-group">
+            <span class="product-views-option-tile-label">
+                {{label}}: <span data-value="custcol_size">{{selectOption}}</span>
+            </span>
+            <div class="product-views-option-tile-container">
+                {{#each options}}
+                    <span class="product-views-option-tile-picker product-views-option-picker {{#ifEquals ../selectOption this}} active {{/ifEquals}}" data-field="{{../fieldId}}" data-value="{{this}}">
+                        <input class="product-views-option-tile-input-picker" type="radio"
+                               name="{{../fieldId}}" value="{{this}}" data-active="false">
+                        {{this}}
+                    </span>
+                {{/each}}
+            </div>
+    {{/if}}
+{{/each}}
+
 <!--
   Available helpers:
   {{ getExtensionAssetsPath "img/image.jpg"}} - reference assets in your extension

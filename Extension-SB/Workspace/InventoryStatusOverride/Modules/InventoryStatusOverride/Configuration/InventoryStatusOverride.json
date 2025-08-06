@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "subtab": {
+        "id": "inventoryStatus",
+        "title": "Inventory Status Override",
+        "group": "extension"
+    },
+    "properties": {
+        "InventoryStatus.Items": {
+            "group": "extensions",
+            "subtab": "inventoryStatus",
+            "type": "array",
+            "title": "Out Of Stock Items",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "itemId": {
+                        "type": "string",
+                        "title": "item Id",
+                        "mandatory": true
+                    },
+                    "OutOfStockMessage": {
+                        "title": "Out Of Stock Message",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "name": "InventoryStatusOverride",
+    "fantasyName": "InventoryStatusOverride",
+    "vendor": "HP",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=24.1.30",
+        "SCS": ">=24.1.30"
+    },
+    "description": "Overrides the default inventory status to show the item as out of stock even when available.",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/InventoryStatusOverride/Configuration/InventoryStatusOverride.json"
+        ]
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/InventoryStatusOverride/JavaScript/HP.InventoryStatusOverride.InventoryStatusOverride.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/InventoryStatusOverride/JavaScript/HP.InventoryStatusOverride.InventoryStatusOverride.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\InventoryStatusOverride",
+    "suitescript2": {
+        "files": []
+    }
+}

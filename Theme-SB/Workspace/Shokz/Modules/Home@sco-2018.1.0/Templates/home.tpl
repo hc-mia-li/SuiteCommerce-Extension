@@ -102,12 +102,16 @@
                                                         {{#if text}}<h2 class="home-info-title" style="margin-bottom: 3px;background: linear-gradient(90deg, #000000 0%, #D1C2C3 100%);-webkit-background-clip: text; -webkit-text-fill-color: transparent;display: inline-block;margin-bottom: 3.5vw;font-size: calc(40 / 1700 * 100vw) !important;font-weight: 500;">{{text}}</h2>{{/if}}
                                                     {{/ifEquals}}
 
+                                                    {{#ifEquals title 'OPENDOTS ONE PINK'}}
+                                                        <h2 class="home-info-text" style="color:#F0ECED;font-size: clamp(14px, 1.093vw, 21px);font-weight: 500;letter-spacing: -0.2px;">New Color Drop - OpenDots ONE in Pink</h2>
+                                                        <h2 class="home-info-title" style="background: linear-gradient(90deg, #FFFFFF 0%, #CAA4A7 100%);-webkit-background-clip: text; -webkit-text-fill-color: transparent;display: inline-block;font-size: clamp(20px, 2.083vw, 40px);font-weight: 500;letter-spacing: -1.2px;">Fresh Color, Proven Tech.</h2>
+                                                        <p style="color: #F0ECED;font-size: clamp(14px, 1.042vw, 20px);letter-spacing: 0.3px;margin-bottom: clamp(20px, 2.08vw, 40px);margin-top: clamp(6px, 0.52vw, 10px);">Available September 4</p>
+                                                    {{/ifEquals}}
+
                                                     {{#if linktext}}
-                                                        {{#unlessEquals title 'Get Up to 30% off'}}
-                                                                <div class="home-slide-caption-button-container" {{#ifEquals title 'OPENDOTS ONE'}} style="margin:0 auto;"{{/ifEquals}}>
+                                                        <div class="home-slide-caption-button-container" {{#ifEquals title 'OPENDOTS ONE'}} style="margin:0 auto;"{{/ifEquals}}>
                                                             <a{{objectToAtrributes item}} class="home-slide-caption-button">{{#if text}}{{linktext}}{{else}}{{translate 'Shop now'}}{{/if}}</a>
                                                         </div>
-                                                        {{/unlessEquals}}
                                                     {{/if}}
                                                 </div>
                                             </div>
@@ -192,10 +196,12 @@
                     <div class="collection">
                         <div class="collection-detail">
                             <div class="collection-detail-image">
-                                <img class="collection-image black"
+                                <img class="collection-image black" style="display: none;"
                                      src="/site/image/E310-ST-BK-US_01.png"/>
                                 <img class="collection-image beige" style="display: none;"
                                      src="/site/image/E310-ST-GY-US_01.png"/>
+                                <img class="collection-image pink"
+                                     src="/site/image/E310-ST-PK-US_01.png"/>
                             </div>
                             <div class="collection-detail-info">
                                 <div class="collection-detail-info-title">
@@ -203,12 +209,17 @@
                                     <div class="color-option-container">
                                         <div class="color-option black" style="background-color: black;"
                                              data-value="E310-ST-BK-US">
-                                            <img class="checkmark active"
+                                            <img class="checkmark"
                                                  src="/scs/img/check-circle.png"/>
                                         </div>
                                         <div class="color-option beige" style="background-color: #F0ECE1;"
                                              data-value="E310-ST-GY-US">
                                             <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option pink" style="background-color: #E5C3C4;"
+                                             data-value="E310-ST-PK-US">
+                                            <img class="checkmark active"
                                                  src="/scs/img/check-circle.png"/>
                                         </div>
                                     </div>
@@ -218,6 +229,7 @@
                                     <div class="collection-price" data-view="open-dot-price"></div>
                                     <input class="black" type="hidden" value="product/956627"/>
                                     <input class="beige" type="hidden" value="product/956428"/>
+                                    <input class="pink" type="hidden" value="product/1151988"/>
                                 </div>
                             </div>
                         </div>

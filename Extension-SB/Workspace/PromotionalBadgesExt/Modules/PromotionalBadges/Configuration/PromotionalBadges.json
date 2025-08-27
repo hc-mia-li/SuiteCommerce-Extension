@@ -49,6 +49,7 @@
                         "enum": [
                             "OpenFit",
                             "OpenFit 2",
+                            "OpenFit 2+",
                             "OpenFit Air",
                             "OpenDots One",
                             "OpenRun",

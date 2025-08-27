@@ -35,6 +35,7 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 			let homeProduct = [
 				"OpenFit",
 				"OpenFit 2",
+				"OpenFit 2+",
 				"OpenFit Air",
 				"OpenDots One",
 				"OpenRun",

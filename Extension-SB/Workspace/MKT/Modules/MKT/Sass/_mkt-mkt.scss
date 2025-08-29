@@ -1,0 +1,110 @@
+@import "mkt-productlibrary";
+@import "mkt-runclubsupport";
+.mkt_container{
+    @extend .rc_container;
+}
+.mkt_button{
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+.mkt_flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.mkt_banner{
+    @extend .rc_banner;
+    .mkt_mask{
+        @extend .rc_mask;
+    }
+    .mkt_title{
+        color: #fff;
+        font-size: 42px;
+        font-weight: 500;
+        line-height: 1.3;
+    }
+}
+.mkt_image{
+    @extend .rc_image;
+}
+
+.mkt_row-first{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+    width: 100%;
+    .mkt_card{
+        @extend .radius4;
+        position: relative;
+    }
+    .mkt_card-body{
+        margin-left: 24px;
+        width: 180px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        .mkt_card-title{
+            font-size: 24px;
+            font-weight: 600;
+            color: #050505;
+            margin-bottom: 30px;
+        }
+        .mkt_card-button{
+            @extend .mkt_button;
+            background: #FFFFFF;
+            border: 1px solid #fff;
+            &:hover{
+                background-color: #000;
+                border-color: #000;
+                color: #fff;
+            }
+        }
+    }
+}
+.mkt_row-second{
+    @extend .radius4;
+    @extend .mkt_flex;
+    align-items: stretch;
+    gap: 40px;
+    margin-top: 40px;
+    padding: 24px;
+    background: #F8F8F8;
+    width: 100%;
+    border-radius: 4px;
+    .mkt_content-left{
+        width: 550px;
+        padding: 24px 0;
+        .mkt_text-title{
+            color: #050505;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            white-space: nowrap;
+        }
+        .mkt_text-detail{
+            color: #050505;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+        .mkt_text-button{
+            @extend .mkt_button;
+            display: inline-block;
+            background: #0A0A0A;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+        .mkt_tips{
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.1;
+        }
+    }
+    .mkt_content-right{
+        @extend .radius4;
+    }
+}

@@ -1,0 +1,299 @@
+{
+  "type": "object",
+  "subtab": {
+    "id": "MKT",
+    "title": "MKT",
+    "group": "extensions"
+  },
+  "properties": {
+    "MKT.main.banner": {
+      "group": "extensions",
+      "subtab": "MKT",
+      "type": "array",
+      "title": "MKT Resources Banner",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "image": {
+            "type": "string",
+            "title": "Image URL"
+          }
+        }
+      },
+      "default": [
+        {
+          "title": "MKT Resources",
+          "image": "/site/image/MKT/resources-banner.jpg"
+        }
+      ]
+    },
+    "MKT.productLibrary.category": {
+      "group": "extensions",
+      "subtab": "MKT",
+      "type": "array",
+      "title": "Product Library category",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "title": "Category"
+          },
+          "parentId": {
+            "type": "string",
+            "title": "Parent Category"
+          }
+        }
+      },
+      "default": [
+        {
+          "category": "Open Earbuds",
+          "parentId": ""
+        },
+        {
+          "category": "OpenFit",
+          "parentId": "Open Earbuds"
+        },
+        {
+          "category": "OpenFit Air",
+          "parentId": "Open Earbuds"
+        },
+        {
+          "category": "OpenFit 2",
+          "parentId": "Open Earbuds"
+        },
+        {
+          "category": "OpenDots One",
+          "parentId": "Open Earbuds"
+        },
+        {
+          "category": "Sports",
+          "parentId": ""
+        },
+        {
+          "category": "OpenRun",
+          "parentId": "Sports"
+        },
+        {
+          "category": "OpenRun Pro",
+          "parentId": "Sports"
+        },
+        {
+          "category": "OpenRun Pro 2",
+          "parentId": "Sports"
+        },
+        {
+          "category": "OpenMove",
+          "parentId": "Sports"
+        },
+        {
+          "category": "OpenSwim",
+          "parentId": "Sports"
+        },
+        {
+          "category": "OpenSwim Pro",
+          "parentId": "Sports"
+        },
+        {
+          "category": "Communication",
+          "parentId": ""
+        },
+        {
+          "category": "OpenComm2 2025",
+          "parentId": "Communication"
+        }
+      ]
+    },
+    "MKT.productLibrary.products": {
+      "group": "extensions",
+      "subtab": "MKT",
+      "type": "array",
+      "title": "Product Library Products",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Product Name"
+          },
+          "category": {
+            "type": "string",
+            "title": "Category"
+          },
+          "coverImage": {
+            "type": "string",
+            "title": "Cover image"
+          },
+          "video": {
+            "type": "string",
+            "title": "video URL"
+          },
+          "image": {
+            "type": "string",
+            "title": "images URL"
+          }
+        }
+      },
+      "default": [
+        {
+          "name": "Open<span class=\"bold\">Fit</span>",
+          "category": "OpenFit",
+          "coverImage": "/site/image/T910-ST-BK-US_01.png",
+          "video": "",
+          "image": ""
+        },
+        {
+          "name": "Open<span class=\"bold\">Fit</span> Air",
+          "category": "OpenFit Air",
+          "coverImage": "/site/image/T511-ST-BK-US_01.png",
+          "video": "",
+          "image": ""
+        },
+        {
+          "name": "Open<span class=\"bold\">Fit</span> 2",
+          "category": "OpenFit 2",
+          "coverImage": "/site/image/T920-ST-BK-US_01.png",
+          "video": "",
+          "image": ""
+        },
+        {
+          "name": "Open<span class=\"bold\">Dots</span> One",
+          "category": "OpenDots One",
+          "coverImage": "/site/image/E310-ST-PK-US_01.png",
+          "video": "",
+          "image": ""
+        },
+        {
+          "name": "Open<span class=\"bold\">Run</span>",
+          "category": "OpenRun",
+          "coverImage": "/site/image/S803-ST-BK-US_01.png",
+          "video": "",
+          "image": ""
+        },
+        {
+          "name": "Open<span class=\"bold\">Run Pro</span>",
+          "category": "OpenRun Pro",
+          "coverImage": "/site/image/S810-ST-BK-US_01.png",
+          "video": "",
+          "image": ""
+        },
+        {
+          "name": "Open<span class=\"bold\">Run Pro</span> 2",
+          "category": "OpenRun Pro 2",
+          "coverImage": "/site/image/S821-MN-SR-US-326_01.png",
+          "video": "",
+          "image": ""
+        },
+        {
+          "name": "Open<span class=\"bold\">Move</span>",
+          "category": "OpenMove",
+          "coverImage": "/site/image/S661-ST-GY-US_01.png",
+          "video": "",
+          "image": ""
+        },
+        {
+          "name": "Open<span class=\"bold\">Swim</span>",
+          "category": "OpenSwim",
+          "coverImage": "/site/image/S700-ST-BK-US_01.png",
+          "video": "",
+          "image": ""
+        },
+        {
+          "name": "Open<span class=\"bold\">Swim Pro</span>",
+          "category": "OpenSwim Pro",
+          "coverImage": "/site/image/S710-ST-GY-US_01.png",
+          "video": "",
+          "image": ""
+        },
+        {
+          "name": "Open<span class=\"bold\">Comm2</span> 2025",
+          "category": "OpenComm2 2025",
+          "coverImage": "/site/image/C120-AN-BK-US_01.png",
+          "video": "",
+          "image": ""
+        }
+      ]
+    },
+    "MKT.runClub.banner": {
+      "group": "extensions",
+      "subtab": "MKT",
+      "type": "array",
+      "title": "Run Club Banner",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "image": {
+            "type": "string",
+            "title": "Image URL"
+          },
+          "linktext": {
+            "type": "string",
+            "title": "button text"
+          },
+          "linklocation": {
+            "type": "string",
+            "title": "button url"
+          }
+        }
+      },
+      "default": [
+        {
+          "title": "Retail Run Club Demo Kit",
+          "text": "Turn Community Runs into Shokz Moments",
+          "image": "/site/image/MKT/resources-banner.jpg",
+          "linktext": "Get Your Free Demo Kit",
+          "linklocation": ""
+        }
+      ]
+    },
+    "MKT.runClub.kitBlocks": {
+      "group": "extensions",
+      "subtab": "MKT",
+      "type": "array",
+      "title": "Run Club Kit Block",
+      "items": {
+        "type": "object",
+        "properties": {
+          "image": {
+            "type": "string",
+            "title": "Image URL"
+          },
+          "desc": {
+            "type": "string",
+            "title": "Description"
+          }
+        }
+      },
+      "default": [
+        {
+          "image": "/site/image/S821-MN-OR-US_01.png",
+          "desc": "5 × OpenRun Pro 2 Mini"
+        },
+        {
+          "image": "/site/image/S820-ST-OR-US_01.png",
+          "desc": "5 × OpenRun Pro 2"
+        },
+        {
+          "image": "/site/image/T920-ST-BK-US_01.png",
+          "desc": "4 × OpenFit 2"
+        },
+        {
+          "image": "/site/image/E310-ST-GY-US_01.png",
+          "desc": "4 × OpenDots ONE"
+        }
+      ]
+    }
+  }
+}

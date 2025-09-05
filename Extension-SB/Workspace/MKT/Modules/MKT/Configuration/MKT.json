@@ -6,6 +6,12 @@
     "group": "extensions"
   },
   "properties": {
+    "MKT.main.googleDrive": {
+      "group": "extensions",
+      "subtab": "MKT",
+      "type": "string",
+      "title": "Google Drive URL"
+    },
     "MKT.main.banner": {
       "group": "extensions",
       "subtab": "MKT",

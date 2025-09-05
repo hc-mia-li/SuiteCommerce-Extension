@@ -23,14 +23,16 @@ define('HP.MKT.MKT.ProductLibrary.View'
 			*/
 			let env = options.application.getComponent('Environment');
 			this.categoryData = env.getConfig('MKT.productLibrary.category');
+			this.productsData = env.getConfig('MKT.productLibrary.products');
+			//获取一级分类
 			this.categories = this.categoryData.filter(item => item.parentId === "");
+			//设置默认一级分类、二级分类
 			this.category = this.categories[0].category;
 			this.subCategory = 'ALL';
-			this.productsData = env.getConfig('MKT.productLibrary.products');
-			this.subCategories = this.categoryData.filter(item => item.parentId === this.category);
-			this.products = this.productsData.filter(item =>
-				this.subCategories.some(sub => sub.category === item.category)
-			);
+			//获取二级分类
+			this.subCategories = this.filterSubCategories();
+			//获取当前分类的货品
+			this.products = this.filterProducts(this.category,this.subCategory);
 			document.addEventListener('click', function() {
 				document.querySelectorAll('.pl_dropdown.pl_dropdown-open')
 					.forEach(item => item.classList.remove('pl_dropdown-open'));
@@ -40,6 +42,19 @@ define('HP.MKT.MKT.ProductLibrary.View'
 	,	events: {
 			'click .pl_dropdown':'openDropdown',
 			'click .pl_dropdown-list':'handleSelect'
+		}
+		,filterProducts:function (category, subCategory) {
+			if (subCategory !== 'ALL') {
+				return this.productsData.filter(item => item.category === this.subCategory);
+			}else{
+				return this.productsData.filter(item =>
+					this.subCategories.some(sub => sub.category === item.category)
+				);
+			}
+
+		}
+		,filterSubCategories:function () {
+			return this.categoryData.filter(item => item.parentId === this.category);
 		}
 		,openDropdown:function(e) {
 			e.stopPropagation();
@@ -63,17 +78,11 @@ define('HP.MKT.MKT.ProductLibrary.View'
 			if(type==='Category'){
 				this.category = value;
 				this.subCategory = 'ALL';
-				this.subCategories = this.categoryData.filter(item => item.parentId === this.category);
+				this.subCategories = this.filterSubCategories();
 			}else{
 				this.subCategory = value;
 			}
-			if(this.subCategory!=='ALL'){
-				this.products = this.productsData.filter(item => item.category === this.subCategory);
-			}else{
-				this.products = this.productsData.filter(item =>
-					this.subCategories.some(sub => sub.category === item.category)
-				);
-			}
+			this.products = this.filterProducts(this.category,this.subCategory);
 			this.render();
 		}
 

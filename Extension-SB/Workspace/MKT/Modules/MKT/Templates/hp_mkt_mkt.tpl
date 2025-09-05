@@ -1,23 +1,23 @@
 <section class="mkt_container">
     <div class="mkt_banner">
-        <img src="{{bannerData.image}}" class="mkt_image">
+        <img src="{{resizeImage bannerData.image 'main'}}" class="mkt_image">
         <div class="mkt_mask">
             <p class="mkt_title">{{bannerData.title}}</p>
         </div>
     </div>
     <div class="mkt_row mkt_row-first">
         <div class="mkt_card">
-            <img src="/site/image/MKT/video&images.png" alt="Video&Images" class="mkt_image">
+            <img src="{{resizeImage '/site/image/MKT/video&images.png' 'thumbnail'}}" alt="Video&Images" class="mkt_image">
             <div class="mkt_card-body">
                 <p class="mkt_card-title">Video& Images</p>
                 <a href="mkt/product-library" class="mkt_card-button">Learn More</a>
             </div>
         </div>
         <div class="mkt_card">
-            <img src="/site/image/MKT/promotional-posters.png" alt="Promotional posters" class="mkt_image">
+            <img src="{{resizeImage '/site/image/MKT/promotional-posters.png' 'thumbnail'}}" alt="Promotional posters" class="mkt_image">
             <div class="mkt_card-body">
                 <p class="mkt_card-title">Promotional posters</p>
-                <a href="#" class="mkt_card-button">Download</a>
+                <a href="{{url}}" class="mkt_card-button" target="_blank">Download</a>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
             </p>
         </div>
         <div class="mkt_content-right">
-            <img src="/site/image/MKT/runners.png" alt="Want to bring more runners into your store" class="mkt_image">
+            <img src="{{resizeImage '/site/image/MKT/runners.png' 'main'}}" alt="Want to bring more runners into your store" class="mkt_image">
         </div>
     </div>
 </section>

@@ -40,22 +40,22 @@
         {{#each products}}
             <div class="pl_table-row">
                 <div class="pl_table-cell pl_table-cell-product">
-                    <img src="{{coverImage}}" alt="{{category}}" class="table-image">
+                    <img src="{{resizeImage coverImage 'thumbnail'}}" alt="{{category}}" class="table-image">
                     <div class="pl_table-product-name">{{{name}}}</div>
                 </div>
                 <div class="pl_table-cell-doc">
                     <div class="pl_table-subrow">
                         <div>Video</div>
-                        <a href="{{video}}" class="pl_table-subrow-download">
+                        <a href="{{video}}" target="_blank" class="pl_table-subrow-download">
                             <span class="download-link">Document File</span>
-                            <img src="/site/image/MKT/download.png" alt="download Video">
+                            <img src="{{resizeImage '/site/image/MKT/download.png' 'thumbnail'}}" alt="download Video">
                         </a>
                     </div>
                     <div class="pl_table-subrow">
                         <div>Image</div>
-                        <a href="{{image}}" class="pl_table-subrow-download">
+                        <a href="{{image}}" target="_blank" class="pl_table-subrow-download">
                             <span class="download-link">Document File</span>
-                            <img src="/site/image/MKT/download.png" alt="download Image">
+                            <img src="{{resizeImage '/site/image/MKT/download.png' 'thumbnail'}}" alt="download Image">
                         </a>
                     </div>
                 </div>

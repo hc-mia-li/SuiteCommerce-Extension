@@ -1,11 +1,11 @@
 <section class="rc_container">
     <div class="rc_banner">
-        <img src="{{bannerData.image}}" class="rc_image" alt="{{bannerData.title}}">
+        <img src="{{resizeImage bannerData.image 'main'}}" class="rc_image" alt="{{bannerData.title}}">
         <div class="rc_mask">
             <div class="rc_banner-content">
                 <h2 class="rc_banner-title">{{bannerData.title}}</h2>
                 <h3 class="rc_banner-subtitle">{{bannerData.text}}</h3>
-                <a href="{{bannerData.linklocation}}" class="rc_banner-button">{{bannerData.linktext}}</a>
+                <a href="{{bannerData.linklocation}}" target="_blank" class="rc_banner-button">{{bannerData.linktext}}</a>
             </div>
         </div>
     </div>
@@ -13,15 +13,15 @@
         <h2 class="rc_kit-title">What's in the Kit</h2>
         <div class="rc_kit-content">
             <div class="rc_kit-item">
-                <img src="/site/image/MKT/kit.png" alt="" class="rc_kit-image">
+                <img src="{{resizeImage '/site/image/MKT/kit.png' 'thumbnail'}}" alt="" class="rc_kit-image">
             </div>
             <div class="rc_kit-item">
-                <img src="/site/image/MKT/kit-open.png" alt="" class="rc_kit-image">
+                <img src="{{resizeImage '/site/image/MKT/kit-open.png' 'thumbnail'}}" alt="" class="rc_kit-image">
             </div>
             <div class="rc_kit-list">
                 {{#each kitBlocks}}
                     <div class="rc_kit-list-item">
-                        <img src="{{image}}" alt="{{desc}}" class="rc_kit-list-image">
+                        <img src="{{resizeImage image 'thumbnail'}}" alt="{{desc}}" class="rc_kit-list-image">
                         <p class="rc_kit-list-text">{{desc}}</p>
                     </div>
                 {{/each}}
@@ -61,13 +61,13 @@
             </div>
         </div>
         <div class="rc_works-col">
-            <img src="/site/image/MKT/run-works.png" alt="" class="rc_works-image">
+            <img src="{{resizeImage '/site/image/MKT/run-works.png' 'main'}}" alt="How It Works" class="rc_works-image">
         </div>
     </div>
     <div class="rc_form">
         <div class="rc_form-block">
             <p class="rc_form-tip">Free for select partners. Big runs, small runs—this kit turns them all into Shokz-powered experiences.</p>
-            <a href="{{bannerData.linklocation}}" class="rc_form-button">{{bannerData.linktext}}</a>
+            <a href="{{bannerData.linklocation}}" target="_blank" class="rc_form-button">{{bannerData.linktext}}</a>
         </div>
     </div>
 </section>

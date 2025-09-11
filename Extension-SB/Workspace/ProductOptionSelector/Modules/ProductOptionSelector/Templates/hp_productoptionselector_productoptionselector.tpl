@@ -1,30 +1,20 @@
 {{#each itemOptions}}
-    {{#if isColor}}
-        <div class="product-views-option-color-label-header">
-            <span class="product-views-option-color-label">{{label}}: </span>
-            <span class="product-views-option-color-value">{{selectOption}}</span>
+    {{#if options}}
+        <div class="product-option-label-header">
+            <span class="product-option-label">{{label}}: </span>
+            <!--<span class="product-option-color-value">{{selectOption}}</span>-->
         </div>
-        <div class="product-views-option-color-container ">
+        <div class="product-option-container">
             {{#each options}}
-                <div class="product-views-option-color-picker">
-                    <span data-value="{{label}}" data-field="{{../fieldId}}" class="product-views-option-color-picker-box product-views-option-picker {{#ifEquals ../selectOption label}} active {{/ifEquals}}" style="background: {{value}}"></span>
+                <div class="product-option-picker {{#ifEquals ../selectOption label}} active {{/ifEquals}} {{#if disabled}} disabled {{/if}}"
+                     data-value="{{label}}" data-field="{{../fieldId}}">
+                {{#if ../isColor}}
+                    <span class="product-option-picker-box" style="background: {{value}}"></span>
+                {{/if}}
+                    <span class="product-option-value">{{label}}</span>
                 </div>
             {{/each}}
         </div>
-    {{else}}
-        <div class="custcol_size-controls-group">
-            <span class="product-views-option-tile-label">
-                {{label}}: <span data-value="custcol_size">{{selectOption}}</span>
-            </span>
-            <div class="product-views-option-tile-container">
-                {{#each options}}
-                    <span class="product-views-option-tile-picker product-views-option-picker {{#ifEquals ../selectOption this}} active {{/ifEquals}}" data-field="{{../fieldId}}" data-value="{{this}}">
-                        <input class="product-views-option-tile-input-picker" type="radio"
-                               name="{{../fieldId}}" value="{{this}}" data-active="false">
-                        {{this}}
-                    </span>
-                {{/each}}
-            </div>
     {{/if}}
 {{/each}}
 

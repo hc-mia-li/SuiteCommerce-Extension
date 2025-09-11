@@ -1,12 +1,32 @@
-/*
-	Sass Application Entry Point
-	Link all your sass dependencies in the right order
 
-	Example:
-	@import "other-sass-file.scss";
-	@import "../../<other module>/Sass/other-sass-file.scss";
-*/
-
-.product-views-option-tile-picker{
-    cursor: pointer;
+.product-option-label{
+    font-size: 18px;
+    font-weight: bold;
+    color: #050505;
+}
+.product-option-container{
+    .product-option-picker{
+        cursor: pointer;
+        text-align: center;
+        padding: 10px 15px;
+        margin: 15px;
+        border: 1px solid #d8d8d8;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .active{
+        border-color: red;
+    }
+    .product-option-picker-box{
+        display: block;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+    }
+    .product-option-value{}
+    .disabled{
+        opacity: 0.4;
+    }
 }

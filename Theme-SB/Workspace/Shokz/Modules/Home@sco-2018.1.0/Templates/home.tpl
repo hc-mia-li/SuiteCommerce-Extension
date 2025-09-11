@@ -143,20 +143,20 @@
 
     <div class="home-benefit-container">
         <div class="home-benefit-body">
-            <h2 class="home-benefit-title">How you can benefit from our B2B website</h2>
+            <h2 class="home-benefit-title">How you can benefit from our reseller website</h2>
             <div class="home-benefit-cart-container">
                 <div class="home-benefit-cart-first-row">
                     <div class="home-benefit-cart-first-row-first-col">
-                        <img src="/site/image/Home/fast-shipping.svg"></img>
-                        <img src="/site/image/Home/efficient-order-management.svg"></img>
+                        <img src="/site/image/Home/fast-shipping.svg">
+                        <img src="/site/image/Home/efficient-order-management.svg">
                     </div>
                     <div class="home-benefit-cart-first-row-first-col">
-                        <img src="/site/image/Home/dedicated-commerical-team.svg"></img>
+                        <img src="/site/image/Home/dedicated-commerical-team.svg">
                     </div>
                 </div>
                 <div class="home-benefit-cart-second-row">
-                    <img class="home-benefit-cart-second-row-img" src="/site/image/Home/competitive-pricing.svg"></img>
-                    <img class="home-benefit-cart-second-row-img" src="/site/image/Home/net-payments-terms.svg"></img>
+                    <img class="home-benefit-cart-second-row-img" src="/site/image/Home/competitive-pricing.svg">
+                    <img class="home-benefit-cart-second-row-img" src="/site/image/Home/net-payments-terms.svg">
                 </div>
             </div>
         </div>
@@ -207,7 +207,7 @@
                                 </div>
                                 <div class="collection-detail-info-title collection-product">
                                     <p class="collection-detail-title collection-price-title">Price：</p>
-                                    <div class="collection-price" data-view="open-fit-2+-price"></div>
+                                    <div class="collection-price" data-view="open-fit-22-price"></div>
                                     <input class="black" type="hidden" value="product/1035263"/>
                                     <input class="grey" type="hidden" value="product/1035066"/>
                                 </div>
@@ -253,7 +253,7 @@
                                 </div>
                                 <div class="collection-detail-info-title collection-product">
                                     <p class="collection-detail-title collection-price-title">Price：</p>
-                                    <div class="collection-price" data-view="open-dot-price"></div>
+                                    <div class="collection-price" data-view="open-dots-one-price"></div>
                                     <input class="black" type="hidden" value="product/956627"/>
                                     <input class="beige" type="hidden" value="product/956428"/>
                                     <input class="pink" type="hidden" value="product/1151988"/>
@@ -817,6 +817,20 @@
                 </div>
             </div>
             <script>
+                let productTypes = [
+                    { type: "OpenFit Air", template: "open-fit-air-price" },
+                    { type: "OpenFit 2+", template: "open-fit-22-price" },
+                    { type: "OpenFit 2", template: "open-fit-2-price" },
+                    { type: "OpenFit", template: "open-fit-price" },
+                    { type: "OpenRun Pro 2", template: "open-run-pro2-price" },
+                    { type: "OpenRun Pro", template: "open-run-pro-price" },
+                    { type: "OpenRun", template: "open-run-price" },
+                    { type: "OpenMove", template: "open-move-price" },
+                    { type: "OpenSwim Pro", template: "open-swim-pro-price" },
+                    { type: "OpenSwim", template: "open-swim-price" },
+                    { type: "OpenComm 2", template: "open-comm-2-price" },
+                    { type: "OpenDots", template: "open-dots-one-price" },
+                ];
                 $('.color-option').click(function () {
                     var color = this.className.split(" ")[1];
                     var sku = $(this).attr('data-value');
@@ -841,51 +855,24 @@
                         });
                         if (itemRec.price) {
                             var itemType = "";
-                            if (itemRec.itemname.includes("OpenFit")) {
-                                // OpenFit Air
-                                if (itemRec.itemname.includes("Air")) {
-                                    itemType = "open-fit-air-price";
-                                } else if (itemRec.itemname.includes("2")) {
-                                    // OpenFit 2
-                                    itemType = "open-fit-2-price";
-                                } else {
-                                    // OpenFit
-                                    itemType = "open-fit-price";
+                            for (let rule of productTypes) {
+                                if (itemRec.itemname.includes(rule.type)) {
+                                    if(rule.type=='OpenRun Pro 2'){
+                                        if (itemRec.itemname.includes("2-EK")) {
+                                            // OpenRun Pro 2-EK
+                                            itemType = "open-run-pro2-ek-price";
+                                        }else if (itemRec.itemname.includes("Boston Marathon")) {
+                                            // OpenRun Pro 2 Boston Marathon
+                                            itemType = "open-run-pro2-bm-price";
+                                        }else{
+                                            // OpenRun Pro 2
+                                            itemType = rule.template;
+                                        }
+                                    }else{
+                                        itemType = rule.template;
+                                    }
+                                    break;
                                 }
-                            } else if (itemRec.itemname.includes("OpenRun Pro")) {
-                                // OpenRun Pro 2-EK
-                                if (itemRec.itemname.includes("2-EK")) {
-                                    itemType = "open-run-pro2-ek-price";
-                                } else if (itemRec.itemname.includes("Boston Marathon")) {
-                                    // OpenRun Pro 2 Boston Marathon
-                                    itemType = "open-run-pro2-bm-price";
-                                } else if (itemRec.itemname.includes("2")) {
-                                    // OpenRun Pro 2
-                                    itemType = "open-run-pro2-price";
-                                } else {
-                                    // OpenRun Pro
-                                    itemType = "open-run-pro-price";
-                                }
-                            } else if (itemRec.itemname.includes("OpenRun") && !itemRec.itemname.includes("Pro")) {
-                                // OpenRun
-                                itemType = "open-run-price";
-                            } else if (itemRec.itemname.includes("OpenMove")) {
-                                // OpenMove
-                                itemType = "open-move-price";
-                            } else if (itemRec.itemname.includes("OpenSwim")) {
-                                // OpenSwim Pro
-                                if (itemRec.itemname.includes("Pro")) {
-                                    itemType = "open-swim-pro-price";
-                                } else {
-                                    // OpenSwim
-                                    itemType = "open-swim-price";
-                                }
-                            } else if (itemRec.itemname.includes("OpenComm")) {
-                                // OpenComm 2
-                                itemType = "open-comm-2-price";
-                            } else if(itemRec.itemname.includes("OpenDots")){
-                               //    OpenDots
-                                itemType = "open-dot-price";
                             }
 
                             $('[data-view=' + itemType + ']').text(itemRec.price)
@@ -920,51 +907,24 @@
                         });
                         if (itemRec.price) {
                             var itemType = "";
-                            if (itemRec.itemname.includes("OpenFit")) {
-                                // OpenFit Air
-                                if (itemRec.itemname.includes("Air")) {
-                                    itemType = "open-fit-air-price";
-                                } else if (itemRec.itemname.includes("2")) {
-                                    // OpenFit 2
-                                    itemType = "open-fit-2-price";
-                                } else {
-                                    // OpenFit
-                                    itemType = "open-fit-price";
+                            for (let rule of productTypes) {
+                                if (itemRec.itemname.includes(rule.type)) {
+                                    if(rule.type=='OpenRun Pro 2'){
+                                        if (itemRec.itemname.includes("2-EK")) {
+                                            // OpenRun Pro 2-EK
+                                            itemType = "open-run-pro2-ek-price";
+                                        }else if (itemRec.itemname.includes("Boston Marathon")) {
+                                            // OpenRun Pro 2 Boston Marathon
+                                            itemType = "open-run-pro2-bm-price";
+                                        }else{
+                                            // OpenRun Pro 2
+                                            itemType = rule.template;
+                                        }
+                                    }else{
+                                        itemType = rule.template;
+                                    }
+                                    break;
                                 }
-                            } else if (itemRec.itemname.includes("OpenRun Pro")) {
-                                // OpenRun Pro 2-EK
-                                if (itemRec.itemname.includes("2-EK")) {
-                                    itemType = "open-run-pro2-ek-price";
-                                } else if (itemRec.itemname.includes("Boston Marathon")) {
-                                    // OpenRun Pro 2 Boston Marathon
-                                    itemType = "open-run-pro2-bm-price";
-                                } else if (itemRec.itemname.includes("2")) {
-                                    // OpenRun Pro 2
-                                    itemType = "open-run-pro2-price";
-                                } else {
-                                    // OpenRun Pro
-                                    itemType = "open-run-pro-price";
-                                }
-                            } else if (itemRec.itemname.includes("OpenRun") && !itemRec.itemname.includes("Pro")) {
-                                // OpenRun
-                                itemType = "open-run-price";
-                            } else if (itemRec.itemname.includes("OpenMove")) {
-                                // OpenMove
-                                itemType = "open-move-price";
-                            } else if (itemRec.itemname.includes("OpenSwim")) {
-                                // OpenSwim Pro
-                                if (itemRec.itemname.includes("Pro")) {
-                                    itemType = "open-swim-pro-price";
-                                } else {
-                                    // OpenSwim
-                                    itemType = "open-swim-price";
-                                }
-                            } else if (itemRec.itemname.includes("OpenComm")) {
-                                // OpenComm 2
-                                itemType = "open-comm-2-price";
-                            }else if(itemRec.itemname.includes("OpenDots")){
-                                //    OpenDots
-                                itemType = "open-dot-price";
                             }
 
                             $('[data-view=' + itemType + ']').text(itemRec.price)
@@ -1013,7 +973,6 @@
                     updateButtons();
 
                     $arrowPrev.add($arrowNext).click(function () {
-                        console.log('click')
                         if ($(this).hasClass('disabled')) return;
 
                         if ($(this).hasClass('prev')) {

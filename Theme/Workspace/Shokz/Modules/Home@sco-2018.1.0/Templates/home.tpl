@@ -49,7 +49,7 @@
 
                                         <div class="home-slide-caption-container {{#if isAbsoluteUrl}}carousel-center-box{{/if}} {{#if class}}{{class}}{{else}}carousel-center{{/if}} {{#if text}}caption-display{{/if}} {{#if title}}caption-display{{/if}} {{#if linktext}}caption-display{{/if}}">
                                             <div class="home-slide-caption {{captionTextAlign}}">
-                                                <div class="home-slide-caption-body" {{#ifEquals title 'OPENDOTS ONE'}} style="margin-top: calc(190 / 1700 * 100vw);margin-left: calc(35 / 1700 * 100vw);text-align: center;display: inline-block;width: auto !important;"{{/ifEquals}}>
+                                                <div class="home-slide-caption-body">
                                                     <div class="custom-menu-color" style="color:{{captionColor}};display: none;">{{title}}</div>
                                                         <!--                                                {{#if title}}<h1 class="home-info-title"-->
                                                         <!--                                                                 style="color:{{captionColor}}">{{title}}</h1>{{/if}}-->
@@ -75,46 +75,25 @@
                                                             Water to Land, the Music Never Ends.</h3>
                                                     {{/ifEquals}}
 
-                                                    {{#ifEquals title 'OPENRUN PRO2 BM'}}
-                                                        <h3 class="home-info-subtext"
-                                                            style="color:#C9C9C9;font-size:20px;line-height:30px;">
-                                                            Redefining the Sound of Sports.</h3>
-                                                        <h2 class="home-info-title" style="color:{{captionColor}};margin-bottom: 0">OPEN<span style="font-weight:700">RUN PRO </span>2</h2>
-                                                        {{#if text}}<h2 class="home-info-text"
-                                                                        style="color:{{captionColor}};margin-bottom:3.646vw;">{{text}}</h2>{{/if}}
-                                                    {{/ifEquals}}
-
-                                                    {{#ifEquals title 'ELIUD KIPCHOGE'}}
-                                                        <h2 class="home-info-title" style="color:{{captionColor}};font-size: 1.25vw !important;letter-spacing: -0.04em;">BE <span style="font-weight: 700;">OPEN</span> to <span style="font-family:'Titillium Web';font-weight:700;background: linear-gradient(to right, #E9521B, #FBB728);-webkit-background-clip: text;-webkit-text-fill-color: transparent;font-style: italic;padding-right: 5px">GREATNESS</span></h2>
-                                                        <h3 style="letter-spacing: -0.03em;font-size: 1.771vw;background: linear-gradient(to right, #FFFFFF, #D0C3C3);-webkit-background-clip: text;-webkit-text-fill-color: transparent;margin-bottom:3.646vw;">
-                                                            Eliud Kipchoge x Shokz <br/>OpenRun Pro 2 Co-Branded Edition.
-                                                        </h3>
-                                                    {{/ifEquals}}
-
                                                     {{#ifEquals title 'OPENRUN PRO2'}}
                                                         {{#if text}}<h2 class="home-info-text"
                                                                         style="color:{{captionColor}};margin-bottom: 3px;">{{text}}</h2>{{/if}}
                                                         <h2 class="home-info-title" style="color:{{captionColor}};margin-bottom: 2.604vw;">OPEN<span style="font-weight:700">RUN PRO </span>2 <div style="text-transform: uppercase;display: inline-block;font-size: 16px;padding: 3px 11px;border-radius: 34px;vertical-align: middle;margin-left: -5px;background-color: rgba(10, 11, 16);opacity: 0.6">Silver</div></h2>
                                                     {{/ifEquals}}
 
-                                                    {{#ifEquals title 'Get Up to $40 off'}}
-                                                        <p style="background: linear-gradient(to right, #D99B82, #BE8068,#9E6049);-webkit-background-clip: text;-webkit-text-fill-color: transparent;font-size: 1.02vw;line-height: 1vw;margin-bottom:0.7vw">{{text}}</p>
-                                                        <h2 class="home-info-title" style="display: inline-block;border-bottom: 2px solid #D8BEAA;padding-bottom: calc(20px + 0.5vw);line-height: 2.5vw;">
-                                                            <span style="color:#4A1500;font-weight: 400;font-size: 2.5vw !important;letter-spacing: -0.02em;">
-                                                                Get Up to <span style="color:#CB500C">$40 off</span>
-                                                                <br/>savings with Shokz
-                                                            </span>
-                                                        </h2>
-
-                                                        <div style="margin-top: 2vw;margin-bottom: 3.65vw;">
-                                                            <p style="color: rgba(85, 24, 0, 0.8);font-size: 0.83vw;"><span style="font-weight: 600">Discounts for you: </span>April 16-30</p>
-                                                            <p style="color: rgba(85, 24, 0, 0.8);font-size: 0.83vw;"><span style="font-weight: 600">Discounts for your customer: </span>May 5–11 & May 19–26</p>
-                                                        </div>
+                                                    {{#ifEquals title 'OPENDOTS ONE PINK'}}
+                                                        <h2 class="home-info-text" style="color:#F0ECED;font-size: clamp(14px, 1.093vw, 21px);font-weight: 500;letter-spacing: -0.2px;">New Color Drop - OpenDots ONE in Pink</h2>
+                                                        <h2 class="home-info-title" style="background: linear-gradient(90deg, #FFFFFF 0%, #CAA4A7 100%);-webkit-background-clip: text; -webkit-text-fill-color: transparent;display: inline-block;font-size: clamp(20px, 2.083vw, 40px);font-weight: 500;letter-spacing: -1.2px;">Fresh Color, Proven Tech.</h2>
+                                                        <p style="color: #F0ECED;font-size: clamp(14px, 1.042vw, 20px);letter-spacing: 0.3px;margin-bottom: clamp(20px, 2.08vw, 40px);margin-top: clamp(6px, 0.52vw, 10px);">Available September 4</p>
                                                     {{/ifEquals}}
 
-                                                    {{#ifEquals title 'OPENDOTS ONE'}}
-                                                        <h2 class="home-info-text" style="color:{{captionColor}};font-size: calc(22 / 1700 * 100vw) !important;font-weight: 500">OPEN<span style="font-weight:700">DOTS </span>ONE</h2>
-                                                        {{#if text}}<h2 class="home-info-title" style="margin-bottom: 3px;background: linear-gradient(90deg, #000000 0%, #D1C2C3 100%);-webkit-background-clip: text; -webkit-text-fill-color: transparent;display: inline-block;margin-bottom: 3.5vw;font-size: calc(40 / 1700 * 100vw) !important;font-weight: 500;">{{text}}</h2>{{/if}}
+                                                    {{#ifEquals title 'OPENFIT 2+'}}
+                                                        <h3 style="font-size: 20px;color: #737373;font-weight: 400;line-height: 1.2;">Pre-order on Sept.2</h3>
+                                                        <h2 class="home-info-title" style="font-weight: 500;text-transform: uppercase;color: #000">Open<span style="font-weight: 600">Fit</span> 2+</h2>
+                                                        <p style="font-size: 20px;font-weight: 400;line-height: 1.2;color: #404040;padding-bottom: 16px;">Equipped with Dolby Audio<br/>
+                                                            and Qi Wireless Charging Case for <br/>
+                                                            Superior Convenience.</p>
+                                                    <p style="font-size: 12px;color: #404040;padding-bottom: 32px;">*The wireless charging pad is not included in the box</p>
                                                     {{/ifEquals}}
 
                                                     {{#if linktext}}
@@ -164,20 +143,20 @@
 
     <div class="home-benefit-container">
         <div class="home-benefit-body">
-            <h2 class="home-benefit-title">How you can benefit from our B2B website</h2>
+            <h2 class="home-benefit-title">How you can benefit from our reseller website</h2>
             <div class="home-benefit-cart-container">
                 <div class="home-benefit-cart-first-row">
                     <div class="home-benefit-cart-first-row-first-col">
-                        <img src="/site/image/Home/fast-shipping.svg"></img>
-                        <img src="/site/image/Home/efficient-order-management.svg"></img>
+                        <img src="/site/image/Home/fast-shipping.svg">
+                        <img src="/site/image/Home/efficient-order-management.svg">
                     </div>
                     <div class="home-benefit-cart-first-row-first-col">
-                        <img src="/site/image/Home/dedicated-commerical-team.svg"></img>
+                        <img src="/site/image/Home/dedicated-commerical-team.svg">
                     </div>
                 </div>
                 <div class="home-benefit-cart-second-row">
-                    <img class="home-benefit-cart-second-row-img" src="/site/image/Home/competitive-pricing.svg"></img>
-                    <img class="home-benefit-cart-second-row-img" src="/site/image/Home/net-payments-terms.svg"></img>
+                    <img class="home-benefit-cart-second-row-img" src="/site/image/Home/competitive-pricing.svg">
+                    <img class="home-benefit-cart-second-row-img" src="/site/image/Home/net-payments-terms.svg">
                 </div>
             </div>
         </div>
@@ -201,14 +180,55 @@
                     </div>
                 </div>
                 <div class="collections-container">
-                    <!-- OpenDots-->
+                    <!-- OpenFit 2+-->
                     <div class="collection">
                         <div class="collection-detail">
                             <div class="collection-detail-image">
                                 <img class="collection-image black"
+                                     src="/site/image/T921-ST-BK-US_01.png"/>
+                                <img class="collection-image grey" style="display: none;"
+                                     src="/site/image/T921-ST-GY-US_01.png"/>
+                            </div>
+                            <div class="collection-detail-info">
+                                <div class="collection-detail-info-title">
+                                    <p class="collection-detail-title">Color：</p>
+                                    <div class="color-option-container">
+                                        <div class="color-option black" style="background-color: black;"
+                                             data-value="T921-ST-BK-US">
+                                            <img class="checkmark active"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option grey" style="background-color: #C8C8C8;"
+                                             data-value="T921-ST-GY-US">
+                                            <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collection-detail-info-title collection-product">
+                                    <p class="collection-detail-title collection-price-title">Price：</p>
+                                    <div class="collection-price" data-view="open-fit-22-price"></div>
+                                    <input class="black" type="hidden" value="product/1035263"/>
+                                    <input class="grey" type="hidden" value="product/1035066"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-info">
+                            <p class="primary-text">OPEN<span style="font-weight: 700">FIT</span> 2+</p>
+                            <div class="collection-link-btn">SHOP NOW ></div>
+                        </div>
+                        <p class="collection-tag">New</p>
+                    </div>
+                    <!-- OpenDots One-->
+                    <div class="collection">
+                        <div class="collection-detail">
+                            <div class="collection-detail-image">
+                                <img class="collection-image black" style="display: none;"
                                      src="/site/image/E310-ST-BK-US_01.png"/>
                                 <img class="collection-image beige" style="display: none;"
                                      src="/site/image/E310-ST-GY-US_01.png"/>
+                                <img class="collection-image pink"
+                                     src="/site/image/E310-ST-PK-US_01.png"/>
                             </div>
                             <div class="collection-detail-info">
                                 <div class="collection-detail-info-title">
@@ -216,12 +236,17 @@
                                     <div class="color-option-container">
                                         <div class="color-option black" style="background-color: black;"
                                              data-value="E310-ST-BK-US">
-                                            <img class="checkmark active"
+                                            <img class="checkmark"
                                                  src="/scs/img/check-circle.png"/>
                                         </div>
                                         <div class="color-option beige" style="background-color: #F0ECE1;"
                                              data-value="E310-ST-GY-US">
                                             <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option pink" style="background-color: #E5C3C4;"
+                                             data-value="E310-ST-PK-US">
+                                            <img class="checkmark active"
                                                  src="/scs/img/check-circle.png"/>
                                         </div>
                                     </div>
@@ -231,6 +256,7 @@
                                     <div class="collection-price" data-view="open-dots-one-price"></div>
                                     <input class="black" type="hidden" value="product/956627"/>
                                     <input class="beige" type="hidden" value="product/956428"/>
+                                    <input class="pink" type="hidden" value="product/1151988"/>
                                 </div>
                             </div>
                         </div>
@@ -429,7 +455,7 @@
                         <div class="collection-detail">
                             <div class="collection-detail-image">
                                 <img class="collection-image standard coral" src="/site/image/S820-ST-EK-US-326_01.png"/>
-                            </div>
+                           </div>
                             <div class="collection-detail-info">
                                 <div class="collection-detail-info-title">
                                     <p class="collection-detail-title">Color：</p>
@@ -791,6 +817,20 @@
                 </div>
             </div>
             <script>
+                let productTypes = [
+                    { type: "OpenFit Air", template: "open-fit-air-price" },
+                    { type: "OpenFit 2+", template: "open-fit-22-price" },
+                    { type: "OpenFit 2", template: "open-fit-2-price" },
+                    { type: "OpenFit", template: "open-fit-price" },
+                    { type: "OpenRun Pro 2", template: "open-run-pro2-price" },
+                    { type: "OpenRun Pro", template: "open-run-pro-price" },
+                    { type: "OpenRun", template: "open-run-price" },
+                    { type: "OpenMove", template: "open-move-price" },
+                    { type: "OpenSwim Pro", template: "open-swim-pro-price" },
+                    { type: "OpenSwim", template: "open-swim-price" },
+                    { type: "OpenComm 2", template: "open-comm-2-price" },
+                    { type: "OpenDots", template: "open-dots-one-price" },
+                ];
                 $('.color-option').click(function () {
                     var color = this.className.split(" ")[1];
                     var sku = $(this).attr('data-value');
@@ -815,51 +855,24 @@
                         });
                         if (itemRec.price) {
                             var itemType = "";
-                            if (itemRec.itemname.includes("OpenFit")) {
-                                // OpenFit Air
-                                if (itemRec.itemname.includes("Air")) {
-                                    itemType = "open-fit-air-price";
-                                } else if (itemRec.itemname.includes("2")) {
-                                    // OpenFit 2
-                                    itemType = "open-fit-2-price";
-                                } else {
-                                    // OpenFit
-                                    itemType = "open-fit-price";
+                            for (let rule of productTypes) {
+                                if (itemRec.itemname.includes(rule.type)) {
+                                    if(rule.type=='OpenRun Pro 2'){
+                                        if (itemRec.itemname.includes("2-EK")) {
+                                            // OpenRun Pro 2-EK
+                                            itemType = "open-run-pro2-ek-price";
+                                        }else if (itemRec.itemname.includes("Boston Marathon")) {
+                                            // OpenRun Pro 2 Boston Marathon
+                                            itemType = "open-run-pro2-bm-price";
+                                        }else{
+                                            // OpenRun Pro 2
+                                            itemType = rule.template;
+                                        }
+                                    }else{
+                                        itemType = rule.template;
+                                    }
+                                    break;
                                 }
-                            } else if (itemRec.itemname.includes("OpenRun Pro")) {
-                                // OpenRun Pro 2-EK
-                                if (itemRec.itemname.includes("2-EK")) {
-                                    itemType = "open-run-pro2-ek-price";
-                                } else if (itemRec.itemname.includes("Boston Marathon")) {
-                                    // OpenRun Pro 2 Boston Marathon
-                                    itemType = "open-run-pro2-bm-price";
-                                } else if (itemRec.itemname.includes("2")) {
-                                    // OpenRun Pro 2
-                                    itemType = "open-run-pro2-price";
-                                } else {
-                                    // OpenRun Pro
-                                    itemType = "open-run-pro-price";
-                                }
-                            } else if (itemRec.itemname.includes("OpenRun") && !itemRec.itemname.includes("Pro")) {
-                                // OpenRun
-                                itemType = "open-run-price";
-                            } else if (itemRec.itemname.includes("OpenMove")) {
-                                // OpenMove
-                                itemType = "open-move-price";
-                            } else if (itemRec.itemname.includes("OpenSwim")) {
-                                // OpenSwim Pro
-                                if (itemRec.itemname.includes("Pro")) {
-                                    itemType = "open-swim-pro-price";
-                                } else {
-                                    // OpenSwim
-                                    itemType = "open-swim-price";
-                                }
-                            } else if (itemRec.itemname.includes("OpenComm")) {
-                                // OpenComm 2
-                                itemType = "open-comm-2-price";
-                            } else if(itemRec.itemname.includes("OpenDots")){
-                                //    OpenDots
-                                itemType = "open-dots-one-price";
                             }
 
                             $('[data-view=' + itemType + ']').text(itemRec.price)
@@ -894,51 +907,24 @@
                         });
                         if (itemRec.price) {
                             var itemType = "";
-                            if (itemRec.itemname.includes("OpenFit")) {
-                                // OpenFit Air
-                                if (itemRec.itemname.includes("Air")) {
-                                    itemType = "open-fit-air-price";
-                                } else if (itemRec.itemname.includes("2")) {
-                                    // OpenFit 2
-                                    itemType = "open-fit-2-price";
-                                } else {
-                                    // OpenFit
-                                    itemType = "open-fit-price";
+                            for (let rule of productTypes) {
+                                if (itemRec.itemname.includes(rule.type)) {
+                                    if(rule.type=='OpenRun Pro 2'){
+                                        if (itemRec.itemname.includes("2-EK")) {
+                                            // OpenRun Pro 2-EK
+                                            itemType = "open-run-pro2-ek-price";
+                                        }else if (itemRec.itemname.includes("Boston Marathon")) {
+                                            // OpenRun Pro 2 Boston Marathon
+                                            itemType = "open-run-pro2-bm-price";
+                                        }else{
+                                            // OpenRun Pro 2
+                                            itemType = rule.template;
+                                        }
+                                    }else{
+                                        itemType = rule.template;
+                                    }
+                                    break;
                                 }
-                            } else if (itemRec.itemname.includes("OpenRun Pro")) {
-                                // OpenRun Pro 2-EK
-                                if (itemRec.itemname.includes("2-EK")) {
-                                    itemType = "open-run-pro2-ek-price";
-                                } else if (itemRec.itemname.includes("Boston Marathon")) {
-                                    // OpenRun Pro 2 Boston Marathon
-                                    itemType = "open-run-pro2-bm-price";
-                                } else if (itemRec.itemname.includes("2")) {
-                                    // OpenRun Pro 2
-                                    itemType = "open-run-pro2-price";
-                                } else {
-                                    // OpenRun Pro
-                                    itemType = "open-run-pro-price";
-                                }
-                            } else if (itemRec.itemname.includes("OpenRun") && !itemRec.itemname.includes("Pro")) {
-                                // OpenRun
-                                itemType = "open-run-price";
-                            } else if (itemRec.itemname.includes("OpenMove")) {
-                                // OpenMove
-                                itemType = "open-move-price";
-                            } else if (itemRec.itemname.includes("OpenSwim")) {
-                                // OpenSwim Pro
-                                if (itemRec.itemname.includes("Pro")) {
-                                    itemType = "open-swim-pro-price";
-                                } else {
-                                    // OpenSwim
-                                    itemType = "open-swim-price";
-                                }
-                            } else if (itemRec.itemname.includes("OpenComm")) {
-                                // OpenComm 2
-                                itemType = "open-comm-2-price";
-                            }else if(itemRec.itemname.includes("OpenDots")){
-                                //    OpenDots
-                                itemType = "open-dots-one-price";
                             }
 
                             $('[data-view=' + itemType + ']').text(itemRec.price)
@@ -987,7 +973,6 @@
                     updateButtons();
 
                     $arrowPrev.add($arrowNext).click(function () {
-                        console.log('click')
                         if ($(this).hasClass('disabled')) return;
 
                         if ($(this).hasClass('prev')) {

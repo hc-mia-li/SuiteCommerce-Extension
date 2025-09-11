@@ -52,6 +52,7 @@
             font-weight: 600;
             color: #050505;
             margin-bottom: 30px;
+            line-height: 1.1;
         }
         .mkt_card-button{
             @extend .mkt_button;
@@ -65,6 +66,7 @@
         }
     }
 }
+
 .mkt_row-second{
     @extend .radius4;
     @extend .mkt_flex;
@@ -84,6 +86,7 @@
             font-weight: 500;
             margin-bottom: 20px;
             white-space: nowrap;
+            line-height: 1.1;
         }
         .mkt_text-detail{
             color: #050505;
@@ -106,5 +109,33 @@
     }
     .mkt_content-right{
         @extend .radius4;
+    }
+}
+@media (max-width: 768px) {
+    .mkt_row-first {
+        grid-template-columns: 1fr;
+        padding-left: 15px;
+        padding-right: 15px;
+        .mkt_card-body{
+          width: 50%;
+          margin-left: 0;
+          padding-left: 12px;
+            .mkt_card-title{
+                font-size: 20px;
+            }
+        }
+    }
+    .mkt_row-second{
+        padding-left: 15px;
+        padding-right: 15px;
+        flex-direction: column-reverse;
+        gap: 0;
+        .mkt_content-left{
+            width: 100%;
+            padding: 16px 10px;
+            .mkt_text-title{
+                white-space: normal;
+            }
+        }
     }
 }

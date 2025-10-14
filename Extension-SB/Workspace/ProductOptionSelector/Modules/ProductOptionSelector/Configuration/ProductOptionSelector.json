@@ -11,7 +11,7 @@
             "subtab": "optionSelector",
             "type": "array",
             "title": "item options",
-            "item": {
+            "items": {
                 "type": "object",
                 "properties": {
                     "fieldId": {
@@ -28,28 +28,6 @@
                     "isColor": {
                         "type": "boolean",
                         "title": "Is Color Option"
-                    }
-                }
-            }
-        },
-        "optionSelector.colorPalette": {
-            "group": "extensions",
-            "subtab": "optionSelector",
-            "type": "array",
-            "title": "Color Palette",
-            "item": {
-                "type": "object",
-                "properties": {
-                    "colorName": {
-                        "type": "string",
-                        "title": "Color name",
-                        "description": "The color name as it is in the netsuite list used in the declaration.",
-                        "mandatory": true
-                    },
-                    "colorValue": {
-                        "type": "string",
-                        "title": "Color value",
-                        "description": "The color CSS value. "
                     }
                 }
             }

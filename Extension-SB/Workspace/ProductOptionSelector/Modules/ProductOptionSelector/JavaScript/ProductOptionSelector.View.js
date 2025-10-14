@@ -3,7 +3,6 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 ,	[
 	'hp_productoptionselector_productoptionselector.tpl'
 	, 'HP.ProductOptionSelector.ProductOptionSelector.Model'
-	, 'ProductDetails.Full.View'
 	, 'Backbone'
 	,'underscore'
 	,'jQuery'
@@ -11,7 +10,6 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 , function (
 	hp_productoptionselector_productoptionselector_tpl
 	,	ProductOptionSelectorModel
-	,   ProductDetailsFullView
 	,	Backbone
 	,   _
 	,   jQuery
@@ -25,21 +23,10 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 		template: hp_productoptionselector_productoptionselector_tpl
 
 	,	initialize: function (options) {
+			this.isLoading = true;
 			this.items = []; // 所有同类商品
 			this.model = options.model;
-			// this.itemOptions = options.application.getConfig('optionSelector.itemOptions');
-			this.itemOptions = [
-				{
-					fieldId:"custitem11",
-					label:"size",
-					isColor:false
-				},
-				{
-					fieldId:"custitem12",
-					label:"color",
-					isColor:true
-				}
-			];
+			this.itemOptions = options.application.getConfig().optionSelector.itemOptions;
 			this.colorMap = this.getColorPalette();
 			_.each(this.itemOptions, function (opt) {
 				opt.selectOption = this.model.get('item').get(opt.fieldId) || null;
@@ -68,12 +55,16 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 				this.buildOptions();
 				this.setOptionMap(this.items);
 				//根据当前 item 设置 disabled 状态
-				var firstOpt = _.find(this.itemOptions, function(opt){
+				// 找出所有已选的选项
+				var selectedOptions = _.filter(this.itemOptions, function(opt){
 					return !!opt.selectOption;
 				});
-				if(firstOpt){
-					this.updateAvailableOptions(firstOpt.fieldId, firstOpt.selectOption);
-				}
+
+                // 对每个已选项都更新一次可用性
+				_.each(selectedOptions, function(opt){
+					this.updateAvailableOptions(opt.fieldId, opt.selectOption);
+				}, this);
+				this.isLoading = false;
 				this.render();
 			}, this));
 		},
@@ -101,49 +92,51 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 			});
 		},
 		getColorPalette:function(){
-			// var palette = this.options.application.getConfig('optionSelector.colorPalette');
-			let palette = [
-				{
-					colorName:"black",
-					colorValue:"black"
-			    },{
-				    colorName:"beige",
-					colorValue:"#E5DED5"
-				}
-			]
+			var palette = this.options.application.getConfig().optionSelector.colorPalette;
 			return _.object(_.pluck(palette,'colorName'), _.pluck(palette,'colorValue'));
 		},
 		changeOption: function (e) {
 			e.stopPropagation();
 			var value = $(e.currentTarget).data('value');
 			var fieldId = $(e.currentTarget).data('field');
+			//如果当前选项不可用，则不做修改
+			if ($(e.currentTarget).hasClass('disabled')) {
+				return;
+			}
 			this.updateSelectedOption(fieldId, value);
 			this.updateAvailableOptions(fieldId, value);
 			this.updateCurrentItem();
 			this.render();
 		},
 		updateSelectedOption: function (fieldId, value) {
+			//更新当前选项
 			var opt = _.find(this.itemOptions, { fieldId: fieldId });
 			if(opt) opt.selectOption = value;
 		},
-		updateAvailableOptions: function (fieldId, value) {
-			var tempItems = _.filter(this.items, function(item) {
-				return item[fieldId] === value;
-			});
-
+		updateAvailableOptions: function () {
+          // 遍历所有选项，更新 disabled 状态
 			_.each(this.itemOptions, function (opt) {
-				if(opt.fieldId === fieldId) {
-					_.each(opt.options, function (o) { o.disabled = false; });
-				} else {
-					var uniqueValues = _.chain(tempItems).pluck(opt.fieldId).uniq().compact().value();
-					_.each(opt.options, function (o) {
-						o.disabled = !_.contains(uniqueValues, o.label);
+				// 对每个选项，找出在当前已选组合下可用的值
+				var tempItems = _.filter(this.items, function (item) {
+					// item 必须满足所有已选选项（除了当前 opt）
+					return _.every(this.itemOptions, function(o){
+						if(!o.selectOption) return true; // 未选的忽略
+						if(o.fieldId === opt.fieldId) return true; // 当前选项先忽略
+						return item[o.fieldId] === o.selectOption;
 					});
-					if(!_.contains(uniqueValues, opt.selectOption)) {
-						opt.selectOption = uniqueValues[0] || null;
-					}
-				}
-			});
+				}, this);
+
+				var uniqueValues = _.chain(tempItems).pluck(opt.fieldId).uniq().compact().value();
+				_.each(opt.options, function(o){
+					o.disabled = !_.contains(uniqueValues, o.label);
+				});
+
+				// // 如果当前选中值不再可用 清空或保持 null
+				// if(opt.selectOption && !_.contains(uniqueValues, opt.selectOption)){
+				// 	opt.selectOption = null;
+				// }
+
+			}, this);
 		},
 		updateCurrentItem: function () {
 			var key = _.map(this.itemOptions, function (opt) {
@@ -158,7 +151,8 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 		},
 		changeItemInfo:function(){
 			var item = this.model.get('item');
-			$('[itemprop="name"]').text(item.get('storedisplayname2'));
+			$('.product-details-full-content-header-title').text(item.get('storedisplayname2'));
+			$('.product-details-quickview-item-name').text(item.get('storedisplayname2'));
 			$('.product-details-full-content-sku-upc .product-line-sku-value').eq(0).text('SKU: ' + item.get('itemid'));
 			$('.product-details-full-content-sku-upc .product-line-sku-value').eq(1).text('UPC: ' + item.get('custitem_upc'));
 		}
@@ -175,7 +169,8 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 			//@class HP.ProductOptionSelector.ProductOptionSelector.View.Context
 			return {
 				itemOptions: this.itemOptions,
-				availableOptions: this.availableOptions
+				availableOptions: this.availableOptions,
+				isLoading: this.isLoading
 			};
 		}
 	});

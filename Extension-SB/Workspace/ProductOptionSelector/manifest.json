@@ -2,39 +2,25 @@
     "name": "ProductOptionSelector",
     "fantasyName": "ProductOptionSelector",
     "vendor": "HP",
-    "version": "1.0.0",
     "type": "extension",
-    "target": "SCS,SCA",
+    "target": "SCA,SCS",
     "target_version": {
-        "SCS": ">=24.2.40",
-        "SCA": ">=24.2.40"
+        "SCA": ">=23.2.3",
+        "SCS": ">=23.2.3"
     },
+    "version": "1.0.1",
     "description": "Switches products on the PDP based on selected options without relying on matrix items",
-    "skins": [],
     "assets": {
         "img": {
             "files": []
         },
         "fonts": {
             "files": []
-        },
-        "services": {
-            "files": [
-                "services/ProductOptionSelector.Service.ss"
-            ]
         }
     },
     "configuration": {
         "files": [
             "Modules/ProductOptionSelector/Configuration/ProductOptionSelector.json"
-        ]
-    },
-    "sass": {
-        "entry_points": {
-            "shopping": "Modules/ProductOptionSelector/Sass/_productoptionselector-productoptionselector.scss"
-        },
-        "files": [
-            "Modules/ProductOptionSelector/Sass/_productoptionselector-productoptionselector.scss"
         ]
     },
     "templates": {
@@ -45,6 +31,14 @@
                 ]
             }
         }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/ProductOptionSelector/Sass/_productoptionselector-productoptionselector.scss"
+        },
+        "files": [
+            "Modules/ProductOptionSelector/Sass/_productoptionselector-productoptionselector.scss"
+        ]
     },
     "javascript": {
         "entry_points": {
@@ -60,14 +54,6 @@
             }
         }
     },
-    "ssp-libraries": {
-        "entry_point": "Modules/ProductOptionSelector/SuiteScript/HP.ProductOptionSelector.ProductOptionSelector.js",
-        "files": [
-            "Modules/ProductOptionSelector/SuiteScript/HP.ProductOptionSelector.ProductOptionSelector.js",
-            "Modules/ProductOptionSelector/SuiteScript/ProductOptionSelector.ServiceController.js"
-        ]
-    },
-    "local_folder": "Workspace\\ProductOptionSelector",
     "suitescript2": {
         "files": []
     }

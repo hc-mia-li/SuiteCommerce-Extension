@@ -46,14 +46,14 @@
                 <div class="pl_table-cell-doc">
                     <div class="pl_table-subrow">
                         <div>Video</div>
-                        <a href="{{video}}" target="_blank" class="pl_table-subrow-download">
+                        <a href="{{video}}" target="_blank" data-category="{{category}}" class="pl_table-subrow-download download-video">
                             <span class="download-link">Document File</span>
                             <img src="{{resizeImage '/site/image/MKT/download.png' 'thumbnail'}}" alt="download Video">
                         </a>
                     </div>
                     <div class="pl_table-subrow">
                         <div>Image</div>
-                        <a href="{{image}}" target="_blank" class="pl_table-subrow-download">
+                        <a href="{{image}}" target="_blank" data-category="{{category}}" class="pl_table-subrow-download download-image">
                             <span class="download-link">Document File</span>
                             <img src="{{resizeImage '/site/image/MKT/download.png' 'thumbnail'}}" alt="download Image">
                         </a>
@@ -63,7 +63,19 @@
         {{/each}}
     </div>
 </section>
+<script>
+    $(document).on('click', '.pl_table-subrow-download', function () {
+        var $btn = $(this);
+        var category = $btn.data('category');
 
+        var isVideo = $btn.hasClass('download-video');
+        var eventName = isVideo ? 'download_video' : 'download_image';
+
+        gtag('event', eventName, {
+            category: category
+        });
+    });
+</script>
 
 <!--
   Available helpers:

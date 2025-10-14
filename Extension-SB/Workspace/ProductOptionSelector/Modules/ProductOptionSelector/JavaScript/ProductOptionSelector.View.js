@@ -3,6 +3,7 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 ,	[
 	'hp_productoptionselector_productoptionselector.tpl'
 	, 'HP.ProductOptionSelector.ProductOptionSelector.Model'
+	, 'Profile.Model'
 	, 'Backbone'
 	,'underscore'
 	,'jQuery'
@@ -10,6 +11,7 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 , function (
 	hp_productoptionselector_productoptionselector_tpl
 	,	ProductOptionSelectorModel
+	,   profileModel
 	,	Backbone
 	,   _
 	,   jQuery
@@ -147,6 +149,11 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 			if(currentItem) {
 				this.model.set('item', currentItem);
 				this.changeItemInfo();
+			}
+			var isLoggedIn = profileModel.getInstance().get('isLoggedIn');
+			if(isLoggedIn=='F'){
+				//如果没有登录，就不显示按钮
+				$('.cart-add-to-cart-button-button').remove();
 			}
 		},
 		changeItemInfo:function(){

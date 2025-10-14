@@ -65,6 +65,10 @@ define(
 							type: 'error',
 							selector: 'Notifications'
 						});
+						window.scrollTo({
+							top: 0,
+							behavior: 'smooth'
+						});
 					}
 					return false;
 				}
@@ -90,6 +94,10 @@ define(
 									message: 'The quantity of headphones in the order should be at least 4.',
 									type: 'error',
 									selector: 'Notifications'
+								});
+								window.scrollTo({
+									top: 0,
+									behavior: 'smooth'
 								});
 							}
 							deferred.reject();

@@ -3,7 +3,6 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 ,	[
 	'hp_productoptionselector_productoptionselector.tpl'
 	, 'HP.ProductOptionSelector.ProductOptionSelector.Model'
-	, 'Profile.Model'
 	, 'Backbone'
 	,'underscore'
 	,'jQuery'
@@ -11,7 +10,6 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 , function (
 	hp_productoptionselector_productoptionselector_tpl
 	,	ProductOptionSelectorModel
-	,   profileModel
 	,	Backbone
 	,   _
 	,   jQuery
@@ -29,7 +27,6 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 			this.items = []; // 所有同类商品
 			this.model = options.model;
 			this.itemOptions = options.application.getConfig().optionSelector.itemOptions;
-			this.colorMap = this.getColorPalette();
 			_.each(this.itemOptions, function (opt) {
 				opt.selectOption = this.model.get('item').get(opt.fieldId) || null;
 			}, this);
@@ -77,7 +74,6 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 				opt.options = _.map(uniqueValues, function(value) {
 					return {
 						label: value,
-						value: opt.isColor ? self.colorMap[value] || value : value,
 						disabled: false
 					};
 				});
@@ -92,10 +88,6 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 				}).join('|');
 				self.optionMap[key] = item;
 			});
-		},
-		getColorPalette:function(){
-			var palette = this.options.application.getConfig().optionSelector.colorPalette;
-			return _.object(_.pluck(palette,'colorName'), _.pluck(palette,'colorValue'));
 		},
 		changeOption: function (e) {
 			e.stopPropagation();
@@ -149,11 +141,6 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 			if(currentItem) {
 				this.model.set('item', currentItem);
 				this.changeItemInfo();
-			}
-			var isLoggedIn = profileModel.getInstance().get('isLoggedIn');
-			if(isLoggedIn=='F'){
-				//如果没有登录，就不显示按钮
-				$('.cart-add-to-cart-button-button').remove();
 			}
 		},
 		changeItemInfo:function(){

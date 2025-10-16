@@ -5,12 +5,16 @@ define(
 		'HP.ProductOptionSelector.ProductOptionSelector.View',
 		'ProductDetails.Full.View',
 		'ProductDetails.QuickView.View',
+		'Cart.AddToCart.Button.View',
+		'Profile.Model',
 		'underscore'
 	]
 ,   function (
 		ProductOptionSelectorView,
 		ProductDetailsFullView,
 		ProductDetailsQuickViewView,
+		CartAddToCartButtonView,
+		ProfileModel,
 		_
 	)
 {
@@ -29,4 +33,15 @@ define(
 			application: this.application
 		});
 	};
+
+	//没有登录时，不显示加入购物车按钮
+	_.extend(CartAddToCartButtonView.prototype, {
+		getContext: function () {
+			var isLoggedIn = ProfileModel.getInstance().get('isLoggedIn');
+			return {
+				isCurrentItemPurchasable: isLoggedIn=='F'? false : this.model.getItem().get('_isPurchasable'),
+				isUpdate: !this.model.isNew() && this.model.get('source') === 'cart'
+			};
+		}
+	})
 });

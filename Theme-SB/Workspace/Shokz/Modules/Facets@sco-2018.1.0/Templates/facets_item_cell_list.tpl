@@ -41,6 +41,9 @@
 		</div>
 
 		<div data-view="Cart.QuickAddToCart"></div>
+        <div data-view="StockDescription"></div>
+    </div>
+</div>
 		{{!----
 		{{#if showRating}}
 		{{!----
@@ -62,8 +65,8 @@
 
 
 {{!----
-Use the following context variables when customizing this template: 
-	
+Use the following context variables when customizing this template:
+
 	itemId (Number)
 	name (String)
 	url (String)

@@ -28,6 +28,7 @@
         <div class="facets-item-cell-grid-stock">
             <div data-view="ItemViews.Stock" class="facets-item-cell-grid-stock-message"></div>
         </div>
+        <div data-view="StockDescription"></div>
     </div>
 </div>
 		{{!----

@@ -27,8 +27,11 @@
 		<div class="facets-item-cell-table-price">
 			<div data-view="ItemViews.Price"></div>
 		</div>
-		
+
         <div data-view="Cart.QuickAddToCart"></div>
+        <div data-view="StockDescription"></div>
+    </div>
+</div>
 		{{!----
 		{{#if showRating}}
 		{{!----

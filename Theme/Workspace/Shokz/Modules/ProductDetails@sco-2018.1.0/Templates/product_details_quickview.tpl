@@ -52,10 +52,10 @@
             class="product-details-quickview-product-options-container"
           ></section>
 
-          <script>
-            if(!($('.stock-info').data('stock-status'))) {
-            $('.cart-add-to-cart-button-button').prop('disabled',true); }
-          </script>
+<!--          <script>-->
+<!--            if(!($('.stock-info').data('stock-status'))) {-->
+<!--            $('.cart-add-to-cart-button-button').prop('disabled',true); }-->
+<!--          </script>-->
           {{#if isPriceEnabled}}
             <div
               style="display: flex; flex-wrap:wrap; justify-content:space-between; align-items: center;"

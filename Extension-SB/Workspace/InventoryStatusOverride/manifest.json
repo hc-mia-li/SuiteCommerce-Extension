@@ -2,15 +2,14 @@
     "name": "InventoryStatusOverride",
     "fantasyName": "InventoryStatusOverride",
     "vendor": "HP",
-    "version": "1.0.0",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=24.1.30",
         "SCS": ">=24.1.30"
     },
+    "version": "1.0.0",
     "description": "Overrides the default inventory status to show the item as out of stock even when available.",
-    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -39,7 +38,6 @@
             }
         }
     },
-    "local_folder": "Workspace\\InventoryStatusOverride",
     "suitescript2": {
         "files": []
     }

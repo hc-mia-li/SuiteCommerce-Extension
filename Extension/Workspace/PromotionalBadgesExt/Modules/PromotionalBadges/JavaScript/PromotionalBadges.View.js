@@ -35,6 +35,7 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 			let homeProduct = [
 				"OpenFit",
 				"OpenFit 2",
+                "OpenFit 2+",
 				"OpenFit Air",
 				"OpenDots One",
 				"OpenRun",
@@ -186,7 +187,8 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 				let sortedTypes = homeProduct.sort((a, b) => b.length - a.length);
 
 				for (let type of sortedTypes) {
-					let regex = new RegExp(`^${type.toLowerCase()}(\\s|$)`);
+					let escapedType = type.replace(/[+^${}()|[\]\\]/g, '\\$&');
+					let regex = new RegExp(`^${escapedType}(\\s|$)`, 'i'); // 忽略大小写
 					if (regex.test(name)) {
 						return type;
 					}

@@ -38,10 +38,13 @@ define('HP.MKT.MKT.ProductLibrary.View'
 					.forEach(item => item.classList.remove('pl_dropdown-open'));
 			});
 		}
-
+    ,  destroy:function () {
+      Backbone.View.prototype.destroy.apply(this, arguments);
+    }
 	,	events: {
 			'click .pl_dropdown':'openDropdown',
-			'click .pl_dropdown-list':'handleSelect'
+			'click .pl_dropdown-list':'handleSelect',
+      'click .pl_table-subrow-download':'clickDownload'
 		}
 		,filterProducts:function (category, subCategory) {
 			if (subCategory !== 'ALL') {
@@ -85,7 +88,14 @@ define('HP.MKT.MKT.ProductLibrary.View'
 			this.products = this.filterProducts(this.category,this.subCategory);
 			this.render();
 		}
-
+    ,clickDownload(e){
+      const $btn = $(e.currentTarget);
+      const category = $btn.data('category');
+      const isVideo = $btn.hasClass('download_video');
+      gtag('event', isVideo ? 'download video' : 'download image', {
+        category: category
+      });
+    }
 	,	bindings: {
 		}
 

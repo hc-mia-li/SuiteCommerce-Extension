@@ -2,15 +2,14 @@
     "name": "MKT",
     "fantasyName": "MKT",
     "vendor": "HP",
-    "version": "1.0.0",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=23.2.3",
         "SCS": ">=23.2.3"
     },
+    "version": "1.0.1",
     "description": "MKT Module",
-    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -27,16 +26,6 @@
             "Modules/MKT/Configuration/MKT.json"
         ]
     },
-    "sass": {
-        "entry_points": {
-            "shopping": "Modules/MKT/Sass/_mkt-mkt.scss"
-        },
-        "files": [
-            "Modules/MKT/Sass/_mkt-mkt.scss",
-            "Modules/MKT/Sass/_mkt-productlibrary.scss",
-            "Modules/MKT/Sass/_mkt-runclubsupport.scss"
-        ]
-    },
     "templates": {
         "application": {
             "shopping": {
@@ -47,6 +36,16 @@
                 ]
             }
         }
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/MKT/Sass/_mkt-mkt.scss"
+        },
+        "files": [
+            "Modules/MKT/Sass/_mkt-mkt.scss",
+            "Modules/MKT/Sass/_mkt-productlibrary.scss",
+            "Modules/MKT/Sass/_mkt-runclubsupport.scss"
+        ]
     },
     "javascript": {
         "entry_points": {
@@ -64,7 +63,6 @@
             }
         }
     },
-    "local_folder": "Workspace\\MKT",
     "suitescript2": {
         "files": []
     }

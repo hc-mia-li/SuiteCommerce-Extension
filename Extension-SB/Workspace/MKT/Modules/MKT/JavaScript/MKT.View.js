@@ -33,8 +33,11 @@ define('HP.MKT.MKT.View'
 			}
 
 			,	events: {
+        'click .mkt_download':'clickDownload',
 			}
-
+,      clickDownload: function () {
+        gtag('event', 'promotional posters');
+      }
 			,	bindings: {
 			}
 

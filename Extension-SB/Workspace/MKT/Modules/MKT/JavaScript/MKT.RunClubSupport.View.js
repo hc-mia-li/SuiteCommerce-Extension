@@ -29,8 +29,11 @@ define('HP.MKT.MKT.RunClubSupport.View'
 		}
 
 	,	events: {
+      'click .form-button': 'handleClick'
 		}
-
+,   handleClick: function () {
+      gtag('event', 'get Demo Kit');
+    }
 	,	bindings: {
 		}
 

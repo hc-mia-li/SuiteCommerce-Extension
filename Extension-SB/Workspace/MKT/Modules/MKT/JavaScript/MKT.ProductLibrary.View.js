@@ -69,8 +69,8 @@ define('HP.MKT.MKT.ProductLibrary.View'
 					}
 				});
 			el.classList.toggle('pl_dropdown-open');
-		},
-		handleSelect:function(e) {
+		}
+    ,handleSelect:function(e) {
 			e.stopPropagation();
 			const type = e.currentTarget.dataset.type;
 			const item = e.target.closest('.pl_dropdown-item');
@@ -87,13 +87,15 @@ define('HP.MKT.MKT.ProductLibrary.View'
 			}
 			this.products = this.filterProducts(this.category,this.subCategory);
 			this.render();
-		}
+    }
     ,clickDownload(e){
       const $btn = $(e.currentTarget);
       const category = $btn.data('category');
       const isVideo = $btn.hasClass('download_video');
-      gtag('event', isVideo ? 'download video' : 'download image', {
-        category: category
+      gtag('event', isVideo ? 'download_video' : 'download_image', {
+        content_category: category,
+        content_name: 'file_download',
+        page_name: 'product_library'
       });
     }
 	,	bindings: {

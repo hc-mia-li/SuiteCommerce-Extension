@@ -93,12 +93,28 @@
                                                         <p style="font-size: 20px;font-weight: 400;line-height: 1.2;color: #404040;padding-bottom: 16px;">Equipped with Dolby Audio<br/>
                                                             and Qi Wireless Charging Case for <br/>
                                                             Superior Convenience.</p>
-                                                    <p style="font-size: 12px;color: #404040;padding-bottom: 32px;">*The wireless charging pad is not included in the box</p>
+                                                        <p style="font-size: 12px;color: #404040;padding-bottom: 32px;">*The wireless charging pad is not included in the box</p>
+                                                    {{/ifEquals}}
+
+                                                    {{#ifEquals title 'OPENRUN PRO 2'}}
+                                                        <h3 style="font-size: 0.885vw;color: #3B7AA1;font-weight: 500;line-height: 1.2;">A Fresh New Color for OPEN<span style="font-weight: bolder">RUN PRO</span> 2</h3>
+                                                        <h2 class="home-info-title" style="font-weight: 700;color: #3B7AA1;font-style: italic">Run Free in Sky Blue</h2>
+                                                        <p style="font-size: 0.885vw;font-weight: 500;line-height: 1.2;color: #3B7AA1;margin-bottom: 2.083vw;">Launching Oct. 23</p>
+                                                    {{/ifEquals}}
+
+                                                    {{#ifEquals title 'Up to 30% off'}}
+                                                        <p style="font-size: 1.174vw;line-height: 1.4;font-weight: 400;color:#CE445F;margin-bottom: 0.885vw">Up to 30% OFF on Massive Picks!</p>
+                                                        <h2 class="home-info-title" style="display: inline-block;font-weight: 700;font-size: 2.359375vw;color:#D45D75;line-height: 1.2;margin-bottom: 0.9375vw">Valentine's Day Sale
+                                                            <img style="margin-left: -0.521vw" src="/scs/img/star-icon.png"><br/>
+                                                            OpenSwim Pro in White</h2>
+
+                                                        <p style="font-size: 0.78125vw;line-height: 1.4;margin-bottom: 3.958vw;font-weight: 500;color:rgba(206, 68, 95, 0.9)">Discounts for you: January 19–30 <br/>
+                                                        Discounts for your customer: February 4- 14</p>
                                                     {{/ifEquals}}
 
                                                     {{#if linktext}}
-                                                        <div class="home-slide-caption-button-container" {{#ifEquals title 'OPENDOTS ONE'}} style="margin:0 auto;"{{/ifEquals}}>
-                                                            <a{{objectToAtrributes item}} class="home-slide-caption-button">{{#if text}}{{linktext}}{{else}}{{translate 'Shop now'}}{{/if}}</a>
+                                                        <div class="home-slide-caption-button-container" style="white-space: nowrap;">
+                                                            <a{{objectToAtrributes item}} class="home-slide-caption-button" {{#ifEquals title 'OPENRUN PRO 2'}} style="background-color: #000;border-color: #000;color: #fff;"{{/ifEquals}}>{{#if text}}{{linktext}}{{else}}{{translate 'Shop now'}}{{/if}}</a>
                                                         </div>
                                                     {{/if}}
                                                 </div>
@@ -217,7 +233,6 @@
                             <p class="primary-text">OPEN<span style="font-weight: 700">FIT</span> 2+</p>
                             <div class="collection-link-btn">SHOP NOW ></div>
                         </div>
-                        <p class="collection-tag">New</p>
                     </div>
                     <!-- OpenDots One-->
                     <div class="collection">
@@ -264,7 +279,6 @@
                             <p class="primary-text">OPEN<span style="font-weight: 700">DOTS</span> ONE</p>
                             <div class="collection-link-btn">SHOP NOW ></div>
                         </div>
-                        <p class="collection-tag">New</p>
                     </div>
                     <!-- OpenFit 2-->
                     <div class="collection">
@@ -393,7 +407,7 @@
             <div class="home-product-category sports">
                 <div class="home-product-sports">
                     <div>
-                        <h3 class="home-product-category-title">Sports</h3>
+                        <h3 class="home-product-category-title">Bone Conduction</h3>
                         <p class="home-product-category-description">Bone Conduction Headphones</p>
                     </div>
                     <div class="sport-left">
@@ -406,6 +420,53 @@
                     </div>
                 </div>
                 <div class="collections-container">
+                    <!-- OpenSwim Pro-->
+                    <div class="collection">
+                        <div class="collection-detail">
+                            <div class="collection-detail-image">
+                                <img class="collection-image grey" style="display:none"
+                                     src="/site/image/S710-ST-GY-US_01.png"/>
+                                <img class="collection-image red" style="display:none"
+                                     src="/site/image/S710-ST-RD-US_01.png"/>
+                                <img class="collection-image white"
+                                     src="/site/image/S710-ST-WT-US_01.png"/>
+                            </div>
+                            <div class="collection-detail-info">
+                                <div class="collection-detail-info-title">
+                                    <p class="collection-detail-title">Color：</p>
+                                    <div class="color-option-container">
+                                        <div class="color-option grey" style="background-color: grey;"
+                                             data-value="S710-ST-GY-US">
+                                            <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option red" style="background-color: #ba4b36;"
+                                             data-value="S710-ST-RD-US">
+                                            <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option white" style="background-color: #C2C2C2;"
+                                             data-value="S710-ST-WT-US">
+                                            <img class="checkmark active"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collection-detail-info-title collection-product">
+                                    <p class="collection-detail-title collection-price-title">Price：</p>
+                                    <div class="collection-price" data-view="open-swim-pro-price"></div>
+                                    <input class="grey" type="hidden" value="OpenSwim-Pro-Grey"/>
+                                    <input class="red" type="hidden" value="OpenSwim-Pro"/>
+                                    <input class="white" type="hidden" value="OpenSwim-Pro-White"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-info">
+                            <p class="primary-text">OPEN<span style="font-weight: 700">SWIM PRO</span></p>
+                            <div class="collection-link-btn">SHOP NOW ></div>
+                        </div>
+                        <p class="collection-tag">New</p>
+                    </div>
                     <!-- OpenRun Pro 2-BM-->
                     <div class="collection">
                         <div class="collection-detail">
@@ -455,7 +516,7 @@
                         <div class="collection-detail">
                             <div class="collection-detail-image">
                                 <img class="collection-image standard coral" src="/site/image/S820-ST-EK-US-326_01.png"/>
-                           </div>
+                            </div>
                             <div class="collection-detail-info">
                                 <div class="collection-detail-info-title">
                                     <p class="collection-detail-title">Color：</p>
@@ -487,41 +548,53 @@
                                 <img class="collection-image standard black" style="display:none" src="/site/image/S820-ST-BK-US_01.png"/>
                                 <img class="collection-image standard orange" style="display:none" src="/site/image/S820-ST-OR-US_01.png"/>
                                 <img class="collection-image standard silver" style="display:none" src="/site/image/S820-ST-SR-US-326_01.png"/>
+                                <img class="collection-image standard blue" src="/site/image/S820-ST-BL-US_01.png"/>
                                 <img class="collection-image mini black" style="display:none" src="/site/image/S821-MN-BK-US_01.png"/>
                                 <img class="collection-image mini orange" style="display:none" src="/site/image/S821-MN-OR-US_01.png"/>
-                                <img class="collection-image mini silver" src="/site/image/S821-MN-SR-US-326_01.png"/>
+                                <img class="collection-image mini silver" style="display:none" src="/site/image/S821-MN-SR-US-326_01.png"/>
+                                <img class="collection-image mini blue" style="display:none" src="/site/image/S821-MN-BL-US_01.png"/>
                             </div>
                             <div class="collection-detail-info">
                                 <div class="collection-detail-info-title">
                                     <p class="collection-detail-title">Color：</p>
                                     <div class="color-option-container">
-                                        <div class="color-option black standard" style="background-color: black;display:none;"
+                                        <div class="color-option black standard" style="background-color: black;"
                                              data-value="S820-ST-BK-US">
                                             <img class="checkmark"
                                                  src="/scs/img/check-circle.png"/>
                                         </div>
-                                        <div class="color-option orange standard" style="background-color: #F87E41;display:none;"
+                                        <div class="color-option orange standard" style="background-color: #F87E41;"
                                              data-value="S820-ST-OR-US">
                                             <img class="checkmark"
                                                  src="/scs/img/check-circle.png"/>
                                         </div>
-                                        <div class="color-option silver standard" style="background:linear-gradient(to bottom, #A7A7A7, #EDEDED);display:none;"
+                                        <div class="color-option silver standard" style="background:linear-gradient(to bottom, #A7A7A7, #EDEDED);"
                                              data-value="S820-ST-SR-US-326">
+                                            <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option blue standard" style="background:#B8C7D1;"
+                                             data-value="S820-ST-BL-US">
                                             <img class="checkmark active"
                                                  src="/scs/img/check-circle.png"/>
                                         </div>
-                                        <div class="color-option black mini" style="background-color: black;"
+                                        <div class="color-option black mini" style="background-color: black;display:none;"
                                              data-value="S821-MN-BK-US">
                                             <img class="checkmark"
                                                  src="/scs/img/check-circle.png"/>
                                         </div>
-                                        <div class="color-option orange mini" style="background-color: #F87E41;"
+                                        <div class="color-option orange mini" style="background-color: #F87E41;display:none;"
                                              data-value="S821-MN-OR-US">
                                             <img class="checkmark"
                                                  src="/scs/img/check-circle.png"/>
                                         </div>
-                                        <div class="color-option silver mini" style="background:linear-gradient(to bottom, #A7A7A7, #EDEDED);"
+                                        <div class="color-option silver mini" style="background:linear-gradient(to bottom, #A7A7A7, #EDEDED);display:none;"
                                              data-value="S821-MN-SR-US-326">
+                                            <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option blue mini" style="background-color: #B8C7D1;display:none;"
+                                             data-value="S821-MN-BL-US">
                                             <img class="checkmark active"
                                                  src="/scs/img/check-circle.png"/>
                                         </div>
@@ -530,8 +603,8 @@
                                 <div class="collection-detail-info-title">
                                     <p class="collection-detail-title">Size：</p>
                                     <div class="features open-run-pro-2">
-                                        <span class="item active" data-value="mini">Mini</span>
-                                        <span class="item" data-value="standard">Standard</span>
+                                        <span class="item" data-value="mini">Mini</span>
+                                        <span class="item active" data-value="standard">Standard</span>
                                     </div>
                                 </div>
                                 <div class="collection-detail-info-title collection-product">
@@ -540,111 +613,16 @@
                                     <input class="black standard" type="hidden" value="product/639641"/>
                                     <input class="orange standard" type="hidden" value="product/639940"/>
                                     <input class="silver standard" type="hidden" value="product/843182"/>
+                                    <input class="blue standard" type="hidden" value="product/1173594"/>
                                     <input class="black mini" type="hidden" value="product/723970"/>
                                     <input class="orange mini" type="hidden" value="product/724066"/>
                                     <input class="silver mini" type="hidden" value="product/954028"/>
+                                    <input class="blue mini" type="hidden" value="product/1173295"/>
                                 </div>
                             </div>
                         </div>
                         <div class="collection-info">
                             <p class="primary-text">OPEN<span style="font-weight: 700">RUN PRO </span>2</p>
-                            <div class="collection-link-btn">SHOP NOW ></div>
-                        </div>
-                    </div>
-                    <!-- OpenSwim Pro-->
-                    <div class="collection">
-                        <div class="collection-detail">
-                            <div class="collection-detail-image">
-                                <img class="collection-image grey"
-                                     src="/site/image/S710-ST-GY-US_01.png"/>
-                                <img class="collection-image red" style="display:none"
-                                     src="/site/image/S710-ST-RD-US_01.png"/>
-                            </div>
-                            <div class="collection-detail-info">
-                                <div class="collection-detail-info-title">
-                                    <p class="collection-detail-title">Color：</p>
-                                    <div class="color-option-container">
-                                        <div class="color-option grey" style="background-color: grey;"
-                                             data-value="S710-ST-GY-US">
-                                            <img class="checkmark active"
-                                                 src="/scs/img/check-circle.png"/>
-                                        </div>
-                                        <div class="color-option red" style="background-color: #ba4b36;"
-                                             data-value="S710-ST-RD-US">
-                                            <img class="checkmark"
-                                                 src="/scs/img/check-circle.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="collection-detail-info-title collection-product">
-                                    <p class="collection-detail-title collection-price-title">Price：</p>
-                                    <div class="collection-price" data-view="open-swim-pro-price"></div>
-                                    <input class="grey" type="hidden" value="OpenSwim-Pro-Grey"/>
-                                    <input class="red" type="hidden" value="OpenSwim-Pro"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="collection-info">
-                            <p class="primary-text">OPEN<span style="font-weight: 700">SWIM PRO</span></p>
-                            <div class="collection-link-btn">SHOP NOW ></div>
-                        </div>
-                    </div>
-                    <!-- OpenRun Pro-->
-                    <div class="collection">
-                        <div class="collection-detail">
-                            <div class="collection-detail-image">
-                                <img class="collection-image standard black" src="/site/image/S810-ST-BK-US_01.png"/>
-                                <img class="collection-image standard blue" style="display:none" src="/site/image/S810-ST-BL-US_01.png"/>
-                                <img class="collection-image standard beige" style="display:none" src="/site/image/S810-ST-BG-US_01.png"/>
-                                <img class="collection-image standard pink" style="display:none" src="/site/image/S810-ST-PK-US_01.png"/>
-                                <img class="collection-image mini black" style="display:none" src="/site/image/S811-MN-BK-US_01.png"/>
-                                <img class="collection-image mini beige" style="display:none" src="/site/image/S811-MN-BG-US_01.png"/>
-                            </div>
-                            <div class="collection-detail-info">
-                                <div class="collection-detail-info-title">
-                                    <p class="collection-detail-title">Color：</p>
-                                    <div class="color-option-container">
-                                        <div class="color-option black standard" style="background-color: black;" data-value="S810-ST-BK-US">
-                                            <img class="checkmark active" src="/scs/img/check-circle.png"/>
-                                        </div>
-                                        <div class="color-option blue standard" style="background-color: #3886B4;" data-value="S810-ST-BL-US">
-                                            <img class="checkmark" src="/scs/img/check-circle.png"/>
-                                        </div>
-                                        <div class="color-option beige standard" style="background-color: #E0CFC2;" data-value="S810-ST-BG-US">
-                                            <img class="checkmark" src="/scs/img/check-circle.png"/>
-                                        </div>
-                                        <div class="color-option pink standard" style="background-color: #F08C81;" data-value="S810-ST-PK-US">
-                                            <img class="checkmark" src="/scs/img/check-circle.png"/>
-                                        </div>
-                                        <div class="color-option black mini" style="background-color: black; display:none;" data-value="S811-MN-BK-US">
-                                            <img class="checkmark active" src="/scs/img/check-circle.png"/>
-                                        </div>
-                                        <div class="color-option beige mini" style="background-color: #E0CFC2; display:none;" data-value="S811-MN-BG-US">
-                                            <img class="checkmark" src="/scs/img/check-circle.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="collection-detail-info-title">
-                                    <p class="collection-detail-title">Size：</p>
-                                    <div class="features open-run-pro">
-                                        <span class="item" data-value="mini">Mini</span>
-                                        <span class="item active" data-value="standard">Standard</span>
-                                    </div>
-                                </div>
-                                <div class="collection-detail-info-title collection-product">
-                                    <p class="collection-detail-title collection-price-title">Price：</p>
-                                    <div class="collection-price" data-view="open-run-pro-price"></div>
-                                    <input class="black standard" type="hidden" value="product/286119"/>
-                                    <input class="blue standard" type="hidden" value="product/285750"/>
-                                    <input class="beige standard" type="hidden" value="product/286114"/>
-                                    <input class="pink standard" type="hidden" value="product/285958"/>
-                                    <input class="black mini" type="hidden" value="product/404178"/>
-                                    <input class="beige mini" type="hidden" value="product/404975"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="collection-info">
-                            <p class="primary-text">OPEN<span style="font-weight: 700">RUN PRO</span></p>
                             <div class="collection-link-btn">SHOP NOW ></div>
                         </div>
                     </div>
@@ -746,38 +724,6 @@
                         </div>
                         <div class="collection-info">
                             <p class="primary-text">OPEN<span style="font-weight: 700">MOVE</span></p>
-                            <div class="collection-link-btn">SHOP NOW ></div>
-                        </div>
-                    </div>
-                    <!-- OpenSwim-->
-                    <div class="collection">
-                        <div class="collection-detail">
-                            <div class="collection-detail-image">
-                                <img class="collection-image black" src="/site/image/S700-ST-BK-US_01.png"/>
-                                <img class="collection-image blue" style="display:none" src="/site/image/S700-ST-BL-US_01.png"/>
-                            </div>
-                            <div class="collection-detail-info">
-                                <div class="collection-detail-info-title">
-                                    <p class="collection-detail-title">Color：</p>
-                                    <div class="color-option-container">
-                                        <div class="color-option black" style="background: black" data-value="S700-ST-BK-US">
-                                            <img class="checkmark active" src="/scs/img/check-circle.png"/>
-                                        </div>
-                                        <div class="color-option blue" style="background: #233F8C" data-value="S700-ST-BL-US">
-                                            <img class="checkmark" src="/scs/img/check-circle.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="collection-detail-info-title collection-product">
-                                    <p class="collection-detail-title collection-price-title">Price：</p>
-                                    <div class="collection-price" data-view="open-swim-price"></div>
-                                    <input class="black" type="hidden" value="product/285919"/>
-                                    <input class="blue" type="hidden" value="product/286102"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="collection-info">
-                            <p class="primary-text">OPEN<span style="font-weight: 700">SWIM</span></p>
                             <div class="collection-link-btn">SHOP NOW ></div>
                         </div>
                     </div>

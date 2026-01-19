@@ -5,7 +5,7 @@
             <div class="rc_banner-content">
                 <h2 class="rc_banner-title">{{bannerData.title}}</h2>
                 <h3 class="rc_banner-subtitle">{{bannerData.text}}</h3>
-                <a href="{{bannerData.linklocation}}" target="_blank" class="rc_banner-button">{{bannerData.linktext}}</a>
+                <a href="{{bannerData.linklocation}}" target="_blank" class="rc_banner-button form-button">{{bannerData.linktext}}</a>
             </div>
         </div>
     </div>
@@ -67,11 +67,10 @@
     <div class="rc_form">
         <div class="rc_form-block">
             <p class="rc_form-tip">Free for select partners. Big runs, small runs—this kit turns them all into Shokz-powered experiences.</p>
-            <a href="{{bannerData.linklocation}}" target="_blank" class="rc_form-button">{{bannerData.linktext}}</a>
+            <a href="{{bannerData.linklocation}}" target="_blank" class="rc_form-button form-button">{{bannerData.linktext}}</a>
         </div>
     </div>
 </section>
-
 
 <!--
   Available helpers:

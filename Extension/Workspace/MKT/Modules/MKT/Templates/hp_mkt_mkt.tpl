@@ -17,7 +17,7 @@
             <img src="{{resizeImage '/site/image/MKT/promotional-posters.png' 'thumbnail'}}" alt="Promotional posters" class="mkt_image">
             <div class="mkt_card-body">
                 <p class="mkt_card-title">Promotional posters</p>
-                <a href="{{url}}" class="mkt_card-button" target="_blank">Download</a>
+                <a href="{{url}}" class="mkt_card-button mkt_download" target="_blank">Download</a>
             </div>
         </div>
     </div>
@@ -37,7 +37,6 @@
         </div>
     </div>
 </section>
-
 
 <!--
   Available helpers:

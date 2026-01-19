@@ -33,15 +33,20 @@ define('HP.MKT.MKT.ProductLibrary.View'
 			this.subCategories = this.filterSubCategories();
 			//获取当前分类的货品
 			this.products = this.filterProducts(this.category,this.subCategory);
-			document.addEventListener('click', function() {
-				document.querySelectorAll('.pl_dropdown.pl_dropdown-open')
-					.forEach(item => item.classList.remove('pl_dropdown-open'));
-			});
+      this._docClickHandler = function() {
+        document.querySelectorAll('.pl_dropdown.pl_dropdown-open')
+          .forEach(item => item.classList.remove('pl_dropdown-open'));
+      };
+      document.addEventListener('click', this._docClickHandler);
 		}
-
+    ,  destroy:function () {
+      document.removeEventListener('click', this._docClickHandler);
+      Backbone.View.prototype.destroy.apply(this, arguments);
+    }
 	,	events: {
 			'click .pl_dropdown':'openDropdown',
-			'click .pl_dropdown-list':'handleSelect'
+			'click .pl_dropdown-list':'handleSelect',
+      'click .pl_table-subrow-download':'clickDownload'
 		}
 		,filterProducts:function (category, subCategory) {
 			if (subCategory !== 'ALL') {
@@ -85,7 +90,17 @@ define('HP.MKT.MKT.ProductLibrary.View'
 			this.products = this.filterProducts(this.category,this.subCategory);
 			this.render();
 		}
-
+    ,clickDownload(e){
+      e.stopPropagation();
+      const $btn = $(e.currentTarget);
+      const category = $btn.data('category');
+      const isVideo = $btn.hasClass('download_video');
+      gtag('event', isVideo ? 'download_video' : 'download_image', {
+        content_category: category,
+        content_name: 'file_download',
+        page_name: 'product_library'
+      });
+    }
 	,	bindings: {
 		}
 

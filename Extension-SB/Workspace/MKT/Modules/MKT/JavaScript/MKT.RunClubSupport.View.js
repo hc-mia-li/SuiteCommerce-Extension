@@ -32,7 +32,7 @@ define('HP.MKT.MKT.RunClubSupport.View'
       'click .form-button': 'handleClick'
 		}
 ,   handleClick: function () {
-      gtag('event', 'download_click', {
+      gtag('event', 'get_demo_kit', {
         content_type: 'demo_kit',
         content_name: 'get_demo_kit',
         page_name: 'run_club_support'

@@ -92,10 +92,8 @@ define('HP.MKT.MKT.ProductLibrary.View'
       const $btn = $(e.currentTarget);
       const category = $btn.data('category');
       const isVideo = $btn.hasClass('download_video');
-      gtag('event', isVideo ? 'download_video' : 'download_image', {
-        content_category: category,
-        content_name: 'file_download',
-        page_name: 'product_library'
+      gtag('event', isVideo ? 'view' : 'download', {
+        content_category: category
       });
     }
 	,	bindings: {

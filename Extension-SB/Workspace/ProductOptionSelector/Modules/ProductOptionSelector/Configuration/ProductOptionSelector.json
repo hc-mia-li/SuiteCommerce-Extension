@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "subtab": {
+        "id": "optionSelector",
+        "title": "Product Option Selector",
+        "group": "extensions"
+    },
+    "properties": {
+        "optionSelector.itemOptions": {
+            "group": "extensions",
+            "subtab": "optionSelector",
+            "type": "array",
+            "title": "item options",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "fieldId": {
+                        "type": "string",
+                        "title": "Field ID",
+                        "mandatory": true
+                    },
+                    "label": {
+                        "type": "string",
+                        "title": "Label",
+                        "description": "The label that the option will be shown",
+                        "translate": true
+                    },
+                    "isColor": {
+                        "type": "boolean",
+                        "title": "Is Color Option"
+                    }
+                }
+            }
+        }
+    }
+}

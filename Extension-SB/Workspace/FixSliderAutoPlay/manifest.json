@@ -1,0 +1,41 @@
+{
+    "name": "FixSliderAutoPlay",
+    "fantasyName": "FixSliderAutoPlay",
+    "vendor": "HP",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=23.2.3",
+        "SCS": ">=23.2.3"
+    },
+    "description": "Fixes the bxSlider autoplay bug by resetting the timer after manual slide ",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/FixSliderAutoPlay/JavaScript/HP.FixSliderAutoPlay.FixSliderAutoPlay.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/FixSliderAutoPlay/JavaScript/HP.FixSliderAutoPlay.FixSliderAutoPlay.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\FixSliderAutoPlay",
+    "suitescript2": {
+        "files": []
+    }
+}

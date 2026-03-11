@@ -1,0 +1,58 @@
+{
+    "type": "object",
+    "subtab": {
+        "id": "PDPVideoExt",
+        "title": "PDP Video",
+        "group": "extensions"
+    },
+    "properties": {
+        "PDPVideoExt.first": {
+            "group": "extensions",
+            "subtab": "PDPVideoExt",
+            "type": "array",
+            "title": "PDP Video First",
+            "description": "Configure the video to be displayed first in the PDP",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "item": {
+                        "title": "item",
+                        "mandatory": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    "videoURL": {
+                        "title": "video url",
+                        "mandatory": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            }
+        },
+        "PDPVideoExt.last": {
+            "group": "extensions",
+            "subtab": "PDPVideoExt",
+            "type": "array",
+            "title": "PDP Video last",
+            "description": "Configure the video to be displayed at the end of the PDP",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "item": {
+                        "title": "item",
+                        "mandatory": true,
+                        "type": "string",
+                        "default": ""
+                    },
+                    "videoURL": {
+                        "title": "video url",
+                        "mandatory": true,
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            }
+        }
+    }
+}

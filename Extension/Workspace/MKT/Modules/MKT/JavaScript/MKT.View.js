@@ -36,11 +36,7 @@ define('HP.MKT.MKT.View'
         'click .mkt_download':'clickDownload',
 			}
 ,      clickDownload: function () {
-        gtag('event', 'download_click', {
-          content_type: 'poster',
-          content_name: 'promotional_poster',
-          page_name: 'mkt_resource'
-        });
+        gtag('event', 'promotional posters');
       }
 			,	bindings: {
 			}

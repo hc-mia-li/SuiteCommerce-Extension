@@ -34,8 +34,8 @@
     <div class="pl_table">
         <div class="pl_table-header">
             <div class="pl_header-cell pl_header-cell-product">Product</div>
-            <div class="pl_header-cell">Title</div>
-            <div class="pl_header-cell">Format</div>
+            <div class="pl_header-cell">Asset Type</div>
+            <div class="pl_header-cell">File Type</div>
         </div>
         {{#each products}}
             <div class="pl_table-row">
@@ -47,14 +47,14 @@
                     <div class="pl_table-subrow">
                         <div>Video</div>
                         <a href="{{video}}" target="_blank" data-category="{{category}}" class="pl_table-subrow-download download_video">
-                            <span class="download-link">Document File</span>
+                            <span class="download-link">View</span>
                             <img src="{{resizeImage '/site/image/MKT/download.png' 'thumbnail'}}" alt="download Video">
                         </a>
                     </div>
                     <div class="pl_table-subrow">
                         <div>Image</div>
                         <a href="{{image}}" target="_blank" data-category="{{category}}" class="pl_table-subrow-download download_image">
-                            <span class="download-link">Document File</span>
+                            <span class="download-link">Download</span>
                             <img src="{{resizeImage '/site/image/MKT/download.png' 'thumbnail'}}" alt="download Image">
                         </a>
                     </div>

@@ -1,97 +1,98 @@
 {
-    "name": "MinQtyExt",
-    "fantasyName": "MinQtyExt",
-    "vendor": "HP",
-    "version": "1.0.3",
-    "type": "extension",
-    "target": "SCA,SCS",
-    "target_version": {
-        "SCA": ">=23.1.3",
-        "SCS": ">=23.1.3"
-    },
-    "description": "When submitting an order, the quantity of products in the order must be at least 4",
-    "skins": [],
-    "assets": {
-        "img": {
-            "files": []
-        },
-        "fonts": {
-            "files": []
-        },
-        "services": {
-            "files": [
-                "services/MinQtyExt.Service.ss"
-            ]
-        }
-    },
-    "sass": {
-        "entry_points": {
-            "shopping": "Modules/MinQtyExt/Sass/_minqtyext-minqtyext.scss",
-            "myaccount": "Modules/MinQtyExt/Sass/_minqtyext-minqtyext.scss",
-            "checkout": "Modules/MinQtyExt/Sass/_minqtyext-minqtyext.scss"
-        },
-        "files": [
-            "Modules/MinQtyExt/Sass/_minqtyext-minqtyext.scss"
-        ]
-    },
-    "templates": {
-        "application": {
-            "shopping": {
-                "files": [
-                    "Modules/MinQtyExt/Templates/hp_minqtyext_minqtyext.tpl"
-                ]
-            },
-            "myaccount": {
-                "files": [
-                    "Modules/MinQtyExt/Templates/hp_minqtyext_minqtyext.tpl"
-                ]
-            },
-            "checkout": {
-                "files": [
-                    "Modules/MinQtyExt/Templates/hp_minqtyext_minqtyext.tpl"
-                ]
-            }
-        }
-    },
-    "javascript": {
-        "entry_points": {
-            "shopping": "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js",
-            "myaccount": "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js",
-            "checkout": "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js"
-        },
-        "application": {
-            "shopping": {
-                "files": [
-                    "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js",
-                    "Modules/MinQtyExt/JavaScript/MinQtyExt.View.js",
-                    "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.Model.js"
-                ]
-            },
-            "myaccount": {
-                "files": [
-                    "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js",
-                    "Modules/MinQtyExt/JavaScript/MinQtyExt.View.js",
-                    "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.Model.js"
-                ]
-            },
-            "checkout": {
-                "files": [
-                    "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js",
-                    "Modules/MinQtyExt/JavaScript/MinQtyExt.View.js",
-                    "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.Model.js"
-                ]
-            }
-        }
-    },
-    "ssp-libraries": {
-        "entry_point": "Modules/MinQtyExt/SuiteScript/HP.MinQtyExt.MinQtyExt.js",
-        "files": [
-            "Modules/MinQtyExt/SuiteScript/HP.MinQtyExt.MinQtyExt.js",
-            "Modules/MinQtyExt/SuiteScript/MinQtyExt.ServiceController.js"
-        ]
-    },
-    "local_folder": "Workspace\\MinQtyExt",
-    "suitescript2": {
-        "files": []
-    }
+	"name": "MinQtyExt",
+	"fantasyName": "MinQtyExt",
+	"vendor": "HP",
+	"type": "extension",
+	"target": "SCA,SCS",
+	"target_version": {
+		"SCA": ">=23.1.3",
+		"SCS": ">=23.1.3"
+	},
+	"version": "1.0.3",
+	"description": "When submitting an order, the quantity of products in the order must be at least 4",
+	"assets": {
+		"img": {
+			"files": []
+		},
+		"fonts": {
+			"files": []
+		},
+		"services": {
+			"files": [
+				"services/MinQtyExt.Service.ss"
+			]
+		}
+	},
+	"templates": {
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/MinQtyExt/Templates/hp_minqtyext_minqtyext.tpl"
+				]
+			},
+			"myaccount": {
+				"files": [
+					"Modules/MinQtyExt/Templates/hp_minqtyext_minqtyext.tpl"
+				]
+			},
+			"checkout": {
+				"files": [
+					"Modules/MinQtyExt/Templates/hp_minqtyext_minqtyext.tpl"
+				]
+			}
+		}
+	},
+	"sass": {
+		"entry_points": {
+			"shopping": "Modules/MinQtyExt/Sass/_minqtyext-minqtyext.scss",
+			"myaccount": "Modules/MinQtyExt/Sass/_minqtyext-minqtyext.scss",
+			"checkout": "Modules/MinQtyExt/Sass/_minqtyext-minqtyext.scss"
+		},
+		"files": [
+			"Modules/MinQtyExt/Sass/_minqtyext-minqtyext.scss"
+		]
+	},
+	"javascript": {
+		"entry_points": {
+			"shopping": "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js",
+			"myaccount": "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js",
+			"checkout": "Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js"
+		},
+		"application": {
+			"shopping": {
+				"files": [
+					"Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js",
+					"Modules/MinQtyExt/JavaScript/MinQtyExt.View.js",
+					"Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.Model.js"
+				]
+			},
+			"myaccount": {
+				"files": [
+					"Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js",
+					"Modules/MinQtyExt/JavaScript/MinQtyExt.View.js",
+					"Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.Model.js"
+				]
+			},
+			"checkout": {
+				"files": [
+					"Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.js",
+					"Modules/MinQtyExt/JavaScript/MinQtyExt.View.js",
+					"Modules/MinQtyExt/JavaScript/HP.MinQtyExt.MinQtyExt.Model.js"
+				]
+			}
+		}
+	},
+	"ssp-libraries": {
+		"entry_point": "Modules/MinQtyExt/SuiteScript/HP.MinQtyExt.MinQtyExt.js",
+		"files": [
+			"Modules/MinQtyExt/SuiteScript/HP.MinQtyExt.MinQtyExt.js",
+			"Modules/MinQtyExt/SuiteScript/MinQtyExt.ServiceController.js"
+		]
+	},
+	"suitescript2": {
+		"files": []
+	},
+	"path": "SuiteScripts/Deploy_Extensions/HP/MinQtyExt@1.0.3",
+	"activation_id": "1",
+	"extension_id": "5201"
 }

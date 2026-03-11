@@ -9,14 +9,7 @@
                         {{#each extraHomeView.carousel}}
                             {{#unlessEquals title ../bannerTitle}}
                                 <li class="{{#if text}}caption-on{{/if}} {{#if title}}caption-on{{/if}} {{#if linktext}}caption-on{{/if}}">
-                                    <div class="home-slide-main-container
-										{{#if imageBehaviour}}
-											use-image
-										{{else}}
-                                        {{#if backgroundCrop}}
-                                            {{backgroundCrop}}
-                                        {{/if}}
-                                    {{/if}}">
+                                    <div class="home-slide-main-container {{#if imageBehaviour}}use-image{{else}}{{#if backgroundCrop}}{{backgroundCrop}}{{/if}}{{/if}}">
                                         {{#if isAbsoluteUrl}}
                                             <div class="home-slide-image-container use-image" style="background-image:url('{{image}}');">
                                                 <a{{objectToAtrributes item}} class="home-slide-wrap-link">
@@ -24,22 +17,15 @@
                                                 </a>
                                             </div>
                                         {{else}}
-                                            <div class="home-slide-image-container
-											{{#if imageBehaviour}}
-												use-image
-											{{else}}
-                                                {{#if backgroundCrop}}
+                                            <div class="home-slide-image-container {{#if imageBehaviour}}use-image{{else}}{{#if backgroundCrop}}
                                                     {{backgroundCrop}}
-                                                {{/if}}
-                                            {{/if}}" style="background-image:url('{{getThemeAssetsPathWithDefault image 'img/posh-carousel-home-1.jpg'}}');">
+                                                {{/if}}{{/if}}" style="background-image:url('{{getThemeAssetsPathWithDefault image 'img/posh-carousel-home-1.jpg'}}');">
                                                 <a{{objectToAtrributes item}} class="home-slide-wrap-link">
-                                                    <img src="
-															{{#if isAbsoluteUrl}}
+                                                    <img src="{{#if isAbsoluteUrl}}
                                                         {{image}}
                                                     {{else}}
                                                         {{getThemeAssetsPathWithDefault image 'img/posh-carousel-home-1.jpg'}}
-                                                    {{/if}}"
-                                                         class="home-slide-image {{#if imageMobile}}hide-small{{/if}}" />
+                                                    {{/if}}" class="home-slide-image {{#if imageMobile}}hide-small{{/if}}" />
                                                     {{#if imageMobile}}
                                                         <img src="{{imageMobile}}" class="home-slide-image-mobile" />
                                                     {{/if}}
@@ -51,9 +37,6 @@
                                             <div class="home-slide-caption {{captionTextAlign}}">
                                                 <div class="home-slide-caption-body">
                                                     <div class="custom-menu-color" style="color:{{captionColor}};display: none;">{{title}}</div>
-                                                        <!--                                                {{#if title}}<h1 class="home-info-title"-->
-                                                        <!--                                                                 style="color:{{captionColor}}">{{title}}</h1>{{/if}}-->
-                                                    <!--<h2 class="home-info-title">OPEN<span style="font-weight:500">FIT</span></h2>-->
 
                                                     {{#ifEquals title 'OPENFIT 2'}}
                                                         <h2 class="home-info-title" style="color:{{captionColor}};font-weight: 500">
@@ -102,14 +85,17 @@
                                                         <p style="font-size: 0.885vw;font-weight: 500;line-height: 1.2;color: #3B7AA1;margin-bottom: 2.083vw;">Launching Oct. 23</p>
                                                     {{/ifEquals}}
 
-                                                    {{#ifEquals title 'Up to 30% off'}}
-                                                        <p style="font-size: 1.174vw;line-height: 1.4;font-weight: 400;color:#CE445F;margin-bottom: 0.885vw">Up to 30% OFF on Massive Picks!</p>
-                                                        <h2 class="home-info-title" style="display: inline-block;font-weight: 700;font-size: 2.359375vw;color:#D45D75;line-height: 1.2;margin-bottom: 0.9375vw">Valentine's Day Sale
-                                                            <img style="margin-left: -0.521vw" src="/scs/img/star-icon.png"><br/>
-                                                            OpenSwim Pro in White</h2>
+                                                    {{#ifEquals title 'Shokz Spring Sale'}}
+                                                        <p style="font-size: 1.174vw;line-height: 1.3;font-weight: 400;color:#5F5F5F;margin-bottom: 0.365vw">{{text}}</p>
+                                                        <h2 class="home-info-title" style="display: inline-block;font-weight: 700;font-size: 2.36vw;color:#5F823B;line-height: 1.2;margin-bottom: 0.99vw">{{title}}</h2>
 
-                                                        <p style="font-size: 0.78125vw;line-height: 1.4;margin-bottom: 3.958vw;font-weight: 500;color:rgba(206, 68, 95, 0.9)">Discounts for you: January 19–30 <br/>
-                                                        Discounts for your customer: February 4- 14</p>
+                                                        <p style="font-size: 1.042vw;line-height: 1.4;margin-bottom: 1.146vw;font-weight: 500;color:rgba(95, 95, 95, 0.9);">Discounts for you: <span style="font-weight: 700">March 6 - 20</span> <br/>
+                                                        Discounts for your customer: <span style="font-weight: 700">March 25 - April 7</span></p>
+                                                        <p style="font-size:0.625vw;color:#5F5F5F;line-height: 1.3;margin-bottom: 1.5625vw;">Retailer Support Program<br/>
+                                                            Shokz.com will run a Spring Promotion (Buy 2 Get Extra $30 Off).<br/>
+                                                            Retailers may choose to price match and submit sell-out reports to request for reimbursement.<br/>
+                                                            Please refer to the detailed <a href="https://docs.google.com/document/d/1RP1cfnqSP6rGepJPRks8zc7njZFmawNp_lGDPJPRD-M/edit?usp=sharing" target="_blank" style="text-decoration: underline;pointer-events: all;">program guidelines.</a><br/>
+                                                        </p>
                                                     {{/ifEquals}}
 
                                                     {{#if linktext}}
@@ -503,36 +489,6 @@
                                     <div class="collection-price" data-view="open-run-pro2-bm-price"></div>
                                     <input class="royal standard" type="hidden" value="product/969331"/>
                                     <input class="royal mini" type="hidden" value="product/969032"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="collection-info">
-                            <p class="primary-text">OPEN<span style="font-weight: 700">RUN PRO </span>2</p>
-                            <div class="collection-link-btn">SHOP NOW ></div>
-                        </div>
-                    </div>
-                    <!-- OpenRun Pro 2-EK-->
-                    <div class="collection">
-                        <div class="collection-detail">
-                            <div class="collection-detail-image">
-                                <img class="collection-image standard coral" src="/site/image/S820-ST-EK-US-326_01.png"/>
-                            </div>
-                            <div class="collection-detail-info">
-                                <div class="collection-detail-info-title">
-                                    <p class="collection-detail-title">Color：</p>
-                                    <div class="color-option-container">
-                                        <div class="color-option coral standard" style="background: linear-gradient(to bottom, #EB6231, #F6BC48);z-index: 1"
-                                             data-value="S820-ST-EK-US-326">
-                                            <img class="checkmark active"
-                                                 src="/scs/img/check-circle.png"/>
-                                        </div>
-                                        <span style="color: #666666;font-size: 11px; background: #FCEDD0;padding: 0 15px 0 25px;border-radius: 16px;margin-left: -21px;line-height: 16px;">Kipchoge Co-branded Edition</span>
-                                    </div>
-                                </div>
-                                <div class="collection-detail-info-title collection-product">
-                                    <p class="collection-detail-title collection-price-title">Price：</p>
-                                    <div class="collection-price" data-view="open-run-pro2-ek-price"></div>
-                                    <input class="coral standard" type="hidden" value="product/829573"/>
                                 </div>
                             </div>
                         </div>

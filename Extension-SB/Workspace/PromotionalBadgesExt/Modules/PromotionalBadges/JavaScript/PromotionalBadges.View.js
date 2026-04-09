@@ -31,12 +31,13 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 			let environment = options.environment;
 			let items = options.plp?.getItemsInfo();
 			let itemInfo = options.pdp?.getItemInfo();
+			let qv_item = options.model?.get('item');
 			let Series = environment.getConfig("PromotionalBadges.PLPSeries");
 			let homeProduct = [
-				"OpenFit",
 				"OpenFit 2",
 				"OpenFit 2+",
 				"OpenFit Air",
+				"OpenFit Pro",
 				"OpenDots One",
 				"OpenRun",
 				"OpenRun Pro",
@@ -53,9 +54,10 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 				if(items){
 					//PLP
 					items.forEach(itm=>{
-						let categories = itm.commercecategory.categories;
+						let category = itm.custitem8;
+						let size = itm.custitem_hc_item_size;
 						let displayname = itm.storedisplayname2.toLowerCase();
-						let item = findSeries(categories,displayname);
+						let item = findSeries(category,size,displayname);
 						if(item){
 							let dom = $('[data-sku="'+itm.itemid+'"]').find('.facets-item-cell-grid-image-wrapper');
 							appendContent(dom,item);
@@ -63,28 +65,25 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 					})
 				}else if(itemInfo && itemInfo.item.custitem_ccs_item_type=="Headphone"){
 					//PDP
-					let categories = itemInfo.item.commercecategory.categories;
+					let category = itemInfo.item.custitem8;
+					let size = itemInfo.item.custitem_hc_item_size;
 					let displayname = itemInfo.item.storedisplayname2.toLowerCase();
-					let item = findSeries(categories,displayname);
+					let item = findSeries(category,size,displayname);
 					if(item){
 						let dom = $('.product-details-image-gallery');
 						appendContent(dom, item);
 					}
-				}else{
+				}else if(qv_item){
 					// quick view
-					let quick = $('.product-details-quickview-item-name').text().toLowerCase();
-					let series = matchSeries(quick);
-					let matched = Series.filter(obj=>series==obj.series && (!obj.size || quick.includes(obj.size.toLowerCase())));
-					if(matched.length > 0){
-						var hasExcluded = matched.some(obj => {
-							return obj.excludeKeywords && quick.includes(obj.excludeKeywords.toLowerCase());
-						});
-						if(!hasExcluded){
-							let dom = $('.product-details-quickview-img');
-							appendContent(dom,matched[0]);
-						}
+					let category = qv_item.get('custitem8');
+					let size = qv_item.get('custitem_hc_item_size');
+					let displayname = qv_item.get('storedisplayname2').toLowerCase();
+					let item = findSeries(category,size,displayname);
+					if(item){
+						let dom = $('.product-details-quickview-img');
+						appendContent(dom, item);
 					}
-
+				}else{
 					//Home
 					Series.forEach(obj => {
 						let matched = $('.primary-text').filter(function () {
@@ -152,15 +151,14 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 			}
 
 			// 找到匹配的配置记录
-			function findSeries(categories,itemName){
+			function findSeries(category,size,itemName){
 
 				// 找到所有和 item 相关的配置：series + size 都匹配（size 可选）
 				var relatedSeries = Series.filter(config => {
-					var hasSeries = categories.some(cat => cat.name.toLowerCase() === config.series.toLowerCase());
-					if (!hasSeries) return false;
+					if ( category.toLowerCase() !== config.series.toLowerCase()) return false;
 
 					// size 存在时，itemName 必须包含 size
-					if (config.size && !itemName.includes(config.size.toLowerCase())) return false;
+					if (config.size && size!==config.size.toLowerCase()) return false;
 
 					return true;
 				});
@@ -187,7 +185,8 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 				let sortedTypes = homeProduct.sort((a, b) => b.length - a.length);
 
 				for (let type of sortedTypes) {
-					let regex = new RegExp(`^${type.toLowerCase()}(\\s|$)`);
+					let escapedType = type.replace(/[+^${}()|[\]\\]/g, '\\$&');
+					let regex = new RegExp(`^${escapedType}(\\s|$)`, 'i'); // 忽略大小写
 					if (regex.test(name)) {
 						return type;
 					}

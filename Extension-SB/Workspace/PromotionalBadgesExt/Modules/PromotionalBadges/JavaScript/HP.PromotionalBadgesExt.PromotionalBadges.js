@@ -48,10 +48,11 @@ define(
 						return new PromotionalBadgesView({environment: environment, pdp: pdp});
 					}
 				});
-				//quick view
+				// quick view
 				layout.addChildView('Child.View', function() {
+					let model = container.getLayout().getCurrentView().model;
 					if(isInPromotion()) {
-						return new PromotionalBadgesView({environment: environment});
+						return new PromotionalBadgesView({environment: environment,model:model});
 					}
 				});
 

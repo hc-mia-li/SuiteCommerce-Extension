@@ -26,16 +26,7 @@ define('HP.ProductOptionSelector.ProductOptionSelector.View'
 			this.isLoading = true;
 			this.items = []; // 所有同类商品
 			this.model = options.model;
-			// this.itemOptions = options.application.getConfig().optionSelector.itemOptions;
-			this.itemOptions = [{
-				fieldId:"custitem_hc_item_color",
-				label:'Color',
-				isColor:true
-			},{
-				fieldId:"custitem_hc_item_size",
-				label:'Size',
-				isColor:false
-			}]
+			this.itemOptions = options.application.getConfig().optionSelector.itemOptions;
 			_.each(this.itemOptions, function (opt) {
 				opt.selectOption = this.model.get('item').get(opt.fieldId) || null;
 			}, this);

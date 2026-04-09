@@ -98,11 +98,27 @@
                                                         </p>
                                                     {{/ifEquals}}
 
-                                                    {{#if linktext}}
-                                                        <div class="home-slide-caption-button-container" style="white-space: nowrap;">
-                                                            <a{{objectToAtrributes item}} class="home-slide-caption-button" {{#ifEquals title 'OPENRUN PRO 2'}} style="background-color: #000;border-color: #000;color: #fff;"{{/ifEquals}}>{{#if text}}{{linktext}}{{else}}{{translate 'Shop now'}}{{/if}}</a>
-                                                        </div>
-                                                    {{/if}}
+                                                    {{#ifEquals title 'Mother’s Day Sale & Memorial Day Sale'}}
+<!--                                                        不显示按钮-->
+                                                        <p style="font-size: 1.042vw;line-height: 1.2;font-weight: 400;background: linear-gradient(269.94deg, #D99B82 3.87%, #BE8068 30.3%, #9E6049 102.53%);-webkit-background-clip: text; -webkit-text-fill-color: transparent;margin-bottom: 0.365vw">{{title}}</p>
+                                                        <h2 class="home-info-title" style="display: inline-block;font-weight: 500;font-size: 2.36vw;color:#4A1500;line-height: 1.2;padding-bottom: 1.757vw;border-bottom: 0.104vw solid #DBC2B4;margin-bottom: 1.172vw">Up to <span style="color:#C14601">30% off</span><br/>
+                                                            wholesale favorites</h2>
+                                                        <p style="font-size: 0.833vw;line-height: 1.3;margin-bottom: 1.146vw;font-weight: 500;color:#753F29;">Discounts for you:<br/> <span style="font-size:0.833vw;line-height:1.6;color:#83503A;font-weight: 200">April 8–22</span></p>
+                                                        <p style="font-size: 0.833vw;line-height: 1.3;margin-bottom: 1.146vw;font-weight: 500;color:#753F29;">Discounts for your customer:<br/>
+                                                            <span style="font-size:0.833vw;line-height:1.6;color:#83503A;font-weight: 200">Mother’s Day Sale：April 29 - May 10<br/>
+                                                                Memorial Day Sale：May 18 - May 25
+                                                            </span>
+                                                        </p>
+                                                        <p style="font-size:1.042vw;color:#4A1500;line-height: 1.3;font-weight: 500">Get Ready: OpenFit Pro Launches April 28</p>
+                                                    {{/ifEquals}}
+
+                                                    {{#unlessEquals title 'Mother’s Day Sale & Memorial Day Sale'}}
+                                                        {{#if linktext}}
+                                                            <div class="home-slide-caption-button-container" style="white-space: nowrap;">
+                                                                <a{{objectToAtrributes item}} class="home-slide-caption-button" {{#ifEquals title 'OPENRUN PRO 2'}} style="background-color: #000;border-color: #000;color: #fff;"{{/ifEquals}}>{{#if text}}{{linktext}}{{else}}{{translate 'Shop now'}}{{/if}}</a>
+                                                            </div>
+                                                        {{/if}}
+                                                    {{/unlessEquals}}
                                                 </div>
                                             </div>
                                         </div>
@@ -182,6 +198,45 @@
                     </div>
                 </div>
                 <div class="collections-container">
+                    <!-- OpenFit Pro-->
+                    <div class="collection">
+                        <div class="collection-detail">
+                            <div class="collection-detail-image">
+                                <img class="collection-image black"
+                                     src="/site/image/T010-ST-BK-US_01.png"/>
+                                <img class="collection-image white" style="display: none;"
+                                     src="/site/image/T010-ST-WT-US_01.png"/>
+                            </div>
+                            <div class="collection-detail-info">
+                                <div class="collection-detail-info-title">
+                                    <p class="collection-detail-title">Color：</p>
+                                    <div class="color-option-container">
+                                        <div class="color-option black" style="background-color: black;"
+                                             data-value="T010-ST-BK-US">
+                                            <img class="checkmark active"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option white" style="background-color: #E6E6E6;"
+                                             data-value="T010-ST-WT-US">
+                                            <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collection-detail-info-title collection-product">
+                                    <p class="collection-detail-title collection-price-title">Price：</p>
+                                    <div class="collection-price" data-view="open-fit-pro-price"></div>
+                                    <input class="black" type="hidden" value="product/1274801"/>
+                                    <input class="white" type="hidden" value="product/1274901"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-info">
+                            <p class="primary-text">OPEN<span style="font-weight: 700">FIT PRO</span></p>
+                            <div class="collection-link-btn">SHOP NOW ></div>
+                        </div>
+                        <p class="collection-tag">New</p>
+                    </div>
                     <!-- OpenFit 2+-->
                     <div class="collection">
                         <div class="collection-detail">
@@ -350,44 +405,6 @@
                             <div class="collection-link-btn">SHOP NOW ></div>
                         </div>
                     </div>
-                    <!-- OpenFit-->
-                    <div class="collection">
-                        <div class="collection-detail">
-                            <div class="collection-detail-image">
-                                <img class="collection-image black"
-                                     src="/site/image/T910-ST-BK-US_01.png"/>
-                                <img class="collection-image beige" style="display: none;"
-                                     src="/site/image/T910-ST-BG-US_01.png"/>
-                            </div>
-                            <div class="collection-detail-info">
-                                <div class="collection-detail-info-title">
-                                    <p class="collection-detail-title">Color：</p>
-                                    <div class="color-option-container">
-                                        <div class="color-option black" style="background-color: black;"
-                                             data-value="T910-ST-BK-US">
-                                            <img class="checkmark active"
-                                                 src="/scs/img/check-circle.png"/>
-                                        </div>
-                                        <div class="color-option beige" style="background-color: #E5DED5;"
-                                             data-value="T910-ST-BG-US">
-                                            <img class="checkmark"
-                                                 src="/scs/img/check-circle.png"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="collection-detail-info-title collection-product">
-                                    <p class="collection-detail-title collection-price-title">Price：</p>
-                                    <div class="collection-price" data-view="open-fit-price"></div>
-                                    <input class="black" type="hidden" value="product/468181"/>
-                                    <input class="beige" type="hidden" value="product/468179"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="collection-info">
-                            <p class="primary-text">OPEN<span style="font-weight: 700">FIT</span></p>
-                            <div class="collection-link-btn">SHOP NOW ></div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="home-product-category sports">
@@ -451,7 +468,6 @@
                             <p class="primary-text">OPEN<span style="font-weight: 700">SWIM PRO</span></p>
                             <div class="collection-link-btn">SHOP NOW ></div>
                         </div>
-                        <p class="collection-tag">New</p>
                     </div>
                     <!-- OpenRun Pro 2-BM-->
                     <div class="collection">
@@ -723,7 +739,7 @@
                     { type: "OpenFit Air", template: "open-fit-air-price" },
                     { type: "OpenFit 2+", template: "open-fit-22-price" },
                     { type: "OpenFit 2", template: "open-fit-2-price" },
-                    { type: "OpenFit", template: "open-fit-price" },
+                    { type: "OpenFit Pro", template: "open-fit-pro-price" },
                     { type: "OpenRun Pro 2", template: "open-run-pro2-price" },
                     { type: "OpenRun Pro", template: "open-run-pro-price" },
                     { type: "OpenRun", template: "open-run-price" },

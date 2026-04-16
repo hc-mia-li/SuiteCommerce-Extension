@@ -158,7 +158,7 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 					if ( category.toLowerCase() !== config.series.toLowerCase()) return false;
 
 					// size 存在时，itemName 必须包含 size
-					if (config.size && size!==config.size.toLowerCase()) return false;
+					if (config.size && size.toLowerCase() !== config.size.toLowerCase()) return false;
 
 					return true;
 				});

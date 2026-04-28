@@ -34,25 +34,25 @@
                 "type": "object",
                 "properties": {
                     "itemId": {
-                        "title": "Promotional Item Id",
+                        "title": "Item Id",
                         "mandatory": true,
                         "type": "string",
                         "description": "Please enter the internal ID of the item"
                     },
                     "item": {
-                        "title": "Promotional Item",
+                        "title": "Item",
                         "mandatory": false,
                         "type": "string",
                         "description": "Please enter the sku of the item"
                     },
                     "giftId": {
-                        "title": "Promotional Gift Item Id",
+                        "title": "Gift Id",
                         "mandatory": true,
                         "type": "string",
                         "description": "Please enter the internal ID of the gift item"
                     },
                     "gift": {
-                        "title": "Promotional Gift",
+                        "title": "Gift",
                         "mandatory": false,
                         "type": "string",
                         "description": "Please enter the sku of the gift item"

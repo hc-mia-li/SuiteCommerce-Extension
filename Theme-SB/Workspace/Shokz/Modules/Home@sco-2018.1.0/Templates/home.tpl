@@ -735,7 +735,7 @@
                 </div>
             </div>
             <script>
-                let productTypes = [
+                var productTypes = [
                     { type: "OpenFit Air", template: "open-fit-air-price" },
                     { type: "OpenFit 2+", template: "open-fit-22-price" },
                     { type: "OpenFit 2", template: "open-fit-2-price" },

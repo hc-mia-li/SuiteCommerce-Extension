@@ -23,10 +23,10 @@
 		{{#if showRegisterOrGuest}}
 			<div class="login-register-wrapper-column-register">
 				<div class="login-register-wrapper-register">
-					<h2 class="login-register-title-register">{{translate 'Apply For Partnership'}}</h2>
+					<h2 class="login-register-title-register">{{translate 'Want to become a Shokz Reseller?'}}</h2>
 
-					<p class="login-register-desc-register">Please provide us your basic information and apply for partnership.<br/>We will get back to you right after.</p>
-					<a href="https://reseller.shokz.com/signup"><button class="login-register-link-btn">APPLY NOW ></button></a>
+                    <p class="login-register-desc-register">Submit your business information to apply for a Shokz reseller partnership. Our team will review your application within 7 business days and follow up by email.</p>
+                    <a href="https://reseller.shokz.com/signup"><button class="login-register-link-btn">APPLY NOW ></button></a>
 					<!--{{#if showCheckoutAsGuest}}
 						<div class="login-register-wrapper-guest" data-view="CheckoutAsGuest"></div>
 					{{/if}}

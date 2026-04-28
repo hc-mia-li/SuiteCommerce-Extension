@@ -735,7 +735,7 @@
                 </div>
             </div>
             <script>
-                let productTypes = [
+                var productTypes = [
                     { type: "OpenFit Air", template: "open-fit-air-price" },
                     { type: "OpenFit 2+", template: "open-fit-22-price" },
                     { type: "OpenFit 2", template: "open-fit-2-price" },
@@ -747,7 +747,7 @@
                     { type: "OpenSwim Pro", template: "open-swim-pro-price" },
                     { type: "OpenSwim", template: "open-swim-price" },
                     { type: "OpenComm 2", template: "open-comm-2-price" },
-                    { type: "OpenDots", template: "open-dots-one-price" },
+                    { type: "OpenDots One", template: "open-dots-one-price" },
                 ];
                 $('.color-option').click(function () {
                     var color = this.className.split(" ")[1];

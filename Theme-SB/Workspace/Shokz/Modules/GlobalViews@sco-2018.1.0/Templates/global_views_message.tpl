@@ -6,7 +6,7 @@
 				{{#each messages}}
 					<li>{{{this}}}</li>
 				{{/each}}
-				<ul>
+				</ul>
 			{{else}}
 				{{#if hasErrorCode}}
 					{{{message}}}<span class="alert-error-code">{{translate 'CODE'}}: {{errorCode}}</span>

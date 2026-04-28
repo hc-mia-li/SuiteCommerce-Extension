@@ -6,6 +6,7 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 		,'HP.PromotionalBadgesExt.PromotionalBadges.Model'
 
 	,	'Backbone'
+		,'underscore'
     ]
 , function (
 	hp_promotionalbadgesext_promotionalbadges_tpl
@@ -13,6 +14,7 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 	,PromotionalBadgesModel
 
 	,	Backbone
+	,_
 )
 {
     'use strict';
@@ -33,28 +35,18 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 			let itemInfo = options.pdp?.getItemInfo();
 			let qv_item = options.model?.get('item');
 			let Series = environment.getConfig("PromotionalBadges.PLPSeries");
-			let homeProduct = [
-				"OpenFit 2",
-				"OpenFit 2+",
-				"OpenFit Air",
-				"OpenFit Pro",
-				"OpenDots One",
-				"OpenRun",
-				"OpenRun Pro",
-				"OpenRun Pro 2",
-				"OpenMove",
-				"OpenSwim",
-				"OpenSwim Pro",
-				"OpenComm2"
-			]
+			// 获取当前所有Products下的Categories
+			let categories = _.findWhere(SC.CATEGORIES, {fullurl: "/products"}).categories;
+			let homeProduct = _.pluck(_.flatten(_.pluck(categories, 'categories')), 'name');
 			// To add elements to the page, need to wait for DOM rendering to complete.
 			// When the request is done, DOM has been rendered.
 			this.model = new PromotionalBadgesModel();
-			this.model.fetch().done(function(result) {
+			this.model.fetch().done(function() {
 				if(items){
 					//PLP
 					items.forEach(itm=>{
-						let category = itm.custitem8;
+						let categories = itm.commercecategory.categories;
+						let category =  _.max(categories, function(item) {return item.id;}).name;
 						let size = itm.custitem_hc_item_size;
 						let displayname = itm.storedisplayname2.toLowerCase();
 						let item = findSeries(category,size,displayname);
@@ -65,7 +57,8 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 					})
 				}else if(itemInfo && itemInfo.item.custitem_ccs_item_type=="Headphone"){
 					//PDP
-					let category = itemInfo.item.custitem8;
+					let categories = itemInfo.item.commercecategory.categories;
+					let category =  _.max(categories, function(item) {return item.id;}).name;
 					let size = itemInfo.item.custitem_hc_item_size;
 					let displayname = itemInfo.item.storedisplayname2.toLowerCase();
 					let item = findSeries(category,size,displayname);
@@ -75,7 +68,8 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 					}
 				}else if(qv_item){
 					// quick view
-					let category = qv_item.get('custitem8');
+					let categories = qv_item.get('commercecategory').categories;
+					let category =  _.max(categories, function(item) {return item.id;}).name;
 					let size = qv_item.get('custitem_hc_item_size');
 					let displayname = qv_item.get('storedisplayname2').toLowerCase();
 					let item = findSeries(category,size,displayname);
@@ -158,7 +152,7 @@ define('HP.PromotionalBadgesExt.PromotionalBadges.View'
 					if ( category.toLowerCase() !== config.series.toLowerCase()) return false;
 
 					// size 存在时，itemName 必须包含 size
-					if (config.size && size.toLowerCase() !== config.size.toLowerCase()) return false;
+					if (config.size && size?.toLowerCase() !== config.size.toLowerCase()) return false;
 
 					return true;
 				});

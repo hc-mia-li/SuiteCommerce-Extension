@@ -38,17 +38,6 @@
                                                 <div class="home-slide-caption-body">
                                                     <div class="custom-menu-color" style="color:{{captionColor}};display: none;">{{title}}</div>
 
-                                                    {{#ifEquals title 'OPENFIT 2'}}
-                                                        <h2 class="home-info-title" style="color:{{captionColor}};font-weight: 500">
-                                                            <span style="display: block;background: linear-gradient(to right, {{captionColor}}, #DBC2AC 50%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Open-Ear Comfort,</span>
-                                                            <span style="display: block;background: linear-gradient(to right, {{captionColor}}, #DBC2AC 50%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Ultimate Sound.</span>
-                                                        </h2>
-                                                        <h3 class="home-info-subtext"
-                                                            style="color:#E7E7E7;font-size:20px;line-height:30px;margin:0 0 48px 0">
-                                                            OPEN<span style="font-weight:700">FIT</span> 2 |
-                                                            {{text}}</h3>
-                                                    {{/ifEquals}}
-
                                                     {{#ifEquals title 'OPENSWIM PRO'}}
                                                         <h2 class="home-info-title" style="color:{{captionColor}}">OPEN<span style="font-weight:700">SWIM PRO</span></h2>
                                                         {{#if text}}<h2 class="home-info-text"
@@ -85,40 +74,30 @@
                                                         <p style="font-size: 0.885vw;font-weight: 500;line-height: 1.2;color: #3B7AA1;margin-bottom: 2.083vw;">Launching Oct. 23</p>
                                                     {{/ifEquals}}
 
-                                                    {{#ifEquals title 'Shokz Spring Sale'}}
-                                                        <p style="font-size: 1.174vw;line-height: 1.3;font-weight: 400;color:#5F5F5F;margin-bottom: 0.365vw">{{text}}</p>
-                                                        <h2 class="home-info-title" style="display: inline-block;font-weight: 700;font-size: 2.36vw;color:#5F823B;line-height: 1.2;margin-bottom: 0.99vw">{{title}}</h2>
-
-                                                        <p style="font-size: 1.042vw;line-height: 1.4;margin-bottom: 1.146vw;font-weight: 500;color:rgba(95, 95, 95, 0.9);">Discounts for you: <span style="font-weight: 700">March 6 - 20</span> <br/>
-                                                        Discounts for your customer: <span style="font-weight: 700">March 25 - April 7</span></p>
-                                                        <p style="font-size:0.625vw;color:#5F5F5F;line-height: 1.3;margin-bottom: 1.5625vw;">Retailer Support Program<br/>
-                                                            Shokz.com will run a Spring Promotion (Buy 2 Get Extra $30 Off).<br/>
-                                                            Retailers may choose to price match and submit sell-out reports to request for reimbursement.<br/>
-                                                            Please refer to the detailed <a href="https://docs.google.com/document/d/1RP1cfnqSP6rGepJPRks8zc7njZFmawNp_lGDPJPRD-M/edit?usp=sharing" target="_blank" style="text-decoration: underline;pointer-events: all;">program guidelines.</a><br/>
-                                                        </p>
-                                                    {{/ifEquals}}
-
-                                                    {{#ifEquals title 'Mother’s Day Sale & Memorial Day Sale'}}
-<!--                                                        不显示按钮-->
-                                                        <p style="font-size: 1.042vw;line-height: 1.2;font-weight: 400;background: linear-gradient(269.94deg, #D99B82 3.87%, #BE8068 30.3%, #9E6049 102.53%);-webkit-background-clip: text; -webkit-text-fill-color: transparent;margin-bottom: 0.365vw">{{title}}</p>
-                                                        <h2 class="home-info-title" style="display: inline-block;font-weight: 500;font-size: 2.36vw;color:#4A1500;line-height: 1.2;padding-bottom: 1.757vw;border-bottom: 0.104vw solid #DBC2B4;margin-bottom: 1.172vw">Up to <span style="color:#C14601">30% off</span><br/>
-                                                            wholesale favorites</h2>
-                                                        <p style="font-size: 0.833vw;line-height: 1.3;margin-bottom: 1.146vw;font-weight: 500;color:#753F29;">Discounts for you:<br/> <span style="font-size:0.833vw;line-height:1.6;color:#83503A;font-weight: 200">April 8–22</span></p>
-                                                        <p style="font-size: 0.833vw;line-height: 1.3;margin-bottom: 1.146vw;font-weight: 500;color:#753F29;">Discounts for your customer:<br/>
-                                                            <span style="font-size:0.833vw;line-height:1.6;color:#83503A;font-weight: 200">Mother’s Day Sale：April 29 - May 10<br/>
-                                                                Memorial Day Sale：May 18 - May 25
-                                                            </span>
-                                                        </p>
-                                                        <p style="font-size:1.042vw;color:#4A1500;line-height: 1.3;font-weight: 500">Get Ready: OpenFit Pro Launches April 28</p>
-                                                    {{/ifEquals}}
-
-                                                    {{#unlessEquals title 'Mother’s Day Sale & Memorial Day Sale'}}
-                                                        {{#if linktext}}
-                                                            <div class="home-slide-caption-button-container" style="white-space: nowrap;">
-                                                                <a{{objectToAtrributes item}} class="home-slide-caption-button" {{#ifEquals title 'OPENRUN PRO 2'}} style="background-color: #000;border-color: #000;color: #fff;"{{/ifEquals}}>{{#if text}}{{linktext}}{{else}}{{translate 'Shop now'}}{{/if}}</a>
+                                                    {{#ifEquals title 'OpenDots 2 and OpenDots Air'}}
+                                                        <h3 style="font-size: 1.25vw;color: #1E1E21;font-weight: 400;line-height: 1.3;font-family: 'Roboto';">{{text}}</h3>
+                                                        <h2 class="home-info-title" style="font-weight: 700;color: #1E1E21;letter-spacing: -0.6px;margin-bottom: 0;font-family: 'Roboto';">New Products Arrival </h2>
+                                                        <div style="display: inline-block;margin-bottom: 57px;font-family: 'Roboto';">
+                                                            <h3 style="font-size: 1.875vw;color: #1E1E21;line-height: 1.1;letter-spacing: -1.1px;margin-bottom: 30px; font-family: 'Roboto';font-weight: 400">{{title}}</h3>
+                                                            <div style="display: flex;justify-content: space-between;color:#000000;font-size: 0.82vw;font-weight: 400">
+                                                                <p>
+                                                                    <span style="padding-right: 11px;font-weight: 500">OpenDots 2</span>
+                                                                    <span style="border: 1px solid rgba(0,0,0,0.3); border-radius: 50px;padding: 2px 11px;font-size: 11px;letter-spacing: -0.5px;">Light Clip, Incredible Sound</span>
+                                                                </p>
+                                                                <p>
+                                                                    <span style="padding-right: 11px;font-weight: 500">OpenDots Air</span>
+                                                                    <span style="border: 1px solid rgba(0,0,0,0.3); border-radius: 50px;padding: 2px 11px;font-size: 11px;letter-spacing: -0.5px;">Clip On Your Style</span>
+                                                                </p>
                                                             </div>
-                                                        {{/if}}
-                                                    {{/unlessEquals}}
+                                                        </div>
+
+                                                    {{/ifEquals}}
+
+                                                    {{#if linktext}}
+                                                        <div class="home-slide-caption-button-container" style="white-space: nowrap;">
+                                                            <a{{objectToAtrributes item}} class="home-slide-caption-button" {{#ifEquals title 'OPENRUN PRO 2'}} style="background-color: #000;border-color: #000;color: #fff;"{{/ifEquals}}>{{#if text}}{{linktext}}{{else}}{{translate 'Shop now'}}{{/if}}</a>
+                                                        </div>
+                                                    {{/if}}
                                                 </div>
                                             </div>
                                         </div>
@@ -198,6 +177,92 @@
                     </div>
                 </div>
                 <div class="collections-container">
+                    <!-- OpenDots 2-->
+                    <div class="collection">
+                        <div class="collection-detail">
+                            <div class="collection-detail-image">
+                                <img class="collection-image black"
+                                     src="/site/image/E320-ST-BK-US_01.png"/>
+                                <img class="collection-image white" style="display: none;"
+                                     src="/site/image/E320-ST-WT-US_01.png"/>
+                                <img class="collection-image white" style="display: none;"
+                                     src="/site/image/E320-ST-GY-US_01.png"/>
+                            </div>
+                            <div class="collection-detail-info">
+                                <div class="collection-detail-info-title">
+                                    <p class="collection-detail-title">Color：</p>
+                                    <div class="color-option-container">
+                                        <div class="color-option black" style="background-color: black;"
+                                             data-value="E320-ST-BK-US">
+                                            <img class="checkmark active"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option white" style="background-color: #F5EFEA;"
+                                             data-value="E320-ST-WT-US">
+                                            <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option grey" style="background-color: #DCDADC;"
+                                             data-value="E320-ST-GY-US">
+                                            <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collection-detail-info-title collection-product">
+                                    <p class="collection-detail-title collection-price-title">Price：</p>
+                                    <div class="collection-price" data-view="open-dots-2-price"></div>
+                                    <input class="black" type="hidden" value="product/1394103"/>
+                                    <input class="white" type="hidden" value="product/1394403"/>
+                                    <input class="grey" type="hidden" value="product/1394402"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-info">
+                            <p class="primary-text">OPEN<span style="font-weight: 700">DOTS</span> 2</p>
+                            <div class="collection-link-btn">SHOP NOW ></div>
+                        </div>
+                        <p class="collection-tag">New</p>
+                    </div>
+                    <!-- OpenDots Air-->
+                    <div class="collection">
+                        <div class="collection-detail">
+                            <div class="collection-detail-image">
+                                <img class="collection-image black"
+                                     src="/site/image/E210-ST-BK-US_01.png"/>
+                                <img class="collection-image purple" style="display: none;"
+                                     src="/site/image/E210-ST-PR-US_01.png"/>
+                            </div>
+                            <div class="collection-detail-info">
+                                <div class="collection-detail-info-title">
+                                    <p class="collection-detail-title">Color：</p>
+                                    <div class="color-option-container">
+                                        <div class="color-option black" style="background-color: black;"
+                                             data-value="E210-ST-BK-US">
+                                            <img class="checkmark active"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                        <div class="color-option purple" style="background-color: #C5BEDE;"
+                                             data-value="E210-ST-PR-US">
+                                            <img class="checkmark"
+                                                 src="/scs/img/check-circle.png"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="collection-detail-info-title collection-product">
+                                    <p class="collection-detail-title collection-price-title">Price：</p>
+                                    <div class="collection-price" data-view="open-dots-air-price"></div>
+                                    <input class="black" type="hidden" value="product/1394102"/>
+                                    <input class="purple" type="hidden" value="product/1394401"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collection-info">
+                            <p class="primary-text">OPEN<span style="font-weight: 700">DOTS</span> AIR</p>
+                            <div class="collection-link-btn">SHOP NOW ></div>
+                        </div>
+                        <p class="collection-tag">New</p>
+                    </div>
                     <!-- OpenFit Pro-->
                     <div class="collection">
                         <div class="collection-detail">
@@ -235,7 +300,6 @@
                             <p class="primary-text">OPEN<span style="font-weight: 700">FIT PRO</span></p>
                             <div class="collection-link-btn">SHOP NOW ></div>
                         </div>
-                        <p class="collection-tag">New</p>
                     </div>
                     <!-- OpenFit 2+-->
                     <div class="collection">
@@ -747,7 +811,9 @@
                     { type: "OpenSwim Pro", template: "open-swim-pro-price" },
                     { type: "OpenSwim", template: "open-swim-price" },
                     { type: "OpenComm 2", template: "open-comm-2-price" },
-                    { type: "OpenDots One", template: "open-dots-one-price" },
+                    { type: "OpenDots", template: "open-dots-one-price" },
+                    { type: "OpenDots 2", template: "open-dots-2-price" },
+                    { type: "OpenDots Air", template: "open-dots-air-price" },
                 ];
                 $('.color-option').click(function () {
                     var color = this.className.split(" ")[1];

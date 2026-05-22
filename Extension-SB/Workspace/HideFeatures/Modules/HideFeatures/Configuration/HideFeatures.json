@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "subtab": {
+        "id": "HideFeatures",
+        "title": "Hide Features",
+        "group": "extensions"
+    },
+    "properties": {
+        "HideFeatures.HideQuote": {
+            "group": "extensions",
+            "subtab": "HideFeatures",
+            "type": "boolean",
+            "title": "Hide Quote",
+            "description": "Hide Quote Button",
+            "default": true
+        },
+        "HideFeatures.HideWishlist": {
+            "group": "extensions",
+            "subtab": "HideFeatures",
+            "type": "boolean",
+            "title": "Hide Wishlist",
+            "description": "Hide Wishlist Button",
+            "default": true
+        }
+    }
+}

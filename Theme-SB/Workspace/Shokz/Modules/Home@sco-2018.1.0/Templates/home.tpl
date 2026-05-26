@@ -185,7 +185,7 @@
                                      src="/site/image/E320-ST-BK-US_01.png"/>
                                 <img class="collection-image white" style="display: none;"
                                      src="/site/image/E320-ST-WT-US_01.png"/>
-                                <img class="collection-image white" style="display: none;"
+                                <img class="collection-image grey" style="display: none;"
                                      src="/site/image/E320-ST-GY-US_01.png"/>
                             </div>
                             <div class="collection-detail-info">

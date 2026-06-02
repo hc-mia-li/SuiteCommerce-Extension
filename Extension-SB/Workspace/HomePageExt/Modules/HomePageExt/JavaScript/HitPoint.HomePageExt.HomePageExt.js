@@ -56,7 +56,7 @@ define("HitPoint.HomePageExt.HomePageExt", [
           var self = this;
           var promise = jQuery.Deferred();
           jQuery.get(
-            "/api/items?custitem_product_series=True-Wireless&fieldset=details&limit=3",
+            "/api/items?commercecategoryname=Open Earbuds&fieldset=search&limit=3",
             function (result) {
               self.truewireless =
                 result && result.total > 0
@@ -64,7 +64,7 @@ define("HitPoint.HomePageExt.HomePageExt", [
                   : [];
 
               jQuery.get(
-                "/api/items?custitem_product_series=Sports&fieldset=details&limit=3",
+                "/api/items?commercecategoryname=Bone Conduction&fieldset=search&limit=3",
                 function (result) {
                   self.sports =
                     result && result.total > 0
@@ -72,7 +72,7 @@ define("HitPoint.HomePageExt.HomePageExt", [
                       : [];
 
                   jQuery.get(
-                    "/api/items?custitem_product_series=Communications&fieldset=details&limit=3",
+                    "/api/items?commercecategoryname=Communication&fieldset=search&limit=3",
                     function (result) {
                       self.communication =
                         result && result.total > 0

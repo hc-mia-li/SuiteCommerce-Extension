@@ -289,34 +289,15 @@ define(
 
                         // 判断当前时间是否处于促销期间
                         function isInPromotion() {
-                            // Convert timestamp to PST date
-                            // 创建一个 Date 对象
-                            let date = new Date(SC.date);
-                            // 使用 toLocaleString 转换为指定格式
-                            let options = {
-                                year: 'numeric',
-                                month: '2-digit',
-                                day: '2-digit',
-                                hour: '2-digit',
-                                minute: '2-digit',
-                                second: '2-digit',
-                                hour12: true,
-                                timeZone: 'America/Los_Angeles' // 处理夏令时
-                            };
-                            // 转换为指定格式
-                            let formattedDate = date.toLocaleString('en-US', options);
-                            // 处理格式，去掉多余的部分
-                            let [datePart, timePart] = formattedDate.split(', ');
-                            let [month, day, year] = datePart.split('/');
-                            let [hour, minute, secondPart] = timePart.split(':');
-                            // 处理秒数的 AM/PM 部分
-                            let [second, period] = secondPart.split(' ');
-                            // 拼接为所需格式
-                            let currentStr = `${year}/${month}/${day} ${hour}:${minute}:${second} ${period}`;
-                            let startStr = promotionalGift.startDate;
-                            let endStr = promotionalGift.endDate;
-                            console.log('gift result', startStr <= currentStr && currentStr < endStr)
-                            return startStr <= currentStr && currentStr < endStr;
+                            let currentDate = new Date(
+                              new Date(SC.date).toLocaleString('en-US', {
+                                  timeZone: 'America/Los_Angeles'
+                              })
+                            );
+                            let startDate = new Date(promotionalGift.startDate);
+                            let endDate = new Date(promotionalGift.endDate);
+                            console.log('gift result',currentDate >= startDate && currentDate < endDate)
+                            return currentDate >= startDate && currentDate < endDate;
                         }
                     }
                 });

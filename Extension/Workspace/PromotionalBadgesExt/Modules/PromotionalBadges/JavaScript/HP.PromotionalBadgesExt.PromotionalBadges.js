@@ -58,37 +58,19 @@ define(
 
 				// 判断当前时间是否处于促销期间
 				function isInPromotion() {
-					// Convert timestamp to PST date
-					// 创建一个 Date 对象
-					var date = new Date(SC.date);
-					// 使用 toLocaleString 转换为指定格式
-					var options = {
-						year: 'numeric',
-						month: '2-digit',
-						day: '2-digit',
-						hour: '2-digit',
-						minute: '2-digit',
-						second: '2-digit',
-						hour12: true,
-						timeZone: 'America/Los_Angeles' // 处理夏令时
-					};
-					// 转换为指定格式
-					var formattedDate = date.toLocaleString('en-US', options);
-					// 处理格式，去掉多余的部分
-					var [datePart, timePart] = formattedDate.split(', ');
-					var [month, day, year] = datePart.split('/');
-					var [hour, minute, secondPart] = timePart.split(':');
-					// 处理秒数的 AM/PM 部分
-					var [second, period] = secondPart.split(' ');
-					// 拼接为所需格式
-					var currentStr = `${year}/${month}/${day} ${hour}:${minute}:${second} ${period}`;
-					var startStr = environment.getConfig("PromotionalBadges.startDate");
-					var endStr = environment.getConfig("PromotionalBadges.endDate");
-					var currentDate = new Date(currentStr);
-					var startDate = new Date(startStr);
-					var endDate = new Date(endStr);
-					console.log('badge result', startDate <= currentDate && currentDate < endDate)
-					return startDate <= currentDate && currentDate < endDate;
+					let currentDate = new Date(
+						new Date(SC.date).toLocaleString('en-US', {
+							timeZone: 'America/Los_Angeles'
+						})
+					);
+					let startDate = new Date(
+						environment.getConfig('PromotionalBadges.startDate')
+					);
+					let endDate = new Date(
+						environment.getConfig('PromotionalBadges.endDate')
+					);
+					console.log('badge result',currentDate >= startDate && currentDate < endDate)
+					return currentDate >= startDate && currentDate < endDate;
 				}
 			}
 		}
